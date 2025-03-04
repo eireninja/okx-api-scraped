@@ -5089,13 +5089,13 @@ GET /api/v5/account/bills?instType<span class="o">=</span>MARGIN
 <td style="text-align: left">type</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Bill type<br><code>1</code>: Transfer<br><code>2</code>: Trade<br><code>3</code>: Delivery<br><code>4</code>: Forced repayment<br><code>5</code>: Liquidation<br><code>6</code>: Margin transfer<br><code>7</code>: Interest deduction<br><code>8</code>: Funding fee<br><code>9</code>: ADL<br><code>10</code>: Clawback<br><code>11</code>: System token conversion<br><code>12</code>: Strategy transfer<br><code>13</code>: DDH<br><code>14</code>: Block trade<br><code>15</code>: Quick Margin<br><code>16</code>: Borrowing<br><code>22</code>: Repay<br><code>24</code>: Spread trading<br><code>26</code>: Structured products<br><code>27</code>: Convert<br><code>28</code>: Easy convert<br><code>29</code>: One-click repay<br><code>30</code>: Simple trade<br><code>250</code>: Copy trader profit sharing expenses<br><code>251</code>: Copy trader profit sharing refund</td>
+<td style="text-align: left">Bill type<br><code>1</code>: Transfer<br><code>2</code>: Trade<br><code>3</code>: Delivery<br><code>4</code>: Forced repayment<br><code>5</code>: Liquidation<br><code>6</code>: Margin transfer<br><code>7</code>: Interest deduction<br><code>8</code>: Funding fee<br><code>9</code>: ADL<br><code>10</code>: Clawback<br><code>11</code>: System token conversion<br><code>12</code>: Strategy transfer<br><code>13</code>: DDH<br><code>14</code>: Block trade<br><code>15</code>: Quick Margin<br><code>16</code>: Borrowing<br><code>22</code>: Repay<br><code>24</code>: Spread trading<br><code>26</code>: Structured products<br><code>27</code>: Convert<br><code>28</code>: Easy convert<br><code>29</code>: One-click repay<br><code>30</code>: Simple trade<br><code>33</code>: Loans<br><code>250</code>: Copy trader profit sharing expenses<br><code>251</code>: Copy trader profit sharing refund</td>
 </tr>
 <tr>
 <td style="text-align: left">subType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Bill subtype<br><code>1</code>: Buy<br><code>2</code>: Sell<br><code>3</code>: Open long<br><code>4</code>: Open short<br><code>5</code>: Close long<br><code>6</code>: Close short<br><code>9</code>: Interest deduction for Market loans<br><code>11</code>: Transfer in<br><code>12</code>: Transfer out<br><code>14</code>: Interest deduction for VIP loans<br><code>160</code>: Manual margin increase<br><code>161</code>: Manual margin decrease<br><code>162</code>: Auto margin increase<br><code>114</code>: Forced repayment buy<br><code>115</code>: Forced repayment sell<br><code>118</code>: System token conversion transfer in<br><code>119</code>: System token conversion transfer out<br><code>100</code>: Partial liquidation close long<br><code>101</code>: Partial liquidation close short<br><code>102</code>: Partial liquidation buy<br><code>103</code>: Partial liquidation sell<br><code>104</code>: Liquidation long<br><code>105</code>: Liquidation short<br><code>106</code>: Liquidation buy<br><code>107</code>: Liquidation sell<br><code>108</code>:clawback<br><code>110</code>: Liquidation transfer in<br><code>111</code>: Liquidation transfer out<br><code>125</code>: ADL close long<br><code>126</code>: ADL close short<br><code>127</code>: ADL buy<br><code>128</code>: ADL sell<br><code>131</code>: ddh buy<br><code>132</code>: ddh sell<br><code>170</code>: Exercised(ITM buy side)<br><code>171</code>: Counterparty exercised(ITM sell side)<br><code>172</code>: Expired(Non-ITM buy and sell side)<br><code>112</code>: Delivery long<br><code>113</code>: Delivery short<br><code>117</code>: Delivery/Exercise clawback<br><code>173</code>: Funding fee expense<br><code>174</code>: Funding fee income<br><code>200</code>:System transfer in<br><code>201</code>: Manually transfer in<br><code>202</code>: System transfer out<br><code>203</code>: Manually transfer out<br><code>204</code>: block trade buy<br><code>205</code>: block trade sell<br><code>206</code>: block trade open long<br><code>207</code>: block trade open short<br><code>208</code>: block trade close long<br><code>209</code>: block trade close short<br><code>210</code>: Manual Borrowing of quick margin<br><code>211</code>: Manual Repayment of quick margin<br><code>212</code>: Auto borrow of quick margin<br><code>213</code>: Auto repay of quick margin<br><code>220</code>: Transfer in when using USDT to buy OPTION<br><code>221</code>: Transfer out when using USDT to buy OPTION<br><code>16</code>: Repay forcibly<br><code>17</code>: Repay interest by borrowing forcibly<br><code>224</code>: Repayment transfer in<br><code>225</code>: Repayment transfer out<br><code>236</code>: Easy convert in<br><code>237</code>: Easy convert out<br><code>250</code>: Profit sharing expenses<br><code>251</code>: Profit sharing refund<br><code>280</code>: SPOT profit sharing expenses<br><code>281</code>: SPOT profit sharing refund<br><code>270</code>: Spread trading buy<br><code>271</code>: Spread trading sell<br><code>272</code>: Spread trading open long<br><code>273</code>: Spread trading open short<br><code>274</code>: Spread trading close long<br><code>275</code>: Spread trading close short<br><code>280</code>: SPOT profit sharing expenses<br><code>281</code>: SPOT profit sharing refund <br><code>284</code>: Copy trade automatic transfer in<br><code>285</code>: Copy trade manual transfer in<br><code>286</code>: Copy trade automatic transfer out<br><code>287</code>: Copy trade manual transfer out<br><code>290</code>: Crypto dust auto-transfer out<br><del><code>293</code>: Fixed loan interest deduction</del><br><del><code>294</code>: Fixed loan interest refund</del><br><del><code>295</code>: Fixed loan overdue penalty</del><br><code>296</code>: From structured order placements<br><code>297</code>: To structured order placements<br><code>298</code>: From structured settlements<br><code>299</code>: To structured settlements<br><code>306</code>: Manual borrow<br><code>307</code>: Auto borrow<br><code>308</code>: Manual repay<br><code>309</code>: Auto repay<br><code>312</code>: Auto offset<br><code>318</code>: Convert in<br><code>319</code>: Convert out<br><code>320</code>: Simple buy<br><code>321</code>: Simple sell<br><code>332</code>: Margin transfer in isolated margin position <br><code>333</code>: Margin transfer out isolated margin position<br><code>334</code>: Margin loss when closing isolated margin position</td>
+<td style="text-align: left">Bill subtype<br><code>1</code>: Buy<br><code>2</code>: Sell<br><code>3</code>: Open long<br><code>4</code>: Open short<br><code>5</code>: Close long<br><code>6</code>: Close short<br><code>9</code>: Interest deduction for Market loans<br><code>11</code>: Transfer in<br><code>12</code>: Transfer out<br><code>14</code>: Interest deduction for VIP loans<br><code>160</code>: Manual margin increase<br><code>161</code>: Manual margin decrease<br><code>162</code>: Auto margin increase<br><code>114</code>: Forced repayment buy<br><code>115</code>: Forced repayment sell<br><code>118</code>: System token conversion transfer in<br><code>119</code>: System token conversion transfer out<br><code>100</code>: Partial liquidation close long<br><code>101</code>: Partial liquidation close short<br><code>102</code>: Partial liquidation buy<br><code>103</code>: Partial liquidation sell<br><code>104</code>: Liquidation long<br><code>105</code>: Liquidation short<br><code>106</code>: Liquidation buy<br><code>107</code>: Liquidation sell<br><code>108</code>: Clawback<br><code>110</code>: Liquidation transfer in<br><code>111</code>: Liquidation transfer out<br><code>125</code>: ADL close long<br><code>126</code>: ADL close short<br><code>127</code>: ADL buy<br><code>128</code>: ADL sell<br><code>131</code>: ddh buy<br><code>132</code>: ddh sell<br><code>170</code>: Exercised(ITM buy side)<br><code>171</code>: Counterparty exercised(ITM sell side)<br><code>172</code>: Expired(Non-ITM buy and sell side)<br><code>112</code>: Delivery long<br><code>113</code>: Delivery short<br><code>117</code>: Delivery/Exercise clawback<br><code>173</code>: Funding fee expense<br><code>174</code>: Funding fee income<br><code>200</code>:System transfer in<br><code>201</code>: Manually transfer in<br><code>202</code>: System transfer out<br><code>203</code>: Manually transfer out<br><code>204</code>: block trade buy<br><code>205</code>: block trade sell<br><code>206</code>: block trade open long<br><code>207</code>: block trade open short<br><code>208</code>: block trade close long<br><code>209</code>: block trade close short<br><code>210</code>: Manual Borrowing of quick margin<br><code>211</code>: Manual Repayment of quick margin<br><code>212</code>: Auto borrow of quick margin<br><code>213</code>: Auto repay of quick margin<br><code>220</code>: Transfer in when using USDT to buy OPTION<br><code>221</code>: Transfer out when using USDT to buy OPTION<br><code>16</code>: Repay forcibly<br><code>17</code>: Repay interest by borrowing forcibly<br><code>224</code>: Repayment transfer in<br><code>225</code>: Repayment transfer out<br><code>236</code>: Easy convert in<br><code>237</code>: Easy convert out<br><code>250</code>: Profit sharing expenses<br><code>251</code>: Profit sharing refund<br><code>280</code>: SPOT profit sharing expenses<br><code>281</code>: SPOT profit sharing refund<br><code>270</code>: Spread trading buy<br><code>271</code>: Spread trading sell<br><code>272</code>: Spread trading open long<br><code>273</code>: Spread trading open short<br><code>274</code>: Spread trading close long<br><code>275</code>: Spread trading close short<br><code>280</code>: SPOT profit sharing expenses<br><code>281</code>: SPOT profit sharing refund <br><code>284</code>: Copy trade automatic transfer in<br><code>285</code>: Copy trade manual transfer in<br><code>286</code>: Copy trade automatic transfer out<br><code>287</code>: Copy trade manual transfer out<br><code>290</code>: Crypto dust auto-transfer out<br><del><code>293</code>: Fixed loan interest deduction</del><br><del><code>294</code>: Fixed loan interest refund</del><br><del><code>295</code>: Fixed loan overdue penalty</del><br><code>296</code>: From structured order placements<br><code>297</code>: To structured order placements<br><code>298</code>: From structured settlements<br><code>299</code>: To structured settlements<br><code>306</code>: Manual borrow<br><code>307</code>: Auto borrow<br><code>308</code>: Manual repay<br><code>309</code>: Auto repay<br><code>312</code>: Auto offset<br><code>318</code>: Convert in<br><code>319</code>: Convert out<br><code>320</code>: Simple buy<br><code>321</code>: Simple sell<br><code>332</code>: Margin transfer in isolated margin position <br><code>333</code>: Margin transfer out isolated margin position<br><code>334</code>: Margin loss when closing isolated margin position<br><code>348</code>: [Credit line] Forced repayment<br><code>350</code>: [Credit line] Forced repayment refund<br><code>352</code>: [Credit line] Forced repayment penalty fee deduction<br><code>353</code>: [Credit line] Forced repayment penalty fee (pending deduction)<br><code>356</code>: [Credit line] Auto conversion (pending deduction)<br><code>357</code>: [Credit line] Auto Conversion Transfer to Funding</td>
 </tr>
 <tr>
 <td style="text-align: left">after</td>
@@ -5413,13 +5413,13 @@ GET /api/v5/account/bills-archive?instType<span class="o">=</span>MARGIN
 <td style="text-align: left">type</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Bill type<br><code>1</code>: Transfer<br><code>2</code>: Trade<br><code>3</code>: Delivery<br><code>4</code>: Forced repayment<br><code>5</code>: Liquidation<br><code>6</code>: Margin transfer<br><code>7</code>: Interest deduction<br><code>8</code>: Funding fee<br><code>9</code>: ADL<br><code>10</code>: Clawback<br><code>11</code>: System token conversion<br><code>12</code>: Strategy transfer<br><code>13</code>: DDH<br><code>14</code>: Block trade<br><code>15</code>: Quick Margin<br><code>16</code>: Borrowing<br><code>22</code>: Repay<br><code>24</code>: Spread trading<br><code>26</code>: Structured products<br><code>250</code>: Copy trader profit sharing expenses<br><code>251</code>: Copy trader profit sharing refund</td>
+<td style="text-align: left">Bill type<br><code>1</code>: Transfer<br><code>2</code>: Trade<br><code>3</code>: Delivery<br><code>4</code>: Forced repayment<br><code>5</code>: Liquidation<br><code>6</code>: Margin transfer<br><code>7</code>: Interest deduction<br><code>8</code>: Funding fee<br><code>9</code>: ADL<br><code>10</code>: Clawback<br><code>11</code>: System token conversion<br><code>12</code>: Strategy transfer<br><code>13</code>: DDH<br><code>14</code>: Block trade<br><code>15</code>: Quick Margin<br><code>16</code>: Borrowing<br><code>22</code>: Repay<br><code>24</code>: Spread trading<br><code>26</code>: Structured products<br><code>27</code>: Convert<br><code>28</code>: Easy convert<br><code>29</code>: One-click repay<br><code>30</code>: Simple trade<br><code>33</code>: Loans<br><code>250</code>: Copy trader profit sharing expenses<br><code>251</code>: Copy trader profit sharing refund</td>
 </tr>
 <tr>
 <td style="text-align: left">subType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Bill subtype<br><code>1</code>: Buy<br><code>2</code>: Sell<br><code>3</code>: Open long<br><code>4</code>: Open short<br><code>5</code>: Close long<br><code>6</code>: Close short<br><code>9</code>: Interest deduction for Market loans<br><code>11</code>: Transfer in<br><code>12</code>: Transfer out<br><code>14</code>: Interest deduction for VIP loans<br><code>160</code>: Manual margin increase<br><code>161</code>: Manual margin decrease<br><code>162</code>: Auto margin increase<br><code>114</code>: Forced repayment buy<br><code>115</code>: Forced repayment sell<br><code>118</code>: System token conversion transfer in<br><code>119</code>: System token conversion transfer out<br><code>100</code>: Partial liquidation close long<br><code>101</code>: Partial liquidation close short<br><code>102</code>: Partial liquidation buy<br><code>103</code>: Partial liquidation sell<br><code>104</code>: Liquidation long<br><code>105</code>: Liquidation short<br><code>106</code>: Liquidation buy<br><code>107</code>: Liquidation sell<br><code>108</code>:clawback<br><code>110</code>: Liquidation transfer in<br><code>111</code>: Liquidation transfer out<br><code>125</code>: ADL close long<br><code>126</code>: ADL close short<br><code>127</code>: ADL buy<br><code>128</code>: ADL sell<br><code>131</code>: ddh buy<br><code>132</code>: ddh sell<br><code>170</code>: Exercised(ITM buy side)<br><code>171</code>: Counterparty exercised(ITM sell side)<br><code>172</code>: Expired(Non-ITM buy and sell side)<br><code>112</code>: Delivery long<br><code>113</code>: Delivery short<br><code>117</code>: Delivery/Exercise clawback<br><code>173</code>: Funding fee expense<br><code>174</code>: Funding fee income<br><code>200</code>:System transfer in<br><code>201</code>: Manually transfer in<br><code>202</code>: System transfer out<br><code>203</code>: Manually transfer out<br><code>204</code>: block trade buy<br><code>205</code>: block trade sell<br><code>206</code>: block trade open long<br><code>207</code>: block trade open short<br><code>208</code>: block trade close long<br><code>209</code>: block trade close short<br><code>210</code>: Manual Borrowing of quick margin<br><code>211</code>: Manual Repayment of quick margin<br><code>212</code>: Auto borrow of quick margin<br><code>213</code>: Auto repay of quick margin<br><code>220</code>: Transfer in when using USDT to buy OPTION<br><code>221</code>: Transfer out when using USDT to buy OPTION<br><code>16</code>: Repay forcibly<br><code>17</code>: Repay interest by borrowing forcibly<br><code>224</code>: Repayment transfer in<br><code>225</code>: Repayment transfer out<br><code>236</code>: Easy convert in<br><code>237</code>: Easy convert out<br><code>250</code>: Profit sharing expenses<br><code>251</code>: Profit sharing refund<br><code>280</code>: SPOT profit sharing expenses<br><code>281</code>: SPOT profit sharing refund<br><code>270</code>: Spread trading buy<br><code>271</code>: Spread trading sell<br><code>272</code>: Spread trading open long<br><code>273</code>: Spread trading open short<br><code>274</code>: Spread trading close long<br><code>275</code>: Spread trading close short<br><code>280</code>: SPOT profit sharing expenses<br><code>281</code>: SPOT profit sharing refund <br><code>284</code>: Copy trade automatic transfer in<br><code>285</code>: Copy trade manual transfer in<br><code>286</code>: Copy trade automatic transfer out<br><code>287</code>: Copy trade manual transfer out<br><code>290</code>: Crypto dust auto-transfer out<br><del><code>293</code>: Fixed loan interest deduction</del><br><del><code>294</code>: Fixed loan interest refund</del><br><del><code>295</code> : Fixed loan overdue penalty</del><br><code>296</code>: From structured order placements<br><code>297</code>: To structured order placements<br><code>298</code>: From structured settlements<br><code>299</code>: To structured settlements<br><code>306</code>: Manual borrow<br><code>307</code>: Auto borrow<br><code>308</code>: Manual repay<br><code>309</code>: Auto repay<br><code>312</code>: Auto offset<br><code>332</code>: Margin transfer in isolated margin position <br><code>333</code>: Margin transfer out isolated margin position<br><code>334</code>: Margin loss when closing isolated margin position</td>
+<td style="text-align: left">Bill subtype<br><code>1</code>: Buy<br><code>2</code>: Sell<br><code>3</code>: Open long<br><code>4</code>: Open short<br><code>5</code>: Close long<br><code>6</code>: Close short<br><code>9</code>: Interest deduction for Market loans<br><code>11</code>: Transfer in<br><code>12</code>: Transfer out<br><code>14</code>: Interest deduction for VIP loans<br><code>160</code>: Manual margin increase<br><code>161</code>: Manual margin decrease<br><code>162</code>: Auto margin increase<br><code>114</code>: Forced repayment buy<br><code>115</code>: Forced repayment sell<br><code>118</code>: System token conversion transfer in<br><code>119</code>: System token conversion transfer out<br><code>100</code>: Partial liquidation close long<br><code>101</code>: Partial liquidation close short<br><code>102</code>: Partial liquidation buy<br><code>103</code>: Partial liquidation sell<br><code>104</code>: Liquidation long<br><code>105</code>: Liquidation short<br><code>106</code>: Liquidation buy<br><code>107</code>: Liquidation sell<br><code>108</code>: Clawback<br><code>110</code>: Liquidation transfer in<br><code>111</code>: Liquidation transfer out<br><code>125</code>: ADL close long<br><code>126</code>: ADL close short<br><code>127</code>: ADL buy<br><code>128</code>: ADL sell<br><code>131</code>: ddh buy<br><code>132</code>: ddh sell<br><code>170</code>: Exercised(ITM buy side)<br><code>171</code>: Counterparty exercised(ITM sell side)<br><code>172</code>: Expired(Non-ITM buy and sell side)<br><code>112</code>: Delivery long<br><code>113</code>: Delivery short<br><code>117</code>: Delivery/Exercise clawback<br><code>173</code>: Funding fee expense<br><code>174</code>: Funding fee income<br><code>200</code>:System transfer in<br><code>201</code>: Manually transfer in<br><code>202</code>: System transfer out<br><code>203</code>: Manually transfer out<br><code>204</code>: block trade buy<br><code>205</code>: block trade sell<br><code>206</code>: block trade open long<br><code>207</code>: block trade open short<br><code>208</code>: block trade close long<br><code>209</code>: block trade close short<br><code>210</code>: Manual Borrowing of quick margin<br><code>211</code>: Manual Repayment of quick margin<br><code>212</code>: Auto borrow of quick margin<br><code>213</code>: Auto repay of quick margin<br><code>220</code>: Transfer in when using USDT to buy OPTION<br><code>221</code>: Transfer out when using USDT to buy OPTION<br><code>16</code>: Repay forcibly<br><code>17</code>: Repay interest by borrowing forcibly<br><code>224</code>: Repayment transfer in<br><code>225</code>: Repayment transfer out<br><code>236</code>: Easy convert in<br><code>237</code>: Easy convert out<br><code>250</code>: Profit sharing expenses<br><code>251</code>: Profit sharing refund<br><code>280</code>: SPOT profit sharing expenses<br><code>281</code>: SPOT profit sharing refund<br><code>270</code>: Spread trading buy<br><code>271</code>: Spread trading sell<br><code>272</code>: Spread trading open long<br><code>273</code>: Spread trading open short<br><code>274</code>: Spread trading close long<br><code>275</code>: Spread trading close short<br><code>280</code>: SPOT profit sharing expenses<br><code>281</code>: SPOT profit sharing refund <br><code>284</code>: Copy trade automatic transfer in<br><code>285</code>: Copy trade manual transfer in<br><code>286</code>: Copy trade automatic transfer out<br><code>287</code>: Copy trade manual transfer out<br><code>290</code>: Crypto dust auto-transfer out<br><del><code>293</code>: Fixed loan interest deduction</del><br><del><code>294</code>: Fixed loan interest refund</del><br><del><code>295</code>: Fixed loan overdue penalty</del><br><code>296</code>: From structured order placements<br><code>297</code>: To structured order placements<br><code>298</code>: From structured settlements<br><code>299</code>: To structured settlements<br><code>306</code>: Manual borrow<br><code>307</code>: Auto borrow<br><code>308</code>: Manual repay<br><code>309</code>: Auto repay<br><code>312</code>: Auto offset<br><code>318</code>: Convert in<br><code>319</code>: Convert out<br><code>320</code>: Simple buy<br><code>321</code>: Simple sell<br><code>332</code>: Margin transfer in isolated margin position <br><code>333</code>: Margin transfer out isolated margin position<br><code>334</code>: Margin loss when closing isolated margin position<br><code>348</code>: [Credit line] Forced repayment<br><code>350</code>: [Credit line] Forced repayment refund<br><code>352</code>: [Credit line] Forced repayment penalty fee deduction<br><code>353</code>: [Credit line] Forced repayment penalty fee (pending deduction)<br><code>356</code>: [Credit line] Auto conversion (pending deduction)<br><code>357</code>: [Credit line] Auto Conversion Transfer to Funding</td>
 </tr>
 <tr>
 <td style="text-align: left">after</td>
@@ -19060,7 +19060,7 @@ POST /api/v5/trade/order-precheck
 <tr>
 <td style="text-align: left">&gt; source</td>
 <td style="text-align: left">String</td>
-<td>Order source<br><code>6</code>: The normal order triggered by the <code>trigger order</code><br><code>7</code>:The normal order triggered by the <code>TP/SL order</code> <br><code>13</code>: The normal order triggered by the algo order<br><code>25</code>:The normal order triggered by the <code>trailing stop order</code></td>
+<td>Order source<br><code>6</code>: The normal order triggered by the <code>trigger order</code><br><code>7</code>:The normal order triggered by the <code>TP/SL order</code> <br><code>13</code>: The normal order triggered by the algo order<br><code>25</code>:The normal order triggered by the <code>trailing stop order</code><br/><code>34</code>: The normal order triggered by the chase order</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; cancelSource</td>
@@ -59234,7 +59234,7 @@ body
 <td style="text-align: left">type</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Bill type<br><code>1</code>: Deposit<br><code>2</code>: Withdrawal<br><code>13</code>: Canceled withdrawal<br><code>20</code>: Transfer to sub account (for master account)<br><code>21</code>: Transfer from sub account (for master account)<br><code>22</code>: Transfer out from sub to master account (for sub-account)<br><code>23</code>: Transfer in from master to sub account (for sub-account)<br><code>28</code>: Manually claimed Airdrop<br><code>47</code>: System reversal<br><code>48</code>: Event Reward<br><code>49</code>: Event Giveaway<br><code>68</code>: Fee rebate (by rebate card)<br><code>72</code>: Token received<br><code>73</code>: Token given away<br><code>74</code>: Token refunded<br><code>75</code>: Subscription to savings<br><code>76</code>: Redemption to savings<br><code>77</code>: Jumpstart distribute<br><code>78</code>: Jumpstart lock up<br><code>80</code>: DEFI/Staking purchase<br><code>82</code>: DEFI/Staking redemption<br><code>83</code>: Staking yield<br><code>84</code>: Violation fee<br><code>116</code>: [Fiat] Place an order<br><code>117</code>: [Fiat] Fulfill an order<br><code>118</code>: [Fiat] Cancel an order<br><code>124</code>: Jumpstart unlocking<br><code>130</code>: Transferred from Trading account<br><code>131</code>: Transferred to Trading account<br><code>132</code>: [P2P] Frozen by customer service<br><code>133</code>: [P2P] Unfrozen by customer service<br><code>134</code>: [P2P] Transferred by customer service<br><code>135</code>: Cross chain exchange<br><code>137</code>: [ETH Staking] Subscription<br><code>138</code>: [ETH Staking] Swapping<br><code>139</code>: [ETH Staking] Earnings<br><code>146</code>: Customer feedback<br><code>150</code>: Affiliate commission<br><code>151</code>: Referral reward<br><code>152</code>: Broker reward<br><code>160</code>: Dual Investment subscribe<br><code>161</code>: Dual Investment collection<br><code>162</code>: Dual Investment profit<br><code>163</code>: Dual Investment refund<br><code>172</code>: [Affiliate] Sub-affiliate commission<br><code>173</code>: [Affiliate] Fee rebate (by trading fee)<br><code>174</code>: Jumpstart Pay<br><code>175</code>: Locked collateral<br><code>176</code>: Loan<br><code>177</code>: Added collateral<br><code>178</code>: Returned collateral<br><code>179</code>: Repayment<br><code>180</code>: Unlocked collateral<br><code>181</code>: Airdrop payment<br><code>185</code>: [Broker] Convert reward<br><code>187</code>: [Broker] Convert transfer<br><code>189</code>: Mystery box bonus<br><code>195</code>: Untradable asset withdrawal<br><code>196</code>: Untradable asset withdrawal revoked<br><code>197</code>: Untradable asset deposit<br><code>198</code>: Untradable asset collection reduce<br><code>199</code>: Untradable asset collection increase<br><code>200</code>: Buy<br><code>202</code>: Price Lock Subscribe<br><code>203</code>: Price Lock Collection<br><code>204</code>: Price Lock Profit<br><code>205</code>: Price Lock Refund<br><code>207</code>: Dual Investment Lite Subscribe<br><code>208</code>: Dual Investment Lite Collection<br><code>209</code>: Dual Investment Lite Profit<br><code>210</code>: Dual Investment Lite Refund<br><code>212</code>: [Flexible loan] Multi-collateral loan collateral locked<br><code>215</code>: [Flexible loan] Multi-collateral loan collateral released<br><code>217</code>: [Flexible loan] Multi-collateral loan borrowed<br><code>218</code>: [Flexible loan] Multi-collateral loan repaid<br><code>232</code>: [Flexible loan] Subsidized interest received<br><code>220</code>: Delisted crypto<br><code>221</code>: Blockchain&#39;s withdrawal fee<br><code>222</code>: Withdrawal fee refund<br><code>223</code>: SWAP lead trading profit share<br><code>225</code>: Shark Fin subscribe<br><code>226</code>: Shark Fin collection<br><code>227</code>: Shark Fin profit<br><code>228</code>: Shark Fin refund<br><code>229</code>: Airdrop<br><code>232</code>: Subsidized interest received<br><code>233</code>: Broker rebate compensation<br><code>240</code>: Snowball subscribe<br><code>241</code>: Snowball refund<br><code>242</code>: Snowball profit<br><code>243</code>: Snowball trading failed<br><code>249</code>: Seagull subscribe<br><code>250</code>: Seagull collection<br><code>251</code>: Seagull profit<br><code>252</code>: Seagull refund<br><code>263</code>: Strategy bots profit share<br><code>265</code>: Signal revenue<br><code>266</code>: SPOT lead trading profit share<br><code>270</code>: DCD broker transfer<br><code>271</code>: DCD broker rebate<br><code>272</code>: [Convert] Buy Crypto/Fiat<br><code>273</code>: [Convert] Sell Crypto/Fiat<br><code>284</code>: [Custody] Transfer out trading sub-account<br><code>285</code>: [Custody] Transfer in trading sub-account<br><code>286</code>: [Custody] Transfer out custody funding account<br><code>287</code>: [Custody] Transfer in custody funding account<br><code>288</code>: [Custody] Fund delegation <br><code>289</code>: [Custody] Fund undelegation<br><code>299</code>: Affiliate recommendation commission<br><code>300</code>: Fee discount rebate<br><code>303</code>: Snowball market maker transfer<br><del><code>304</code>: [Simple Earn Fixed] Order submission</del><br><del><code>305</code>: [Simple Earn Fixed] Order redemption</del><br><del><code>306</code>: [Simple Earn Fixed] Principal distribution</del><br><del><code>307</code>: [Simple Earn Fixed] Interest distribution (early termination compensation)</del><br><del><code>308</code>: [Simple Earn Fixed] Interest distribution</del><br><del><code>309</code>: [Simple Earn Fixed] Interest distribution (extension compensation) </del><br><code>311</code>: Crypto dust auto-transfer in<br><code>313</code>: Sent by gift<br><code>314</code>: Received from gift<br><code>315</code>: Refunded from gift<br><code>328</code>: [SOL staking] Send Liquidity Staking Token reward<br><code>329</code>: [SOL staking] Subscribe Liquidity Staking Token staking<br><code>330</code>: [SOL staking] Mint Liquidity Staking Token<br><code>331</code>: [SOL staking] Redeem Liquidity Staking Token order<br><code>332</code>: [SOL staking] Settle Liquidity Staking Token order<br><code>333</code>: Trial fund reward<br><code>354</code>: Copy and bot rewards</td>
+<td style="text-align: left">Bill type<br><code>1</code>: Deposit<br><code>2</code>: Withdrawal<br><code>13</code>: Canceled withdrawal<br><code>20</code>: Transfer to sub account (for master account)<br><code>21</code>: Transfer from sub account (for master account)<br><code>22</code>: Transfer out from sub to master account (for sub-account)<br><code>23</code>: Transfer in from master to sub account (for sub-account)<br><code>28</code>: Manually claimed Airdrop<br><code>47</code>: System reversal<br><code>48</code>: Event Reward<br><code>49</code>: Event Giveaway<br><code>68</code>: Fee rebate (by rebate card)<br><code>72</code>: Token received<br><code>73</code>: Token given away<br><code>74</code>: Token refunded<br><code>75</code>: Subscription to savings<br><code>76</code>: Redemption to savings<br><code>77</code>: Jumpstart distribute<br><code>78</code>: Jumpstart lock up<br><code>80</code>: DEFI/Staking purchase<br><code>82</code>: DEFI/Staking redemption<br><code>83</code>: Staking yield<br><code>84</code>: Violation fee<br><code>116</code>: [Fiat] Place an order<br><code>117</code>: [Fiat] Fulfill an order<br><code>118</code>: [Fiat] Cancel an order<br><code>124</code>: Jumpstart unlocking<br><code>130</code>: Transferred from Trading account<br><code>131</code>: Transferred to Trading account<br><code>132</code>: [P2P] Frozen by customer service<br><code>133</code>: [P2P] Unfrozen by customer service<br><code>134</code>: [P2P] Transferred by customer service<br><code>135</code>: Cross chain exchange<br><code>137</code>: [ETH Staking] Subscription<br><code>138</code>: [ETH Staking] Swapping<br><code>139</code>: [ETH Staking] Earnings<br><code>146</code>: Customer feedback<br><code>150</code>: Affiliate commission<br><code>151</code>: Referral reward<br><code>152</code>: Broker reward<br><code>160</code>: Dual Investment subscribe<br><code>161</code>: Dual Investment collection<br><code>162</code>: Dual Investment profit<br><code>163</code>: Dual Investment refund<br><code>172</code>: [Affiliate] Sub-affiliate commission<br><code>173</code>: [Affiliate] Fee rebate (by trading fee)<br><code>174</code>: Jumpstart Pay<br><code>175</code>: Locked collateral<br><code>176</code>: Loan<br><code>177</code>: Added collateral<br><code>178</code>: Returned collateral<br><code>179</code>: Repayment<br><code>180</code>: Unlocked collateral<br><code>181</code>: Airdrop payment<br><code>185</code>: [Broker] Convert reward<br><code>187</code>: [Broker] Convert transfer<br><code>189</code>: Mystery box bonus<br><code>195</code>: Untradable asset withdrawal<br><code>196</code>: Untradable asset withdrawal revoked<br><code>197</code>: Untradable asset deposit<br><code>198</code>: Untradable asset collection reduce<br><code>199</code>: Untradable asset collection increase<br><code>200</code>: Buy<br><code>202</code>: Price Lock Subscribe<br><code>203</code>: Price Lock Collection<br><code>204</code>: Price Lock Profit<br><code>205</code>: Price Lock Refund<br><code>207</code>: Dual Investment Lite Subscribe<br><code>208</code>: Dual Investment Lite Collection<br><code>209</code>: Dual Investment Lite Profit<br><code>210</code>: Dual Investment Lite Refund<br><code>212</code>: [Flexible loan] Multi-collateral loan collateral locked<br><code>215</code>: [Flexible loan] Multi-collateral loan collateral released<br><code>217</code>: [Flexible loan] Multi-collateral loan borrowed<br><code>218</code>: [Flexible loan] Multi-collateral loan repaid<br><code>232</code>: [Flexible loan] Subsidized interest received<br><code>220</code>: Delisted crypto<br><code>221</code>: Blockchain&#39;s withdrawal fee<br><code>222</code>: Withdrawal fee refund<br><code>223</code>: SWAP lead trading profit share<br><code>225</code>: Shark Fin subscribe<br><code>226</code>: Shark Fin collection<br><code>227</code>: Shark Fin profit<br><code>228</code>: Shark Fin refund<br><code>229</code>: Airdrop<br><code>232</code>: Subsidized interest received<br><code>233</code>: Broker rebate compensation<br><code>240</code>: Snowball subscribe<br><code>241</code>: Snowball refund<br><code>242</code>: Snowball profit<br><code>243</code>: Snowball trading failed<br><code>249</code>: Seagull subscribe<br><code>250</code>: Seagull collection<br><code>251</code>: Seagull profit<br><code>252</code>: Seagull refund<br><code>263</code>: Strategy bots profit share<br><code>265</code>: Signal revenue<br><code>266</code>: SPOT lead trading profit share<br><code>270</code>: DCD broker transfer<br><code>271</code>: DCD broker rebate<br><code>272</code>: [Convert] Buy Crypto/Fiat<br><code>273</code>: [Convert] Sell Crypto/Fiat<br><code>284</code>: [Custody] Transfer out trading sub-account<br><code>285</code>: [Custody] Transfer in trading sub-account<br><code>286</code>: [Custody] Transfer out custody funding account<br><code>287</code>: [Custody] Transfer in custody funding account<br><code>288</code>: [Custody] Fund delegation <br><code>289</code>: [Custody] Fund undelegation<br><code>299</code>: Affiliate recommendation commission<br><code>300</code>: Fee discount rebate<br><code>303</code>: Snowball market maker transfer<br><del><code>304</code>: [Simple Earn Fixed] Order submission</del><br><del><code>305</code>: [Simple Earn Fixed] Order redemption</del><br><del><code>306</code>: [Simple Earn Fixed] Principal distribution</del><br><del><code>307</code>: [Simple Earn Fixed] Interest distribution (early termination compensation)</del><br><del><code>308</code>: [Simple Earn Fixed] Interest distribution</del><br><del><code>309</code>: [Simple Earn Fixed] Interest distribution (extension compensation) </del><br><code>311</code>: Crypto dust auto-transfer in<br><code>313</code>: Sent by gift<br><code>314</code>: Received from gift<br><code>315</code>: Refunded from gift<br><code>328</code>: [SOL staking] Send Liquidity Staking Token reward<br><code>329</code>: [SOL staking] Subscribe Liquidity Staking Token staking<br><code>330</code>: [SOL staking] Mint Liquidity Staking Token<br><code>331</code>: [SOL staking] Redeem Liquidity Staking Token order<br><code>332</code>: [SOL staking] Settle Liquidity Staking Token order<br><code>333</code>: Trial fund reward<br><code>336</code>: [Credit line] Loan Forced Repayment<br><code>338</code>: [Credit line] Forced Repayment Refund<br><code>354</code>: Copy and bot rewards</td>
 </tr>
 <tr>
 <td style="text-align: left">clientId</td>
@@ -59676,6 +59676,11 @@ The following content only applies to users residing in the United Arab Emirates
 Due to local laws and regulations in your country or region, a certain ratio of user assets must be stored in cold wallets. We will perform cold-to-hot wallet asset transfers from time to time. However, if assets in hot wallets are not sufficient to meet user withdrawal demands, an extra step is needed to transfer cold wallet assets to the hot wallet. This may cause delays of up to 24 hours to receive withdrawals.<br>
 Learn more (https://www.okx.com/help/what-is-a-segregated-wallet-and-why-is-my-withdrawal-delayed)
 </aside>
+
+<aside class="notice">
+Users under certain entities need to provide additional information for withdrawal<br>
+Bahama entity users refer to https://www.okx.com/docs-v5/log_en/#2024-08-08-withdrawal-api-adjustment-for-bahama-entity-users
+</aside>
 <h4 id='funding-account-rest-api-withdrawal-rate-limit-6-requests-per-second'>Rate Limit: 6 requests per second</h4><h4 id='funding-account-rest-api-withdrawal-rate-limit-rule-user-id'>Rate limit rule: User ID</h4><h4 id='funding-account-rest-api-withdrawal-permission-withdraw'>Permission: Withdraw</h4><h4 id='funding-account-rest-api-withdrawal-http-request'>HTTP Request</h4>
 <p><code>POST /api/v5/asset/withdrawal</code></p>
 
@@ -59795,7 +59800,7 @@ body
 <td style="text-align: left">&gt; walletType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Wallet Type<br><code>exchange</code>: Withdraw to exchange wallet<br><code>private</code>: Withdraw to private wallet<br>If withdrawal to the exchange wallet, relevant information about the recipient must be provided.<br>For the exchange wallet belongs to business recipient, <code>rcvrFirstName</code> may input the company name, <code>rcvrLastName</code> may input &quot;N/A&quot;, location info may input the registered address of the company.<br>Withdrawal to a private wallet does not require providing recipient information.</td>
+<td style="text-align: left">Wallet Type<br><code>exchange</code>: Withdraw to exchange wallet<br><code>private</code>: Withdraw to private wallet<br>For the wallet belongs to business recipient, <code>rcvrFirstName</code> may input the company name, <code>rcvrLastName</code> may input &quot;N/A&quot;, location info may input the registered address of the company.</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; exchId</td>
@@ -59807,37 +59812,37 @@ body
 <td style="text-align: left">&gt; rcvrFirstName</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Conditional</td>
-<td style="text-align: left">Receiver&#39;s first name, e.g. <code>Bruce</code><br>Apply to walletType = <code>exchange</code></td>
+<td style="text-align: left">Receiver&#39;s first name, e.g. <code>Bruce</code></td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; rcvrLastName</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Conditional</td>
-<td style="text-align: left">Receiver&#39;s last name, e.g. <code>Wayne</code><br>Apply to walletType = <code>exchange</code></td>
+<td style="text-align: left">Receiver&#39;s last name, e.g. <code>Wayne</code></td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; rcvrCountry</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Conditional</td>
-<td style="text-align: left">The recipient&#39;s country, e.g. <code>United States</code><br>You must enter an English country name or a two letter country code (ISO 3166-1). Please refer to the <code>Country Name</code> and <code>Country Code</code> in the country information table below.<br>Apply to walletType = <code>exchange</code></td>
+<td style="text-align: left">The recipient&#39;s country, e.g. <code>United States</code><br>You must enter an English country name or a two letter country code (ISO 3166-1). Please refer to the <code>Country Name</code> and <code>Country Code</code> in the country information table below.</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; rcvrCountrySubDivision</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Conditional</td>
-<td style="text-align: left">State/Province of the recipient, e.g. <code>California</code><br>Apply to walletType = <code>exchange</code></td>
+<td style="text-align: left">State/Province of the recipient, e.g. <code>California</code></td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; rcvrTownName</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Conditional</td>
-<td style="text-align: left">The town/city where the recipient is located, e.g. <code>San Jose</code><br>Apply to walletType = <code>exchange</code></td>
+<td style="text-align: left">The town/city where the recipient is located, e.g. <code>San Jose</code></td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; rcvrStreetName</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Conditional</td>
-<td style="text-align: left">Recipient&#39;s street address, e.g. <code>Clementi Avenue 1</code><br>Apply to walletType = <code>exchange</code></td>
+<td style="text-align: left">Recipient&#39;s street address, e.g. <code>Clementi Avenue 1</code></td>
 </tr>
 <tr>
 <td style="text-align: left">clientId</td>
@@ -68624,7 +68629,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>50001</td>
 <td>503</td>
-<td>Service temporarily unavailable. Try again later</td>
+<td>Service temporarily unavailable. Please try again later.</td>
 </tr>
 <tr>
 <td>50002</td>
@@ -68634,12 +68639,12 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>50004</td>
 <td>400</td>
-<td>API endpoint request timeout (does not mean that the request was successful or failed, please check the request result).</td>
+<td>API endpoint request timeout. (does not mean that the request was successful or failed, please check the request result).</td>
 </tr>
 <tr>
 <td>50005</td>
 <td>410</td>
-<td>API is offline or unavailable.</td>
+<td>API endpoint is inactive or unavailable.</td>
 </tr>
 <tr>
 <td>50006</td>
@@ -68649,17 +68654,17 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>50007</td>
 <td>200</td>
-<td>Account blocked.</td>
+<td>User blocked.</td>
 </tr>
 <tr>
 <td>50008</td>
 <td>200</td>
-<td>User does not exist.</td>
+<td>User doesn&#39;t exist.</td>
 </tr>
 <tr>
 <td>50009</td>
 <td>200</td>
-<td>Account is suspended due to ongoing liquidation.</td>
+<td>Account is frozen due to stop-out.</td>
 </tr>
 <tr>
 <td>50010</td>
@@ -68689,57 +68694,57 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>50014</td>
 <td>400</td>
-<td>Parameter {param0} cannot be empty.</td>
+<td>Parameter {param0} can not be empty.</td>
 </tr>
 <tr>
 <td>50015</td>
 <td>400</td>
-<td>Either parameter {param0} or {param1} is required.</td>
+<td>Either parameter {param0} or {param1} is required</td>
 </tr>
 <tr>
 <td>50016</td>
 <td>400</td>
-<td>Parameter {param0} and {param1} is an invalid pair.</td>
+<td>Parameter {param0} does not match parameter {param1}</td>
 </tr>
 <tr>
 <td>50017</td>
 <td>200</td>
-<td>Position frozen and related operations restricted due to auto-deleveraging (ADL). Try again later</td>
+<td>Position frozen and related operations restricted due to auto-deleveraging (ADL). Please try again later.</td>
 </tr>
 <tr>
 <td>50018</td>
 <td>200</td>
-<td>{param0} frozen and related operations restricted due to auto-deleveraging (ADL). Try again later</td>
+<td>Currency {param0} is frozen due to ADL. Operation restricted.</td>
 </tr>
 <tr>
 <td>50019</td>
 <td>200</td>
-<td>Account frozen and related operations restricted due to auto-deleveraging (ADL). Try again later</td>
+<td>Account frozen and related operations restricted due to auto-deleveraging (ADL). Please try again later.</td>
 </tr>
 <tr>
 <td>50020</td>
 <td>200</td>
-<td>Position frozen and related operations are restricted due to liquidation. Try again later</td>
+<td>Position frozen and related operations restricted due to forced liquidation. Please try again later.</td>
 </tr>
 <tr>
 <td>50021</td>
 <td>200</td>
-<td>{param0} frozen and related operations are restricted due to liquidation. Try again later</td>
+<td>Currency {param0} is frozen due to liquidation. Operation restricted.</td>
 </tr>
 <tr>
 <td>50022</td>
 <td>200</td>
-<td>Account frozen and related operations are restricted due to liquidation. Try again later</td>
+<td>Account frozen and related operations restricted due to forced liquidation. Please try again later.</td>
 </tr>
 <tr>
 <td>50023</td>
 <td>200</td>
-<td>Funding fees frozen and related operations are restricted. Try again later</td>
+<td>Funding fees frozen and related operations are restricted. Please try again later.</td>
 </tr>
 <tr>
 <td>50024</td>
 <td>200</td>
-<td>Either parameter {param0} or {param1} should be submitted.</td>
+<td>Parameter {param0} and {param1} can not exist at the same time.</td>
 </tr>
 <tr>
 <td>50025</td>
@@ -68759,7 +68764,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>50028</td>
 <td>200</td>
-<td>Unable to take the order, please reach out to support center for details.</td>
+<td>Unable to place the order. Please contact the customer service for details.</td>
 </tr>
 <tr>
 <td>50029</td>
@@ -69062,87 +69067,87 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51001</td>
 <td>200</td>
-<td>Instrument ID does not exist</td>
+<td>Instrument ID doesn&#39;t exist.</td>
 </tr>
 <tr>
 <td>51002</td>
 <td>200</td>
-<td>Instrument ID does not match underlying index</td>
+<td>Instrument ID doesn&#39;t match underlying index.</td>
 </tr>
 <tr>
 <td>51003</td>
 <td>200</td>
-<td>Either client order ID or order ID is required</td>
+<td>Either client order ID or order ID is required.</td>
 </tr>
 <tr>
 <td>51004</td>
 <td>200</td>
-<td>Order failed. For isolated long/short mode of {instId}, the sum of current order size, position quantity in the same direction, and pending orders in the same direction cannot be more than {tierLimitQuantity}(contracts) which is the maximum position amount under current leverage.  Please lower the leverage or use a new sub-account to place the order again (current leverage: {leverage}×, current order size: {size} contracts, position quantity in the same direction: {posNumber} contracts, pending orders in the same direction: {pendingNumber} contracts).</td>
+<td>Order failed. For isolated long/short mode of {param0}, the sum of current order size, position quantity in the same direction, and pending orders in the same direction can’t be more than {param1}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {param2}×, current order size: {param3} contracts, position quantity in the same direction: {param4} contracts, pending orders in the same direction: {param5} contracts).</td>
 </tr>
 <tr>
 <td>51004</td>
 <td>200</td>
-<td>Order failed. For cross long/short mode of {instId}, the sum of current order size, position quantity in the long and short directions, and pending orders in the long and short directions cannot be more than {tierLimitQuantity}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {leverage}×, current order size: {size} contracts, position quantity in the long and short directions: {posLongShortNumber} contracts, pending orders in the long and short directions: {pendingLongShortNumber} contracts).</td>
+<td>Order failed. For cross long/short mode of {param0}, the sum of current order size, position quantity in the long and short directions, and pending orders in the long and short directions can’t be more than {param1}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {param2}×, current order size: {param3} contracts, position quantity in the long and short directions: {param4} contracts, pending orders in the long and short directions: {param5} contracts).</td>
 </tr>
 <tr>
 <td>51004</td>
 <td>200</td>
-<td>Order failed. For cross buy/sell mode of {businessType} and instFamily {instFamily}, the sum of current order size, current instId position quantity in the long and short directions, current instId pending orders in the long and short directions, and other contracts of the same instFamily cannot be more than {tierLimitQuantity}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {leverage}×, current order size: {size} contracts, current instId position quantity in the long and short directions: {posLongShortNumber} contracts, current instId pending orders in the long and short directions: {pendingLongShortNumber} contracts, other contracts of the same instFamily: {otherQuote} contracts).</td>
+<td>Order failed. For cross buy/sell mode of {param0} and instFamily {param1}, the sum of current order size, current instId position quantity in the long and short directions, current instId pending orders in the long and short directions, and other contracts of the same instFamily can’t be more than {param2}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {param3}×, current order size: {param4} contracts, current instId position quantity in the long and short directions: {param5} contracts, current instId pending orders in the long and short directions: {param6} contracts, other contracts of the same instFamily: {param7} contracts).</td>
 </tr>
 <tr>
 <td>51004</td>
 <td>200</td>
-<td>Order failed. For buy/sell mode of {instId}, the sum of current buy order size, position quantity, and pending buy orders cannot be more than {tierLimitQuantity}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {leverage}×, current buy order size: {size} contracts, position quantity: {posNumber} contracts, pending buy orders: {pendingNumber} contracts).</td>
+<td>Order failed. For buy/sell mode of {param0}, the sum of current buy order size, position quantity, and pending buy orders can’t be more than {param1}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {param2}×, current buy order size: {param3} contracts, position quantity: {param4} contracts, pending buy orders: {param5} contracts).</td>
 </tr>
 <tr>
 <td>51004</td>
 <td>200</td>
-<td>Order failed. For buy/sell mode of {instId}, the sum of current sell order size, position quantity, and pending sell orders cannot be more than {tierLimitQuantity}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {leverage}×, current sell order size: {size} contracts, position quantity: {posNumber} contracts, pending sell orders: {pendingNumber} contracts).</td>
+<td>Order failed. For buy/sell mode of {param0}, the sum of current sell order size, position quantity, and pending sell orders can’t be more than {param1}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {param2}×, current sell order size: {param3} contracts, position quantity: {param4} contracts, pending sell orders: {param5} contracts).</td>
 </tr>
 <tr>
 <td>51004</td>
 <td>200</td>
-<td>Order failed. For cross buy/sell mode of {businessType} and instFamily {instFamily}, the sum of current buy order size, current instId position quantity, current instId pending buy orders, and other contracts of the same instFamily cannot be more than {tierLimitQuantity}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {leverage}×, current buy order size: {size} contracts, current instId position quantity: {posNumber} contracts, current instId pending buy orders: {pendingNumber} contracts, other contracts of the same instFamily: {otherQuote} contracts).</td>
+<td>Order failed. For cross buy/sell mode of {param0} and instFamily {param1}, the sum of current buy order size, current instId position quantity, current instId pending buy orders, and other contracts of the same instFamily can’t be more than {param2}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {param3}×, current buy order size: {param4} contracts, current instId position quantity: {param5} contracts, current instId pending buy orders: {param6} contracts, other contracts of the same instFamily: {param7} contracts).</td>
 </tr>
 <tr>
 <td>51004</td>
 <td>200</td>
-<td>Order failed. For cross buy/sell mode of {businessType} and instFamily {instFamily}, the sum of current sell order size, current instId position quantity, current instId pending sell orders, and other contracts of the same instFamily cannot be more than {tierLimitQuantity}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {leverage}×, current sell order size: {size} contracts, current instId position quantity: {posNumber} contracts, current instId pending sell orders: {pendingNumber} contracts, other contracts of the same instFamily: {otherQuote} contracts).</td>
+<td>Order failed. For cross buy/sell mode of {param0} and instFamily {param1}, the sum of current sell order size, current instId position quantity, current instId pending sell orders, and other contracts of the same instFamily can’t be more than {param2}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {param3}×, current sell order size: {param4} contracts, current instId position quantity: {param5} contracts, current instId pending sell orders: {param6} contracts, other contracts of the same instFamily: {param7} contracts).</td>
 </tr>
 <tr>
 <td>51004</td>
 <td>200</td>
-<td>Order amendment failed. For isolated long/short mode of {instId}, the sum of increment order size by amendment, position quantity in the same direction, and pending orders in the same direction cannot be more than {tierLimitQuantity}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {leverage}×, increment order size by amendment: {size} contracts, position quantity in the same direction: {posNumber} contracts, pending orders in the same direction: {pendingNumber} contracts).</td>
+<td>Order amendment failed. For isolated long/short mode of {param0}, the sum of increment order size by amendment, position quantity in the same direction, and pending orders in the same direction can’t be more than {param1}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {param2}×, increment order size by amendment: {param3} contracts, position quantity in the same direction: {param4} contracts, pending orders in the same direction: {param5} contracts).</td>
 </tr>
 <tr>
 <td>51004</td>
 <td>200</td>
-<td>Order amendment failed. For cross long/short mode of {instId}, the sum of increment order size by amendment, position quantity in the long and short directions, and pending orders in the long and short directions cannot be more than {tierLimitQuantity}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {leverage}×, increment order size by amendment: {size} contracts, position quantity in the long and short directions: {posLongShortNumber} contracts, pending orders in the same direction: {pendingLongShortNumber} contracts).</td>
+<td>Order amendment failed. For cross long/short mode of {param0}, the sum of increment order size by amendment, position quantity in the long and short directions, and pending orders in the long and short directions can’t be more than {param1}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {param2}×, increment order size by amendment: {param3} contracts, position quantity in the long and short directions: {param4} contracts, pending orders in the same direction: {param5} contracts).</td>
 </tr>
 <tr>
 <td>51004</td>
 <td>200</td>
-<td>Order amendment failed. For cross buy/sell mode of {businessType} and instFamily {instFamily}, the sum of increment order size by amendment, current instId position quantity in the long and short directions, current instId pending orders in the long and short directions, and other contracts of the same instFamily cannot be more than {tierLimitQuantity}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {leverage}×, increment order size by amendment: {size} contracts, current instId position quantity in the long and short directions: {posLongShortNumber} contracts, current instId pending orders in the long and short directions: {pendingLongShortNumber} contracts, other contracts of the same instFamily: {otherQuote} contracts).</td>
+<td>Order amendment failed. For cross buy/sell mode of {param0} and instFamily {param1}, the sum of increment order size by amendment, current instId position quantity in the long and short directions, current instId pending orders in the long and short directions, and other contracts of the same instFamily can’t be more than {param2}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {param3}×, increment order size by amendment: {param4} contracts, current instId position quantity in the long and short directions: {param5} contracts, current instId pending orders in the long and short directions: {param6} contracts, other contracts of the same instFamily: {param7} contracts).</td>
 </tr>
 <tr>
 <td>51004</td>
 <td>200</td>
-<td>Order amendment failed. For buy/sell mode of {instId}, the sum of increment order size by amending current buy order, position quantity, and pending buy orders cannot be more than {tierLimitQuantity}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {leverage}×, increment order size by amending current buy order: {size} contracts, position quantity: {posNumber} contracts, pending buy orders: {pendingNumber} contracts).</td>
+<td>Order amendment failed. For buy/sell mode of {param0}, the sum of increment order size by amending current buy order, position quantity, and pending buy orders can’t be more than {param1}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {param2}×, increment order size by amending current buy order: {param3} contracts, position quantity: {param4} contracts, pending buy orders: {param5} contracts).</td>
 </tr>
 <tr>
 <td>51004</td>
 <td>200</td>
-<td>Order amendment failed. For buy/sell mode of {instId}, the sum of increment order size by amending current sell order, position quantity, and pending sell orders cannot be more than {tierLimitQuantity}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {leverage}×, increment order size by amending current sell order: {size} contracts, position quantity: {posNumber} contracts, pending sell orders: {pendingNumber} contracts).</td>
+<td>Order amendment failed. For buy/sell mode of {param0}, the sum of increment order size by amending current sell order, position quantity, and pending sell orders can’t be more than {param1}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {param2}×, increment order size by amending current sell order: {param3} contracts, position quantity: {param4} contracts, pending sell orders: {param5} contracts).</td>
 </tr>
 <tr>
 <td>51004</td>
 <td>200</td>
-<td>Order amendment failed. For cross buy/sell mode of {businessType} and instFamily {instFamily}, the sum of increment order size by amending current buy order, current instId position quantity, current instId pending buy orders, and other contracts of the same instFamily cannot be more than {tierLimitQuantity}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {leverage}×, increment order size by amending current buy order: {size} contracts, current instId position quantity: {posNumber} contracts, current instId pending buy orders: {pendingNumber} contracts, other contracts of the same instFamily: {otherQuote} contracts).</td>
+<td>Order amendment failed. For cross buy/sell mode of {param0} and instFamily {param1}, the sum of increment order size by amending current buy order, current instId position quantity, current instId pending buy orders, and other contracts of the same instFamily can’t be more than {param2}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {param3}×, increment order size by amending current buy order: {param4} contracts, current instId position quantity: {param5} contracts, current instId pending buy orders: {param6} contracts, other contracts of the same instFamily: {param7} contracts).</td>
 </tr>
 <tr>
 <td>51004</td>
 <td>200</td>
-<td>Order amendment failed. For cross buy/sell mode of {businessType} and instFamily {instFamily}, the sum of increment order size by amending current sell order, current instId position quantity, current instId pending sell orders, and other contracts of the same instFamily cannot be more than {tierLimitQuantity}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {leverage}×, increment order size by amending current sell order: {size} contracts, current instId position quantity: {posNumber} contracts, current instId pending sell orders: {pendingNumber} contracts, other contracts of the same instFamily: {otherQuote} contracts).</td>
+<td>Order amendment failed. For cross buy/sell mode of {param0} and instFamily {param1}, the sum of increment order size by amending current sell order, current instId position quantity, current instId pending sell orders, and other contracts of the same instFamily can’t be more than {param2}(contracts) which is the maximum position amount under current leverage. Please lower the leverage or use a new sub-account to place the order again (current leverage: {param3}×, increment order size by amending current sell order: {param4} contracts, current instId position quantity: {param5} contracts, current instId pending sell orders: {param6} contracts, other contracts of the same instFamily: {param7} contracts).</td>
 </tr>
 <tr>
 <td>51005</td>
@@ -69152,7 +69157,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51006</td>
 <td>200</td>
-<td>Order price is not within the price limit (max buy price: {param0} min sell price: {param1})</td>
+<td>Order price is not within the price limit (max buy price: {param0} , min sell price: {param1} )</td>
 </tr>
 <tr>
 <td>51007</td>
@@ -69182,7 +69187,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51008</td>
 <td>200</td>
-<td>Order failed. The requested borrow amount is larger than the available {param0} borrow amount of your position tier (Existing pending orders and the new order are required to borrow {param1}, Remaining limit {param2}, Limit {param3}, Limit used {param4})</td>
+<td>Insufficient {param0} available as your borrowing amount exceeds tier limit. Lower leverage appropriately. New and pending limit orders need borrowings {param1}, remaining quota {param2}, total limit {param3}, in use {param4}.</td>
 </tr>
 <tr>
 <td>51008</td>
@@ -69192,7 +69197,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51008</td>
 <td>200</td>
-<td>Order failed. Insufficient {param0} crypto limitation causes insufficient available to borrow</td>
+<td>Order failed. Insufficient {param0} borrowing quota results in an insufficient amount available to borrow.</td>
 </tr>
 <tr>
 <td>51008</td>
@@ -69227,17 +69232,17 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51012</td>
 <td>200</td>
-<td>Token does not exist.</td>
+<td>Token doesn&#39;t exist.</td>
 </tr>
 <tr>
 <td>51014</td>
 <td>200</td>
-<td>Index does not exist.</td>
+<td>Index doesn&#39;t exist.</td>
 </tr>
 <tr>
 <td>51015</td>
 <td>200</td>
-<td>Instrument ID does not match instrument type.</td>
+<td>Instrument ID doesn&#39;t match instrument type.</td>
 </tr>
 <tr>
 <td>51016</td>
@@ -69252,7 +69257,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51018</td>
 <td>200</td>
-<td>User with option account cannot hold net short positions.</td>
+<td>Users with options accounts cannot hold net short positions.</td>
 </tr>
 <tr>
 <td>51019</td>
@@ -69262,7 +69267,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51020</td>
 <td>200</td>
-<td>Order amount should be greater than the min available amount.</td>
+<td>Order amount should be greater than the minimum available amount.</td>
 </tr>
 <tr>
 <td>51021</td>
@@ -69277,7 +69282,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51023</td>
 <td>200</td>
-<td>Position does not exist.</td>
+<td>Position doesn&#39;t exist.</td>
 </tr>
 <tr>
 <td>51024</td>
@@ -69447,7 +69452,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51026</td>
 <td>200</td>
-<td>Instrument type does not match underlying index.</td>
+<td>Instrument type doesn&#39;t match underlying index.</td>
 </tr>
 <tr>
 <td>51027</td>
@@ -69477,7 +69482,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51032</td>
 <td>200</td>
-<td>Closing all positions at market price.</td>
+<td>Closing all the positions at the market price.</td>
 </tr>
 <tr>
 <td>51033</td>
@@ -69492,22 +69497,17 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51035</td>
 <td>200</td>
-<td>Account does not have permission to submit MM quote order</td>
+<td>This account doesn&#39;t have permission to submit MM quote order.</td>
 </tr>
 <tr>
 <td>51036</td>
 <td>200</td>
-<td>Only Options instrument of the PM account supports MMP orders.</td>
-</tr>
-<tr>
-<td>51411</td>
-<td>200</td>
-<td>Account does not have permission for mass cancellation</td>
+<td>Only options instrument of the PM account supports MMP orders.</td>
 </tr>
 <tr>
 <td>51042</td>
 <td>200</td>
-<td>Under the Portfolio margin account, users can only place MMP orders in cross margin mode in Options.</td>
+<td>Under the Portfolio margin account, users can only place market maker protection orders in cross margin mode in Options.</td>
 </tr>
 <tr>
 <td>51043</td>
@@ -69542,7 +69542,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51041</td>
 <td>200</td>
-<td>Portfolio margin account only supports net mode.</td>
+<td>Portfolio margin account only supports the Buy/Sell mode.</td>
 </tr>
 <tr>
 <td>51044</td>
@@ -69657,7 +69657,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51072</td>
 <td>200</td>
-<td>As a spot lead trader, you need to set tdMode to &#39;spot_isolated&#39; when configured buying lead trade pairs</td>
+<td>As a spot lead trader, you need to set tdMode to spot_isolated when buying the configured lead trade pairs.</td>
 </tr>
 <tr>
 <td>51073</td>
@@ -69817,37 +69817,37 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51101</td>
 <td>200</td>
-<td>Order failed. The size of the current order cannot be more than {maxSzPerOrder} (contracts).</td>
+<td>Order failed, the sz of the current order can’t be more than {param0} (contracts).</td>
 </tr>
 <tr>
 <td>51102</td>
 <td>200</td>
-<td>Order failed. The number of pending orders for this instId cannot be more than {maxNumberPerInstrument} (orders).</td>
+<td>Order failed, the number of pending orders for this instId can’t be more than {param0} (orders)</td>
 </tr>
 <tr>
 <td>51103</td>
 <td>200</td>
-<td>Order failed. The number of pending orders across all instIds under the current {businessType} instFamily cannot be more than {maxNumberPerInstFamily} (orders).</td>
+<td>Order failed, the number of pending orders across all instIds under the {param0} current instFamily can’t be more than {param1} (orders)</td>
 </tr>
 <tr>
 <td>51104</td>
 <td>200</td>
-<td>Order failed. The aggregated contract quantity for all pending orders across all instIds under the current {businessType}  instFamily cannot be more than {maxSzPerInstFamily} (contracts).</td>
+<td>Order failed, the aggregated contract quantity for all pending orders across all instIds under the {param0} current instFamily can’t be more than {param1} (contracts)</td>
 </tr>
 <tr>
 <td>51105</td>
 <td>200</td>
-<td>Order failed. The maximum sum of position quantity and pending orders in the same direction for current instId cannot be more than {maxPositionSzPerInstrument} (contracts).</td>
+<td>Order failed, the maximal sum of position quantity and pending orders quantity with the same direction for current instId can’t be more than {param0} (contracts)</td>
 </tr>
 <tr>
 <td>51106</td>
 <td>200</td>
-<td>Order failed. The maximum sum of position quantity and pending orders in the same direction across all instIds under the current {businessType} instFamily cannot be more than {maxPostionSzPerInstFamily51106} (contracts).</td>
+<td>Order failed, the maximal sum of position quantity and pending orders quantity with the same direction across all instIds under the {param0} current instFamily can’t be more than {param1} (contracts)</td>
 </tr>
 <tr>
 <td>51107</td>
 <td>200</td>
-<td>Order failed. The maximum sum of position quantity and pending orders in both directions across all instIds under the current {businessType} instFamily cannot be more than {maxPostionSzPerInstFamily51107} (contracts).</td>
+<td>Order failed, the maximal sum of position quantity and pending orders quantity in both directions across all instIds under the {param0} current instFamily can’t be more than {param1} (contracts)</td>
 </tr>
 <tr>
 <td>51108</td>
@@ -69857,7 +69857,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51109</td>
 <td>200</td>
-<td>No available offer.</td>
+<td>No available offers.</td>
 </tr>
 <tr>
 <td>51110</td>
@@ -69872,7 +69872,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51112</td>
 <td>200</td>
-<td>Close order size exceeds your available size.</td>
+<td>Close order size exceeds available size for this position.</td>
 </tr>
 <tr>
 <td>51113</td>
@@ -69882,7 +69882,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51115</td>
 <td>429</td>
-<td>Cancel all pending close-orders before liquidation</td>
+<td>Cancel all pending close-orders before liquidation.</td>
 </tr>
 <tr>
 <td>51116</td>
@@ -69897,7 +69897,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51120</td>
 <td>200</td>
-<td>Order quantity is less than {param0}. Please try again.</td>
+<td>Order amount is less than {param0}, please try again.</td>
 </tr>
 <tr>
 <td>51121</td>
@@ -69907,7 +69907,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51122</td>
 <td>200</td>
-<td>Order price must be higher than the minimum price {param0}.</td>
+<td>Order price should higher than the min price {param0}</td>
 </tr>
 <tr>
 <td>51123</td>
@@ -69972,22 +69972,22 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51135</td>
 <td>200</td>
-<td>Your closing price has triggered the limit price. The maximum buy price is {param0}.</td>
+<td>Your closing price has triggered the limit price, and the max buy price is {param0}.</td>
 </tr>
 <tr>
 <td>51136</td>
 <td>200</td>
-<td>Your closing price has triggered the limit price. The minimum sell price is {param0}.</td>
+<td>Your closing price has triggered the limit price, and the min sell price is {param0}.</td>
 </tr>
 <tr>
 <td>51137</td>
 <td>200</td>
-<td>The highest price limit for buy orders is {param0}</td>
+<td>The highest price limit for buy orders is {param0}.</td>
 </tr>
 <tr>
 <td>51138</td>
 <td>200</td>
-<td>The lowest price limit for sell orders is {param0}</td>
+<td>The lowest price limit for sell orders is {param0}.</td>
 </tr>
 <tr>
 <td>51139</td>
@@ -70012,7 +70012,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51144</td>
 <td>200</td>
-<td>Please place the order using {param0}.</td>
+<td>Please use {param0} for closing.</td>
 </tr>
 <tr>
 <td>51147</td>
@@ -70052,7 +70052,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51155</td>
 <td>200</td>
-<td>Due to local compliance requirements, trading of this pair or contract is restricted.</td>
+<td>Trading of this pair or contract is restricted due to local compliance requirements.</td>
 </tr>
 <tr>
 <td>51158</td>
@@ -70087,7 +70087,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51174</td>
 <td>200</td>
-<td>Order failed. The number of {param0} pending orders reached the upper limit of {param1} (orders).</td>
+<td>Order failed, number of pending orders for {param0} exceed the limit of {param1}.</td>
 </tr>
 <tr>
 <td>51175</td>
@@ -70107,22 +70107,22 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51179</td>
 <td>200</td>
-<td>Unavailable to place options orders using {param0} in spot mode</td>
+<td>Unavailable to place options orders using {param0} in simple mode</td>
 </tr>
 <tr>
 <td>51180</td>
 <td>200</td>
-<td>The range of {param0} should be ({param1}, {param2})</td>
+<td>The range of {param0} should be ({param1}~{param2})</td>
 </tr>
 <tr>
 <td>51181</td>
 <td>200</td>
-<td>ordType must be limit when placing {param0} orders</td>
+<td>ordType must be limit while placing {param0} orders</td>
 </tr>
 <tr>
 <td>51182</td>
 <td>200</td>
-<td>The total number of pending orders under price types pxUsd and pxVol for the current account cannot exceed {param0}.</td>
+<td>The total number of pending orders under price types pxUsd and pxVol for the current account cannot exceed {param0}</td>
 </tr>
 <tr>
 <td>51185</td>
@@ -70162,7 +70162,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51201</td>
 <td>200</td>
-<td>Value of per market order cannot exceed 1,000,000 USDT.</td>
+<td>The value of a market order can&#39;t exceed {param0}.</td>
 </tr>
 <tr>
 <td>51202</td>
@@ -70777,7 +70777,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51400</td>
 <td>200</td>
-<td>Cancellation failed as the order has been filled, canceled or does not exist.</td>
+<td>Order cancellation failed as the order has been filled, canceled or does not exist.</td>
 </tr>
 <tr>
 <td>51400</td>
@@ -70797,7 +70797,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51403</td>
 <td>200</td>
-<td>Cancellation failed as the order type does not support cancellation.</td>
+<td>Cancellation failed as the order type doesn&#39;t support cancellation.</td>
 </tr>
 <tr>
 <td>51404</td>
@@ -70807,12 +70807,12 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51405</td>
 <td>200</td>
-<td>Cancellation failed as you do not have any pending orders.</td>
+<td>Cancellation failed as you don&#39;t have any pending orders.</td>
 </tr>
 <tr>
 <td>51406</td>
 <td>400</td>
-<td>Canceled order count exceeds the limit {param0}.</td>
+<td>Canceled - order count exceeds the limit {param0}.</td>
 </tr>
 <tr>
 <td>51407</td>
@@ -70822,7 +70822,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51408</td>
 <td>200</td>
-<td>Pair ID or name does not match the order info.</td>
+<td>Pair ID or name doesn&#39;t match the order info.</td>
 </tr>
 <tr>
 <td>51409</td>
@@ -70872,12 +70872,12 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51501</td>
 <td>400</td>
-<td>Maximum of {param0} orders can be modified.</td>
+<td>Maximum {param0} orders can be modified.</td>
 </tr>
 <tr>
 <td>51502</td>
 <td>200</td>
-<td>Order failed. Insufficient {param0} balance in account</td>
+<td>Unable to edit order: insufficient balance or margin.</td>
 </tr>
 <tr>
 <td>51502</td>
@@ -70922,7 +70922,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51502</td>
 <td>200</td>
-<td>Order failed. Insufficient account balance and the adjusted equity in USD is smaller than the IMR (Portfolio margin mode can try IOC orders to lower the risks)</td>
+<td>Order failed. Insufficient account balance and the adjusted equity in USD is smaller than the IMR.</td>
 </tr>
 <tr>
 <td>51502</td>
@@ -70932,7 +70932,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51503</td>
 <td>200</td>
-<td>Order modification failed as the order has been filled, canceled or does not exist.</td>
+<td>Your order has already been filled or canceled.</td>
 </tr>
 <tr>
 <td>51503</td>
@@ -70972,7 +70972,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51511</td>
 <td>200</td>
-<td>Operation failed as the order price did not meet the requirement for Post Only.</td>
+<td>Modification failed as the order price did not meet the requirement for Post Only.</td>
 </tr>
 <tr>
 <td>51512</td>
@@ -70982,7 +70982,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51513</td>
 <td>200</td>
-<td>Number of modification requests that are currently in progress for an order cannot exceed 3.</td>
+<td>Number of modification requests that are currently in progress for an order cannot exceed 3 times.</td>
 </tr>
 <tr>
 <td>51514</td>
@@ -71052,7 +71052,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51536</td>
 <td>200</td>
-<td>Unable to modify the size of the options order if the price type is pxUsd or pxVol</td>
+<td>Unable to modify the size of the options order if the price type is pxUsd or pxVol.</td>
 </tr>
 <tr>
 <td>51537</td>
@@ -71072,7 +71072,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51601</td>
 <td>200</td>
-<td>Order status and order ID cannot exist at the same time.</td>
+<td>Order status and order id cannot exist at the same time.</td>
 </tr>
 <tr>
 <td>51602</td>
@@ -71227,7 +71227,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>54006</td>
 <td>200</td>
-<td>Pre-market expiry future position limit is {posLimit} contracts.</td>
+<td>Pre-market expiry future position limit is {posLimit}. Please cancel order or close position</td>
 </tr>
 <tr>
 <td>54007</td>
@@ -71624,7 +71624,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>58004</td>
 <td>200</td>
-<td>Account blocked</td>
+<td>Account blocked.</td>
 </tr>
 <tr>
 <td>58005</td>
@@ -72270,7 +72270,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>59106</td>
 <td>200</td>
-<td>The max available margin corresponding to your order tier is {0}.<br>Please adjust your margin and place a new order.</td>
+<td>The max available margin corresponding to your order tier is {param0}. Please adjust your margin and place a new order.</td>
 </tr>
 <tr>
 <td>59107</td>
@@ -72285,12 +72285,12 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>59109</td>
 <td>200</td>
-<td>Account equity less than the required margin amount after adjustment. <br>Please adjust the leverage .</td>
+<td>Account equity less than the required margin amount after adjustment. Please adjust the leverage.</td>
 </tr>
 <tr>
 <td>59110</td>
 <td>200</td>
-<td>The instrument type corresponding to this {0} does not support the tgtCcy parameter.</td>
+<td>The instrument corresponding to this {param0} does not support the tgtCcy parameter.</td>
 </tr>
 <tr>
 <td>59111</td>
@@ -72310,7 +72310,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>59114</td>
 <td>200</td>
-<td>According to local laws and regulations, margin trading services are not available in your region</td>
+<td>According to local laws and regulations, margin trading services are not available in your region.</td>
 </tr>
 <tr>
 <td>59117</td>
@@ -72558,9 +72558,9 @@ For private endpoint, the response is restricted based on your country of reside
 <td>Liability reduction failed. Repay this order instead.</td>
 </tr>
 <tr>
-<td>51152</td>
+<td>59401</td>
 <td>200</td>
-<td>Holdings already reached the limit.</td>
+<td>Holdings limit reached.</td>
 </tr>
 <tr>
 <td>59402</td>
@@ -72625,7 +72625,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>59506</td>
 <td>200</td>
-<td>API key does not exist.</td>
+<td>API key doesn&#39;t exist.</td>
 </tr>
 <tr>
 <td>59507</td>
@@ -72635,7 +72635,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>59508</td>
 <td>200</td>
-<td>The sub account of {0} is suspended.</td>
+<td>The sub account of {param0} is suspended.</td>
 </tr>
 <tr>
 <td>59509</td>
