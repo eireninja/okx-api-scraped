@@ -16579,7 +16579,7 @@ if there are any pending orders for closing out and the orders do not need to be
 <tr>
 <td style="text-align: left">source</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Order source<br><code>6</code>: The normal order triggered by the <code>trigger order</code><br><code>7</code>:The normal order triggered by the <code>TP/SL order</code> <br><code>13</code>: The normal order triggered by the algo order<br><code>25</code>:The normal order triggered by the <code>trailing stop order</code><br/><code>34</code>: The normal order triggered by the chase order</td>
+<td style="text-align: left">Order source<br><code>6</code>: The normal order triggered by the <code>trigger order</code><br><code>7</code>:The normal order triggered by the <code>TP/SL order</code> <br><code>13</code>: The normal order triggered by the algo order<br><code>25</code>:The normal order triggered by the <code>trailing stop order</code><br/><code>34</code>: The normal order triggered by the <code>chase order</code></td>
 </tr>
 <tr>
 <td style="text-align: left">rebateCcy</td>
