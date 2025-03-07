@@ -6125,7 +6125,7 @@ It is only applicable to the data from the unified account.
 </tr>
 <tr>
 <td style="text-align: left">spotTraderInsts</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">Array</td>
 <td style="text-align: left">Spot lead trading instruments, only applicable to lead trader</td>
 </tr>
 <tr>
@@ -7965,7 +7965,7 @@ Auto transfers: Automatically borrow and return coins when opening and closing p
 </thead><tbody>
 <tr>
 <td>atRisk</td>
-<td>String</td>
+<td>Boolean</td>
 <td>Account risk status in auto-borrow mode <br>true:  the account is currently in a specific risk state <br>false:  the account is currently not in a specific risk state</td>
 </tr>
 <tr>
@@ -16138,6 +16138,11 @@ if there are any pending orders for closing out and the orders do not need to be
 <td style="text-align: left">String</td>
 <td style="text-align: left">Creation time, Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
 </tr>
+<tr>
+<td style="text-align: left">quickMgnType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"><del>Quick Margin type, Only applicable to Quick Margin Mode of isolated margin<br><code>manual</code>, <code>auto_borrow</code>, <code>auto_repay</code></del>  (Deprecated)</td>
+</tr>
 </tbody></table>
 <h3 id='order-book-trading-trade-get-order-history-last-3-months'>GET / Order history (last 3 months)</h3>
 <p>Get completed orders which are placed in the last 3 months, including those placed 3 months ago but completed in the last 3 months.  <br></p>
@@ -16640,6 +16645,11 @@ if there are any pending orders for closing out and the orders do not need to be
 <td style="text-align: left">cTime</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Creation time, Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
+</tr>
+<tr>
+<td style="text-align: left">quickMgnType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"><del>Quick Margin type, Only applicable to Quick Margin Mode of isolated margin<br><code>manual</code>, <code>auto_borrow</code>, <code>auto_repay</code></del>  (Deprecated)</td>
 </tr>
 </tbody></table>
 
@@ -19065,7 +19075,7 @@ POST /api/v5/trade/order-precheck
 <tr>
 <td style="text-align: left">&gt; cancelSource</td>
 <td style="text-align: left">String</td>
-<td>Source of the order cancellation.<br>Valid values and the corresponding meanings are:<br><code>0</code>: Order canceled by system<br><code>1</code>: Order canceled by user<br><code>2</code>: Order canceled: Pre reduce-only order canceled, due to insufficient margin in user position<br><code>3</code>: Order canceled: Risk cancellation was triggered. Pending order was canceled due to insufficient margin ratio and forced-liquidation risk.<br><code>4</code>: Order canceled: Borrowings of crypto reached hard cap, order was canceled by system.<br><code>6</code>: Order canceled: ADL order cancellation was triggered. Pending order was canceled due to a low margin ratio and forced-liquidation risk. <br><code>7</code>: Order canceled: Futures contract delivery. <br><code>9</code>: Order canceled: Insufficient balance after funding fees deducted. <br><code>13</code>: Order canceled: FOK order was canceled due to incompletely filled.<br><code>14</code>: Order canceled: IOC order was partially canceled due to incompletely filled.<br><code>15</code>: Order canceled: The order price is beyond the limit<br><code>17</code>: Order canceled: Close order was canceled, due to the position was already closed at market price.<br><code>20</code>: Cancel all after triggered<br><code>21</code>: Order canceled: The TP/SL order was canceled because the position had been closed<br><code>22</code>, <code>23</code>: Order canceled: Reduce-only orders only allow reducing your current position. System has already canceled this order.<br><code>27</code>: Order canceled: Price limit verification failed because the price difference between counterparties exceeds 5% <br><code>31</code>: The post-only order will take liquidity in taker orders  <br><code>32</code>: Self trade prevention <br><code>33</code>: The order exceeds the maximum number of order matches per taker order<br/><code>36</code>: Your TP limit order was canceled because the corresponding SL order was triggered. <br/><code>37</code>: Your TP limit order was canceled because the corresponding SL order was canceled.<br> <code>38</code>: You have canceled market maker protection (MMP) orders.<br> <code>39</code>: Your order was canceled because market maker protection (MMP) was triggered.</td>
+<td>Source of the order cancellation.<br>Valid values and the corresponding meanings are:<br><code>0</code>: Order canceled by system<br><code>1</code>: Order canceled by user<br><code>2</code>: Order canceled: Pre reduce-only order canceled, due to insufficient margin in user position<br><code>3</code>: Order canceled: Risk cancellation was triggered. Pending order was canceled due to insufficient margin ratio and forced-liquidation risk.<br><code>4</code>: Order canceled: Borrowings of crypto reached hard cap, order was canceled by system.<br><code>6</code>: Order canceled: ADL order cancellation was triggered. Pending order was canceled due to a low margin ratio and forced-liquidation risk. <br><code>7</code>: Order canceled: Futures contract delivery. <br><code>9</code>: Order canceled: Insufficient balance after funding fees deducted. <br><code>13</code>: Order canceled: FOK order was canceled due to incompletely filled.<br><code>14</code>: Order canceled: IOC order was partially canceled due to incompletely filled.<br><code>15</code>: Order canceled: The order price is beyond the limit<br><code>17</code>: Order canceled: Close order was canceled, due to the position was already closed at market price.<br><code>20</code>: Cancel all after triggered<br><code>21</code>: Order canceled: The TP/SL order was canceled because the position had been closed<br><code>22</code>, <code>23</code>: Order canceled: Reduce-only orders only allow reducing your current position. System has already canceled this order.<br><code>27</code>: Order canceled: Price limit verification failed because the price difference between counterparties exceeds 5% <br><code>31</code>: The post-only order will take liquidity in taker orders  <br><code>32</code>: Self trade prevention <br><code>33</code>: The order exceeds the maximum number of order matches per taker order<br/><code>36</code>: Your TP limit order was canceled because the corresponding SL order was triggered. <br/><code>37</code>: Your TP limit order was canceled because the corresponding SL order was canceled.<br> <code>38</code>: You have canceled market maker protection (MMP) orders.<br> <code>39</code>: Your order was canceled because market maker protection (MMP) was triggered. <br/><code>42</code>: Your order was canceled because the difference between the initial and current best bid or ask prices reached the maximum chase difference.</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; amendSource</td>
@@ -35091,7 +35101,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">details</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">Array</td>
 <td style="text-align: left">Details</td>
 </tr>
 <tr>
@@ -36836,7 +36846,7 @@ Returns reverse chronological order with <code>subPosId</code>. </p>
 </tr>
 <tr>
 <td style="text-align: left">copyTraders</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">Array</td>
 <td style="text-align: left">Copy trader information</td>
 </tr>
 <tr>
@@ -50862,7 +50872,7 @@ When a product is going to be delisted (e.g. when a FUTURES contract is settled 
 </tr>
 <tr>
 <td style="text-align: left">details</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">Array</td>
 <td style="text-align: left">Delivery/exercise details</td>
 </tr>
 <tr>
@@ -52681,7 +52691,7 @@ The enumeration value `regular_update` of type field is used to present up-to-mi
 </tr>
 <tr>
 <td style="text-align: left">tickBand</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">Array</td>
 <td style="text-align: left">Tick size band</td>
 </tr>
 <tr>
@@ -67966,7 +67976,7 @@ If you have additional data requirements regarding the Affiliate API, please don
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">inviteeLv</td>
+<td style="text-align: left">inviteeLevel</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Invitee&#39;s relative level to the affiliate<br>If the user is a invitee, the level will be <code>2</code>.</td>
 </tr>
@@ -72160,6 +72170,11 @@ For private endpoint, the response is restricted based on your country of reside
 <td>58358</td>
 <td>200</td>
 <td>The fromCcy parameter cannot be the same as the toCcy parameter.</td>
+</tr>
+<tr>
+<td>58373</td>
+<td>200</td>
+<td>The minimum {ccy} conversion amount is {amount}</td>
 </tr>
 <tr>
 <td>58400</td>
