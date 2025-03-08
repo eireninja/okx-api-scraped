@@ -2127,7 +2127,7 @@ We recommend developers use WebSocket API to retrieve market data and order book
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of account to login</td>
 </tr>
@@ -2286,7 +2286,7 @@ The request will expire 30 seconds after the timestamp. If your server time diff
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -2435,7 +2435,7 @@ The request will expire 30 seconds after the timestamp. If your server time diff
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of channels to unsubscribe from</td>
 </tr>
@@ -3497,7 +3497,7 @@ GET /api/v5/account/balance?ccy<span class="o">=</span>BTC,ETH
 </tr>
 <tr>
 <td>details</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Detailed asset information in all currencies</td>
 </tr>
 <tr>
@@ -4540,7 +4540,7 @@ In the isolated margin trading settings, if it is set to the manual transfers mo
 </tr>
 <tr>
 <td style="text-align: left">closeOrderAlgo</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Close position algo orders attached to the position. This array will have values only after you request &quot;Place algo order&quot; with <code>closeFraction</code>=1.</td>
 </tr>
 <tr>
@@ -4936,7 +4936,7 @@ Obtain basic information about accounts and positions on the same time snapshot
 </tr>
 <tr>
 <td>balData</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Detailed asset information in all currencies</td>
 </tr>
 <tr>
@@ -4956,7 +4956,7 @@ Obtain basic information about accounts and positions on the same time snapshot
 </tr>
 <tr>
 <td>posData</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Detailed position information in all currencies</td>
 </tr>
 <tr>
@@ -6115,7 +6115,7 @@ It is only applicable to the data from the unified account.
 </tr>
 <tr>
 <td style="text-align: left">traderInsts</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of strings</td>
 <td style="text-align: left">Leading trade instruments, only applicable to Leading trader</td>
 </tr>
 <tr>
@@ -6125,7 +6125,7 @@ It is only applicable to the data from the unified account.
 </tr>
 <tr>
 <td style="text-align: left">spotTraderInsts</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of strings</td>
 <td style="text-align: left">Spot lead trading instruments, only applicable to lead trader</td>
 </tr>
 <tr>
@@ -7400,7 +7400,7 @@ GET /api/v5/account/trade-fee?instType<span class="o">=</span>SPOT&amp;instId<sp
 </tr>
 <tr>
 <td>fiat</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Details of fiat fee rate</td>
 </tr>
 <tr>
@@ -7970,12 +7970,12 @@ Auto transfers: Automatically borrow and return coins when opening and closing p
 </tr>
 <tr>
 <td>atRiskIdx</td>
-<td>Array</td>
+<td>Array of strings</td>
 <td>derivatives risk unit list</td>
 </tr>
 <tr>
 <td>atRiskMgn</td>
-<td>Array</td>
+<td>Array of strings</td>
 <td>margin risk unit list</td>
 </tr>
 <tr>
@@ -8334,7 +8334,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">records</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Details for currencies</td>
 </tr>
 <tr>
@@ -10644,7 +10644,7 @@ It will also be pushed in regular interval according to subscription granularity
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -10854,7 +10854,7 @@ It will also be pushed in regular interval according to subscription granularity
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -10934,7 +10934,7 @@ It will also be pushed in regular interval according to subscription granularity
 </tr>
 <tr>
 <td>&gt; details</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Detailed asset information in all currencies</td>
 </tr>
 <tr>
@@ -11218,7 +11218,7 @@ It will also be pushed in regular interval according to subscription granularity
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -11658,7 +11658,7 @@ It will also be pushed in regular interval according to subscription granularity
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -11953,7 +11953,7 @@ It will also be pushed in regular interval according to subscription granularity
 </tr>
 <tr>
 <td style="text-align: left">&gt; closeOrderAlgo</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td>Close position algo orders attached to the position. This array will have values only after you request &quot;Place algo order&quot; with <code>closeFraction</code>=1.</td>
 </tr>
 <tr>
@@ -12055,7 +12055,7 @@ Concurrent connection to this channel will be restricted by the following rules:
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td style="text-align: left">List of subscribed channels</td>
 </tr>
@@ -12194,7 +12194,7 @@ Concurrent connection to this channel will be restricted by the following rules:
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Subscribed data</td>
 </tr>
 <tr>
@@ -12209,7 +12209,7 @@ Concurrent connection to this channel will be restricted by the following rules:
 </tr>
 <tr>
 <td style="text-align: left">&gt; balData</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Balance data</td>
 </tr>
 <tr>
@@ -12229,7 +12229,7 @@ Concurrent connection to this channel will be restricted by the following rules:
 </tr>
 <tr>
 <td style="text-align: left">&gt; posData</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Position data</td>
 </tr>
 <tr>
@@ -12299,7 +12299,7 @@ Concurrent connection to this channel will be restricted by the following rules:
 </tr>
 <tr>
 <td style="text-align: left">&gt; trades</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Details of trade</td>
 </tr>
 <tr>
@@ -12359,7 +12359,7 @@ Concurrent connection to this channel will be restricted by the following rules:
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td>Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -12543,7 +12543,7 @@ Concurrent connection to this channel will be restricted by the following rules:
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -12665,7 +12665,7 @@ Concurrent connection to this channel will be restricted by the following rules:
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td style="text-align: left">List of subscribed channels</td>
 </tr>
@@ -12853,7 +12853,7 @@ Concurrent connection to this channel will be restricted by the following rules:
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Subscribed data</td>
 </tr>
 <tr>
@@ -15064,7 +15064,7 @@ if there are any pending orders for closing out and the orders do not need to be
 </tr>
 <tr>
 <td style="text-align: left">&gt; algoId</td>
-<td style="text-align: left">Object</td>
+<td style="text-align: left">String</td>
 <td style="text-align: left">Algo ID</td>
 </tr>
 <tr>
@@ -15544,7 +15544,7 @@ if there are any pending orders for closing out and the orders do not need to be
 </tr>
 <tr>
 <td style="text-align: left">&gt; algoId</td>
-<td style="text-align: left">Object</td>
+<td style="text-align: left">String</td>
 <td style="text-align: left">Algo ID</td>
 </tr>
 <tr>
@@ -16050,7 +16050,7 @@ if there are any pending orders for closing out and the orders do not need to be
 </tr>
 <tr>
 <td style="text-align: left">&gt; algoId</td>
-<td style="text-align: left">Object</td>
+<td style="text-align: left">String</td>
 <td style="text-align: left">Algo ID</td>
 </tr>
 <tr>
@@ -16558,7 +16558,7 @@ if there are any pending orders for closing out and the orders do not need to be
 </tr>
 <tr>
 <td style="text-align: left">&gt; algoId</td>
-<td style="text-align: left">Object</td>
+<td style="text-align: left">String</td>
 <td style="text-align: left">Algo ID</td>
 </tr>
 <tr>
@@ -16727,7 +16727,7 @@ As far as OPTION orders that are complete, pxVol and pxUsd will update in time f
 <td style="text-align: left">subType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Transaction type <br><code>1</code>: Buy<br><code>2</code>: Sell<br><code>3</code>: Open long<br><code>4</code>: Open short<br><code>5</code>: Close long<br><code>6</code>: Close short <br><code>100</code>: Partial liquidation close long<br><code>101</code>: Partial liquidation close short<br><code>102</code>: Partial liquidation buy<br><code>103</code>: Partial liquidation sell<br><code>104</code>: Liquidation long<br><code>105</code>: Liquidation short<br><code>106</code>: Liquidation buy <br><code>107</code>: Liquidation sell <br><code>110</code>: Liquidation transfer in<br><code>111</code>: Liquidation transfer out <br><code>118</code>: System token conversion transfer in<br><code>119</code>: System token conversion transfer out <br><code>125</code>: ADL close long<br><code>126</code>: ADL close short<br><code>127</code>: ADL buy<br><code>128</code>: ADL sell <br><code>212</code>: Auto borrow of quick margin<br><code>213</code>: Auto repay of quick margin <br><code>204</code>: block trade buy<br><code>205</code>: block trade sell<br><code>206</code>: block trade open long<br><code>207</code>: block trade open short<br><code>208</code>: block trade close long<br><code>209</code>: block trade close short <br><code>270</code>: Spread trading buy<br><code>271</code>: Spread trading sell<br><code>272</code>: Spread trading open long<br><code>273</code>: Spread trading open short<br><code>274</code>: Spread trading close long<br><code>275</code>: Spread trading close short</td>
+<td style="text-align: left">Transaction type <br><code>1</code>: Buy<br><code>2</code>: Sell<br><code>3</code>: Open long<br><code>4</code>: Open short<br><code>5</code>: Close long<br><code>6</code>: Close short <br><code>100</code>: Partial liquidation close long<br><code>101</code>: Partial liquidation close short<br><code>102</code>: Partial liquidation buy<br><code>103</code>: Partial liquidation sell<br><code>104</code>: Liquidation long<br><code>105</code>: Liquidation short<br><code>106</code>: Liquidation buy <br><code>107</code>: Liquidation sell <br><code>110</code>: Liquidation transfer in<br><code>111</code>: Liquidation transfer out <br><code>118</code>: System token conversion transfer in<br><code>119</code>: System token conversion transfer out <br><code>125</code>: ADL close long<br><code>126</code>: ADL close short<br><code>127</code>: ADL buy<br><code>128</code>: ADL sell <br><code>212</code>: Auto borrow of quick margin<br><code>213</code>: Auto repay of quick margin <br><code>204</code>: block trade buy<br><code>205</code>: block trade sell<br><code>206</code>: block trade open long<br><code>207</code>: block trade open short<br><code>208</code>: block trade close long<br><code>209</code>: block trade close short<br><code>236</code>: Easy convert in<br><code>237</code>: Easy convert out<br><code>270</code>: Spread trading buy<br><code>271</code>: Spread trading sell<br><code>272</code>: Spread trading open long<br><code>273</code>: Spread trading open short<br><code>274</code>: Spread trading close long<br><code>275</code>: Spread trading close short</td>
 </tr>
 <tr>
 <td style="text-align: left">after</td>
@@ -17015,7 +17015,7 @@ Client-supplied order ID, always "" for block trading.
 <td style="text-align: left">subType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Transaction type <br><code>1</code>: Buy<br><code>2</code>: Sell<br><code>3</code>: Open long<br><code>4</code>: Open short<br><code>5</code>: Close long<br><code>6</code>: Close short <br><code>100</code>: Partial liquidation close long<br><code>101</code>: Partial liquidation close short<br><code>102</code>: Partial liquidation buy<br><code>103</code>: Partial liquidation sell<br><code>104</code>: Liquidation long<br><code>105</code>: Liquidation short<br><code>106</code>: Liquidation buy <br><code>107</code>: Liquidation sell <br><code>110</code>: Liquidation transfer in<br><code>111</code>: Liquidation transfer out <br><code>118</code>: System token conversion transfer in<br><code>119</code>: System token conversion transfer out <br><code>125</code>: ADL close long<br><code>126</code>: ADL close short<br><code>127</code>: ADL buy<br><code>128</code>: ADL sell <br><code>212</code>: Auto borrow of quick margin<br><code>213</code>: Auto repay of quick margin <br><code>204</code>: block trade buy<br><code>205</code>: block trade sell<br><code>206</code>: block trade open long<br><code>207</code>: block trade open short<br><code>208</code>: block trade close long<br><code>209</code>: block trade close short <br><code>270</code>: Spread trading buy<br><code>271</code>: Spread trading sell<br><code>272</code>: Spread trading open long<br><code>273</code>: Spread trading open short<br><code>274</code>: Spread trading close long<br><code>275</code>: Spread trading close short</td>
+<td style="text-align: left">Transaction type <br><code>1</code>: Buy<br><code>2</code>: Sell<br><code>3</code>: Open long<br><code>4</code>: Open short<br><code>5</code>: Close long<br><code>6</code>: Close short <br><code>100</code>: Partial liquidation close long<br><code>101</code>: Partial liquidation close short<br><code>102</code>: Partial liquidation buy<br><code>103</code>: Partial liquidation sell<br><code>104</code>: Liquidation long<br><code>105</code>: Liquidation short<br><code>106</code>: Liquidation buy <br><code>107</code>: Liquidation sell <br><code>110</code>: Liquidation transfer in<br><code>111</code>: Liquidation transfer out <br><code>118</code>: System token conversion transfer in<br><code>119</code>: System token conversion transfer out <br><code>125</code>: ADL close long<br><code>126</code>: ADL close short<br><code>127</code>: ADL buy<br><code>128</code>: ADL sell <br><code>212</code>: Auto borrow of quick margin<br><code>213</code>: Auto repay of quick margin <br><code>204</code>: block trade buy<br><code>205</code>: block trade sell<br><code>206</code>: block trade open long<br><code>207</code>: block trade open short<br><code>208</code>: block trade close long<br><code>209</code>: block trade close short<br><code>236</code>: Easy convert in<br><code>237</code>: Easy convert out<br><code>270</code>: Spread trading buy<br><code>271</code>: Spread trading sell<br><code>272</code>: Spread trading open long<br><code>273</code>: Spread trading open short<br><code>274</code>: Spread trading close long<br><code>275</code>: Spread trading close short</td>
 </tr>
 <tr>
 <td style="text-align: left">after</td>
@@ -17315,7 +17315,7 @@ We advise you to use Get Transaction details (last 3 days)when you request data 
 </thead><tbody>
 <tr>
 <td style="text-align: left">fromData</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Currently owned and convertible small currency list</td>
 </tr>
 <tr>
@@ -17330,7 +17330,7 @@ We advise you to use Get Transaction details (last 3 days)when you request data 
 </tr>
 <tr>
 <td style="text-align: left">toCcy</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of strings</td>
 <td style="text-align: left">Type of mainstream currency convert to, e.g. <code>USDT</code></td>
 </tr>
 </tbody></table>
@@ -17376,7 +17376,7 @@ body
 </thead><tbody>
 <tr>
 <td style="text-align: left">fromCcy</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of string</td>
 <td style="text-align: left">Yes</td>
 <td style="text-align: left">Type of small payment currency convert from <br>Maximum 5 currencies can be selected in one order. If there are multiple currencies, separate them with commas.</td>
 </tr>
@@ -17660,7 +17660,7 @@ body
 </thead><tbody>
 <tr>
 <td style="text-align: left">debtData</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Debt currency data list</td>
 </tr>
 <tr>
@@ -17680,7 +17680,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">repayData</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Repay currency data list</td>
 </tr>
 <tr>
@@ -17737,7 +17737,7 @@ body
 </thead><tbody>
 <tr>
 <td style="text-align: left">debtCcy</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of string</td>
 <td style="text-align: left">Yes</td>
 <td style="text-align: left">Debt currency type <br>Maximum 5 currencies can be selected in one order. If there are multiple currencies, separate them with commas.</td>
 </tr>
@@ -18495,7 +18495,7 @@ POST /api/v5/trade/order-precheck
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -18749,7 +18749,7 @@ POST /api/v5/trade/order-precheck
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -19208,7 +19208,7 @@ When OPTION contract expires, the orders channel doesn’t update for the cancel
 </tr>
 <tr>
 <td>args</td>
-<td>Array</td>
+<td>Array of object</td>
 <td>Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -19357,7 +19357,7 @@ When OPTION contract expires, the orders channel doesn’t update for the cancel
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of object</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -19464,7 +19464,7 @@ Rate limit is shared with the `Place order` REST API endpoints
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td style="text-align: left">Request parameters</td>
 </tr>
@@ -19670,7 +19670,7 @@ Rate limit is shared with the `Place order` REST API endpoints
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Data</td>
 </tr>
 <tr>
@@ -19889,7 +19889,7 @@ Rate limit is shared with the `Place multiple orders` REST API endpoints
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td style="text-align: left">Request Parameters</td>
 </tr>
@@ -20141,7 +20141,7 @@ Rate limit is shared with the `Place multiple orders` REST API endpoints
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Data</td>
 </tr>
 <tr>
@@ -20241,7 +20241,7 @@ Rate limit is shared with the `Cancel order` REST API endpoints
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Yes</td>
 <td style="text-align: left">Request Parameters</td>
 </tr>
@@ -20349,7 +20349,7 @@ Rate limit is shared with the `Cancel order` REST API endpoints
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Data</td>
 </tr>
 <tr>
@@ -20445,7 +20445,7 @@ Rate limit is shared with the `Cancel multiple orders` REST API endpoints
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Yes</td>
 <td style="text-align: left">Request Parameters</td>
 </tr>
@@ -20595,7 +20595,7 @@ Rate limit is shared with the `Cancel multiple orders` REST API endpoints
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Data</td>
 </tr>
 <tr>
@@ -20682,7 +20682,7 @@ Rate limit is shared with the `Amend order` REST API endpoints
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Yes</td>
 <td style="text-align: left">Request Parameters</td>
 </tr>
@@ -20834,7 +20834,7 @@ Rate limit is shared with the `Amend order` REST API endpoints
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Data</td>
 </tr>
 <tr>
@@ -20944,7 +20944,7 @@ Rate limit is shared with the `Amend multiple orders` REST API endpoints
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Yes</td>
 <td style="text-align: left">Request Parameters</td>
 </tr>
@@ -21142,7 +21142,7 @@ Rate limit is shared with the `Amend multiple orders` REST API endpoints
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Data</td>
 </tr>
 <tr>
@@ -21236,7 +21236,7 @@ Rate limit is shared with the `Mass Cancel Order` REST API endpoints
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td style="text-align: left">Request parameters</td>
 </tr>
@@ -21314,7 +21314,7 @@ Rate limit is shared with the `Mass Cancel Order` REST API endpoints
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Data</td>
 </tr>
 <tr>
@@ -22449,7 +22449,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">ordIdList</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of strings</td>
 <td style="text-align: left">Order ID list. There will be multiple order IDs when there is TP/SL splitting order.</td>
 </tr>
 <tr>
@@ -22920,7 +22920,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">ordIdList</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of strings</td>
 <td style="text-align: left">Order ID list. There will be multiple order IDs when there is TP/SL splitting order.</td>
 </tr>
 <tr>
@@ -23393,7 +23393,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">ordIdList</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of strings</td>
 <td style="text-align: left">Order ID list. There will be multiple order IDs when there is TP/SL splitting order.</td>
 </tr>
 <tr>
@@ -23732,7 +23732,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -23961,7 +23961,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -23986,7 +23986,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">&gt; ordIdList</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of strings</td>
 <td>Order ID list. There will be multiple order IDs when there is TP/SL splitting order.</td>
 </tr>
 <tr>
@@ -24283,7 +24283,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td>Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -24507,7 +24507,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -28094,7 +28094,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td>Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -28313,7 +28313,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -28624,7 +28624,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td>Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -28848,7 +28848,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -29195,7 +29195,7 @@ Please ignore the empty data.</p>
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td>Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -29352,7 +29352,7 @@ Please ignore the empty data.</p>
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -29504,7 +29504,7 @@ Please ignore the empty data.</p>
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td>Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -29665,7 +29665,7 @@ Please ignore the empty data.</p>
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -30422,7 +30422,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">instIds</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of strings</td>
 <td style="text-align: left">Yes</td>
 <td style="text-align: left">Instrument IDs. When <code>includeAll</code> is <code>true</code>, it is ignored</td>
 </tr>
@@ -33454,7 +33454,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td>Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -33644,7 +33644,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -35101,7 +35101,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">details</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Details</td>
 </tr>
 <tr>
@@ -35594,7 +35594,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">instIds</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Instrument list. It will return all lead contracts of the lead trader</td>
 </tr>
 <tr>
@@ -35998,7 +35998,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">ranks</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">The rank information of lead traders</td>
 </tr>
 <tr>
@@ -36058,7 +36058,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">&gt; traderInsts</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of string</td>
 <td style="text-align: left">Contract list which lead trader is leading</td>
 </tr>
 <tr>
@@ -36073,7 +36073,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">&gt; pnlRatios</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Pnl ratios</td>
 </tr>
 <tr>
@@ -36846,7 +36846,7 @@ Returns reverse chronological order with <code>subPosId</code>. </p>
 </tr>
 <tr>
 <td style="text-align: left">copyTraders</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Copy trader information</td>
 </tr>
 <tr>
@@ -36902,7 +36902,7 @@ Returns reverse chronological order with <code>subPosId</code>. </p>
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td>Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -37059,7 +37059,7 @@ Returns reverse chronological order with <code>subPosId</code>. </p>
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -37531,12 +37531,12 @@ There are multiple services for market data, and each service has an independent
 </thead><tbody>
 <tr>
 <td style="text-align: left">asks</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of Arrays</td>
 <td style="text-align: left">Order book on sell side</td>
 </tr>
 <tr>
 <td style="text-align: left">bids</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of Arrays</td>
 <td style="text-align: left">Order book on buy side</td>
 </tr>
 <tr>
@@ -37626,12 +37626,12 @@ The order book data will be updated around once a second during the call auction
 </thead><tbody>
 <tr>
 <td style="text-align: left">asks</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of Arrays</td>
 <td style="text-align: left">Order book on sell side</td>
 </tr>
 <tr>
 <td style="text-align: left">bids</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of Arrays</td>
 <td style="text-align: left">Order book on buy side</td>
 </tr>
 <tr>
@@ -38297,7 +38297,7 @@ Up to 500 most recent historical public transaction data can be retrieved.
 </tr>
 <tr>
 <td style="text-align: left">tradeInfo</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">The list trade data</td>
 </tr>
 <tr>
@@ -38649,7 +38649,7 @@ The fastest rate is 1 update/100ms. There will be no update if the event is not 
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -38795,7 +38795,7 @@ The fastest rate is 1 update/100ms. There will be no update if the event is not 
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -38913,7 +38913,7 @@ The fastest rate is 1 update/100ms. There will be no update if the event is not 
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -39052,7 +39052,7 @@ The fastest rate is 1 update/100ms. There will be no update if the event is not 
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of Arrays</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -39137,7 +39137,7 @@ The fastest rate is 1 update/100ms. There will be no update if the event is not 
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -39274,7 +39274,7 @@ The fastest rate is 1 update/100ms. There will be no update if the event is not 
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -39357,7 +39357,7 @@ Aggregation function description:<br>
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -39493,7 +39493,7 @@ Aggregation function description:<br>
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -39584,7 +39584,7 @@ Only API users who are VIP4 and above in trading fee tier are allowed to subscri
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -39783,17 +39783,17 @@ Only API users who are VIP4 and above in trading fee tier are allowed to subscri
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; asks</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of Arrays</td>
 <td>Order book on sell side</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; bids</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of Arrays</td>
 <td>Order book on buy side</td>
 </tr>
 <tr>
@@ -39984,7 +39984,7 @@ A full load of market depth:
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -40129,7 +40129,7 @@ A full load of market depth:
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -40226,7 +40226,7 @@ A full load of market depth:
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -40366,7 +40366,7 @@ A full load of market depth:
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -42963,7 +42963,7 @@ Users are recommended to send a request to the exchange every second. When the c
 </tr>
 <tr>
 <td style="text-align: left">&gt; counterparties</td>
-<td style="text-align: left">Array of srings</td>
+<td style="text-align: left">Array of strings</td>
 <td style="text-align: left">The list of counterparties traderCode the RFQ was broadcasted to.</td>
 </tr>
 <tr>
@@ -44103,7 +44103,7 @@ Up to 500 most recent historical public transaction data can be retrieved.
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -44254,7 +44254,7 @@ Up to 500 most recent historical public transaction data can be retrieved.
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -44390,7 +44390,7 @@ state: pending_fill is a kind of moment state, and this channel doesn't update i
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -44542,7 +44542,7 @@ state: pending_fill is a kind of moment state, and this channel doesn't update i
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -44684,7 +44684,7 @@ state: pending_fill is a kind of moment state, and this channel doesn't update i
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -44836,7 +44836,7 @@ state: pending_fill is a kind of moment state, and this channel doesn't update i
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -44973,7 +44973,7 @@ state: pending_fill is a kind of moment state, and this channel doesn't update i
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -45103,7 +45103,7 @@ state: pending_fill is a kind of moment state, and this channel doesn't update i
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -45181,7 +45181,7 @@ state: pending_fill is a kind of moment state, and this channel doesn't update i
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -45321,7 +45321,7 @@ state: pending_fill is a kind of moment state, and this channel doesn't update i
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Information of the public trade object.</td>
 </tr>
 <tr>
@@ -45409,7 +45409,7 @@ state: pending_fill is a kind of moment state, and this channel doesn't update i
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -45543,7 +45543,7 @@ state: pending_fill is a kind of moment state, and this channel doesn't update i
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -47571,12 +47571,12 @@ Order sizes equation: pendingFillSz + canceledSz + accFillSz = sz
 </thead><tbody>
 <tr>
 <td>asks</td>
-<td>Array</td>
+<td>Array of string</td>
 <td>Order book on sell side</td>
 </tr>
 <tr>
 <td>bids</td>
-<td>Array</td>
+<td>Array of string</td>
 <td>Order book on buy side</td>
 </tr>
 <tr>
@@ -48180,7 +48180,7 @@ Rate limit is shared with the Nitro Spread `Place order` REST API endpoints
 </tr>
 <tr>
 <td>args</td>
-<td>Array</td>
+<td>Array of object</td>
 <td>Yes</td>
 <td>Request parameters</td>
 </tr>
@@ -48305,7 +48305,7 @@ Rate limit is shared with the Nitro Spread `Place order` REST API endpoints
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Data</td>
 </tr>
 <tr>
@@ -48386,7 +48386,7 @@ Rate limit is shared with the `Amend order` REST API endpoints
 </tr>
 <tr>
 <td>args</td>
-<td>Array</td>
+<td>Array of object</td>
 <td>Yes</td>
 <td>Request Parameters</td>
 </tr>
@@ -48503,7 +48503,7 @@ Rate limit is shared with the `Amend order` REST API endpoints
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of object</td>
 <td>Data</td>
 </tr>
 <tr>
@@ -48587,7 +48587,7 @@ Rate limit is shared with the Nitro Spread `Cancel order` REST API endpoints
 </tr>
 <tr>
 <td>args</td>
-<td>Array</td>
+<td>Array of object</td>
 <td>Yes</td>
 <td>Request Parameters</td>
 </tr>
@@ -48681,7 +48681,7 @@ Rate limit is shared with the Nitro Spread `Cancel order` REST API endpoints
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Data</td>
 </tr>
 <tr>
@@ -48745,7 +48745,7 @@ Cancel order returns with sCode equal to 0. It is not strictly considered that t
 </tr>
 <tr>
 <td>args</td>
-<td>Array</td>
+<td>Array of object</td>
 <td>Yes</td>
 <td>Request parameters</td>
 </tr>
@@ -48811,7 +48811,7 @@ Cancel order returns with sCode equal to 0. It is not strictly considered that t
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Data</td>
 </tr>
 <tr>
@@ -48872,7 +48872,7 @@ Cancel order returns with sCode equal to 0. It is not strictly considered that t
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -49044,7 +49044,7 @@ Cancel order returns with sCode equal to 0. It is not strictly considered that t
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of object</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -49220,7 +49220,7 @@ Cancel order returns with sCode equal to 0. It is not strictly considered that t
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -49371,7 +49371,7 @@ Cancel order returns with sCode equal to 0. It is not strictly considered that t
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of object</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -49550,7 +49550,7 @@ Cancel order returns with sCode equal to 0. It is not strictly considered that t
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -49747,17 +49747,17 @@ Cancel order returns with sCode equal to 0. It is not strictly considered that t
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of object</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
 <td>&gt; asks</td>
-<td>Array</td>
+<td>Array of string</td>
 <td>Order book on sell side</td>
 </tr>
 <tr>
 <td>&gt; bids</td>
-<td>Array</td>
+<td>Array of string</td>
 <td>Order book on buy side</td>
 </tr>
 <tr>
@@ -49847,7 +49847,7 @@ An example of the array of asks and bids values: ["411.8", "10", "4"]<br>
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -49983,7 +49983,7 @@ An example of the array of asks and bids values: ["411.8", "10", "4"]<br>
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of object</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -50052,7 +50052,7 @@ The fastest rate is 1 update/100ms. There will be no update if the event is not 
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -50194,7 +50194,7 @@ The fastest rate is 1 update/100ms. There will be no update if the event is not 
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of object</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -50298,18 +50298,18 @@ For Spot vs USDT-margined contracts spread and USDT-margined contracts spread, t
 </tr>
 <tr>
 <td>args</td>
-<td>Array</td>
+<td>Array of object</td>
 <td>Yes</td>
 <td>List of subscribed channels</td>
 </tr>
 <tr>
-<td>channel</td>
+<td>&gt; channel</td>
 <td>String</td>
 <td>Yes</td>
 <td>Channel name <br><code>sprd-candle3M</code> <code>sprd-candle1M</code> <br><code>sprd-candle1W</code> <br><code>sprd-candle1D</code> <code>sprd-candle2D</code> <code>sprd-candle3D</code> <code>sprd-candle5D</code> <br><code>sprd-candle12H</code> <code>sprd-candle6H</code> <code>sprd-candle4H</code> <code>sprd-candle2H</code> <code>sprd-candle1H</code> <br><code>sprd-candle30m</code> <code>sprd-candle15m</code> <code>sprd-candle5m</code> <code>sprd-candle3m</code> <code>sprd-candle1m</code> <br><code>sprd-candle3Mutc</code> <code>sprd-candle1Mutc</code> <code>sprd-candle1Wutc</code> <code>sprd-candle1Dutc</code> <code>sprd-candle2Dutc</code> <code>sprd-candle3Dutc</code> <code>sprd-candle5Dutc</code> <code>sprd-candle12Hutc</code> <code>sprd-candle6Hutc</code></td>
 </tr>
 <tr>
-<td>sprdId</td>
+<td>&gt; sprdId</td>
 <td>String</td>
 <td>Yes</td>
 <td>Spread ID</td>
@@ -50430,7 +50430,7 @@ For Spot vs USDT-margined contracts spread and USDT-margined contracts spread, t
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of Arrays</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -50872,7 +50872,7 @@ When a product is going to be delisted (e.g. when a FUTURES contract is settled 
 </tr>
 <tr>
 <td style="text-align: left">details</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Delivery/exercise details</td>
 </tr>
 <tr>
@@ -51746,7 +51746,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </tr>
 <tr>
 <td style="text-align: left">details</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">New discount details.</td>
 </tr>
 <tr>
@@ -52169,7 +52169,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </thead><tbody>
 <tr>
 <td style="text-align: left">basic</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Basic interest rate</td>
 </tr>
 <tr>
@@ -52189,7 +52189,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </tr>
 <tr>
 <td style="text-align: left">vip</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Interest info for vip users</td>
 </tr>
 <tr>
@@ -52209,7 +52209,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </tr>
 <tr>
 <td style="text-align: left">regular</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Interest info for regular users</td>
 </tr>
 <tr>
@@ -52691,7 +52691,7 @@ The enumeration value `regular_update` of type field is used to present up-to-mi
 </tr>
 <tr>
 <td style="text-align: left">tickBand</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Tick size band</td>
 </tr>
 <tr>
@@ -53781,7 +53781,7 @@ Authentication is required for this endpoint. This endpoint is only supported in
 </tr>
 <tr>
 <td>args</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -53943,7 +53943,7 @@ Authentication is required for this endpoint. This endpoint is only supported in
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Subscribed data</td>
 </tr>
 <tr>
@@ -54153,7 +54153,7 @@ When a product is going to be delisted (e.g. when a FUTURES contract is settled 
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -54288,7 +54288,7 @@ When a product is going to be delisted (e.g. when a FUTURES contract is settled 
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -54351,7 +54351,7 @@ When a product is going to be delisted (e.g. when a FUTURES contract is settled 
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -54494,7 +54494,7 @@ When a product is going to be delisted (e.g. when a FUTURES contract is settled 
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -54601,7 +54601,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -54734,7 +54734,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -54802,7 +54802,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -54951,7 +54951,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -55087,7 +55087,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -55257,7 +55257,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -55315,7 +55315,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -55449,7 +55449,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -55507,7 +55507,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -55645,7 +55645,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -55723,7 +55723,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -55853,7 +55853,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of Arrays</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -55921,7 +55921,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -56048,7 +56048,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of Arrays</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -56120,7 +56120,7 @@ The order of the returned values is: [ts,o,h,l,c,confirm]
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td style="text-align: left">List of subscribed channels</td>
 </tr>
@@ -56191,7 +56191,7 @@ The order of the returned values is: [ts,o,h,l,c,confirm]
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Subscribed data</td>
 </tr>
 <tr>
@@ -56211,7 +56211,7 @@ The order of the returned values is: [ts,o,h,l,c,confirm]
 </tr>
 <tr>
 <td style="text-align: left">&gt; details</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Liquidation details</td>
 </tr>
 <tr>
@@ -56290,7 +56290,7 @@ The order of the returned values is: [ts,o,h,l,c,confirm]
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -56456,7 +56456,7 @@ The order of the returned values is: [ts,o,h,l,c,confirm]
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Subscribed data</td>
 </tr>
 <tr>
@@ -56568,7 +56568,7 @@ This endpoint is only supported in production environment.
 </tr>
 <tr>
 <td>args</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -56693,7 +56693,7 @@ This endpoint is only supported in production environment.
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -59244,7 +59244,7 @@ body
 <td style="text-align: left">type</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Bill type<br><code>1</code>: Deposit<br><code>2</code>: Withdrawal<br><code>13</code>: Canceled withdrawal<br><code>20</code>: Transfer to sub account (for master account)<br><code>21</code>: Transfer from sub account (for master account)<br><code>22</code>: Transfer out from sub to master account (for sub-account)<br><code>23</code>: Transfer in from master to sub account (for sub-account)<br><code>28</code>: Manually claimed Airdrop<br><code>47</code>: System reversal<br><code>48</code>: Event Reward<br><code>49</code>: Event Giveaway<br><code>68</code>: Fee rebate (by rebate card)<br><code>72</code>: Token received<br><code>73</code>: Token given away<br><code>74</code>: Token refunded<br><code>75</code>: Subscription to savings<br><code>76</code>: Redemption to savings<br><code>77</code>: Jumpstart distribute<br><code>78</code>: Jumpstart lock up<br><code>80</code>: DEFI/Staking purchase<br><code>82</code>: DEFI/Staking redemption<br><code>83</code>: Staking yield<br><code>84</code>: Violation fee<br><code>116</code>: [Fiat] Place an order<br><code>117</code>: [Fiat] Fulfill an order<br><code>118</code>: [Fiat] Cancel an order<br><code>124</code>: Jumpstart unlocking<br><code>130</code>: Transferred from Trading account<br><code>131</code>: Transferred to Trading account<br><code>132</code>: [P2P] Frozen by customer service<br><code>133</code>: [P2P] Unfrozen by customer service<br><code>134</code>: [P2P] Transferred by customer service<br><code>135</code>: Cross chain exchange<br><code>137</code>: [ETH Staking] Subscription<br><code>138</code>: [ETH Staking] Swapping<br><code>139</code>: [ETH Staking] Earnings<br><code>146</code>: Customer feedback<br><code>150</code>: Affiliate commission<br><code>151</code>: Referral reward<br><code>152</code>: Broker reward<br><code>160</code>: Dual Investment subscribe<br><code>161</code>: Dual Investment collection<br><code>162</code>: Dual Investment profit<br><code>163</code>: Dual Investment refund<br><code>172</code>: [Affiliate] Sub-affiliate commission<br><code>173</code>: [Affiliate] Fee rebate (by trading fee)<br><code>174</code>: Jumpstart Pay<br><code>175</code>: Locked collateral<br><code>176</code>: Loan<br><code>177</code>: Added collateral<br><code>178</code>: Returned collateral<br><code>179</code>: Repayment<br><code>180</code>: Unlocked collateral<br><code>181</code>: Airdrop payment<br><code>185</code>: [Broker] Convert reward<br><code>187</code>: [Broker] Convert transfer<br><code>189</code>: Mystery box bonus<br><code>195</code>: Untradable asset withdrawal<br><code>196</code>: Untradable asset withdrawal revoked<br><code>197</code>: Untradable asset deposit<br><code>198</code>: Untradable asset collection reduce<br><code>199</code>: Untradable asset collection increase<br><code>200</code>: Buy<br><code>202</code>: Price Lock Subscribe<br><code>203</code>: Price Lock Collection<br><code>204</code>: Price Lock Profit<br><code>205</code>: Price Lock Refund<br><code>207</code>: Dual Investment Lite Subscribe<br><code>208</code>: Dual Investment Lite Collection<br><code>209</code>: Dual Investment Lite Profit<br><code>210</code>: Dual Investment Lite Refund<br><code>212</code>: [Flexible loan] Multi-collateral loan collateral locked<br><code>215</code>: [Flexible loan] Multi-collateral loan collateral released<br><code>217</code>: [Flexible loan] Multi-collateral loan borrowed<br><code>218</code>: [Flexible loan] Multi-collateral loan repaid<br><code>232</code>: [Flexible loan] Subsidized interest received<br><code>220</code>: Delisted crypto<br><code>221</code>: Blockchain&#39;s withdrawal fee<br><code>222</code>: Withdrawal fee refund<br><code>223</code>: SWAP lead trading profit share<br><code>225</code>: Shark Fin subscribe<br><code>226</code>: Shark Fin collection<br><code>227</code>: Shark Fin profit<br><code>228</code>: Shark Fin refund<br><code>229</code>: Airdrop<br><code>232</code>: Subsidized interest received<br><code>233</code>: Broker rebate compensation<br><code>240</code>: Snowball subscribe<br><code>241</code>: Snowball refund<br><code>242</code>: Snowball profit<br><code>243</code>: Snowball trading failed<br><code>249</code>: Seagull subscribe<br><code>250</code>: Seagull collection<br><code>251</code>: Seagull profit<br><code>252</code>: Seagull refund<br><code>263</code>: Strategy bots profit share<br><code>265</code>: Signal revenue<br><code>266</code>: SPOT lead trading profit share<br><code>270</code>: DCD broker transfer<br><code>271</code>: DCD broker rebate<br><code>272</code>: [Convert] Buy Crypto/Fiat<br><code>273</code>: [Convert] Sell Crypto/Fiat<br><code>284</code>: [Custody] Transfer out trading sub-account<br><code>285</code>: [Custody] Transfer in trading sub-account<br><code>286</code>: [Custody] Transfer out custody funding account<br><code>287</code>: [Custody] Transfer in custody funding account<br><code>288</code>: [Custody] Fund delegation <br><code>289</code>: [Custody] Fund undelegation<br><code>299</code>: Affiliate recommendation commission<br><code>300</code>: Fee discount rebate<br><code>303</code>: Snowball market maker transfer<br><del><code>304</code>: [Simple Earn Fixed] Order submission</del><br><del><code>305</code>: [Simple Earn Fixed] Order redemption</del><br><del><code>306</code>: [Simple Earn Fixed] Principal distribution</del><br><del><code>307</code>: [Simple Earn Fixed] Interest distribution (early termination compensation)</del><br><del><code>308</code>: [Simple Earn Fixed] Interest distribution</del><br><del><code>309</code>: [Simple Earn Fixed] Interest distribution (extension compensation) </del><br><code>311</code>: Crypto dust auto-transfer in<br><code>313</code>: Sent by gift<br><code>314</code>: Received from gift<br><code>315</code>: Refunded from gift<br><code>328</code>: [SOL staking] Send Liquidity Staking Token reward<br><code>329</code>: [SOL staking] Subscribe Liquidity Staking Token staking<br><code>330</code>: [SOL staking] Mint Liquidity Staking Token<br><code>331</code>: [SOL staking] Redeem Liquidity Staking Token order<br><code>332</code>: [SOL staking] Settle Liquidity Staking Token order<br><code>333</code>: Trial fund reward<br><code>336</code>: [Credit line] Loan Forced Repayment<br><code>338</code>: [Credit line] Forced Repayment Refund<br><code>354</code>: Copy and bot rewards</td>
+<td style="text-align: left">Bill type<br><code>1</code>: Deposit<br><code>2</code>: Withdrawal<br><code>13</code>: Canceled withdrawal<br><code>20</code>: Transfer to sub account (for master account)<br><code>21</code>: Transfer from sub account (for master account)<br><code>22</code>: Transfer out from sub to master account (for sub-account)<br><code>23</code>: Transfer in from master to sub account (for sub-account)<br><code>28</code>: Manually claimed Airdrop<br><code>47</code>: System reversal<br><code>48</code>: Event Reward<br><code>49</code>: Event Giveaway<br><code>68</code>: Fee rebate (by rebate card)<br><code>72</code>: Token received<br><code>73</code>: Token given away<br><code>74</code>: Token refunded<br><code>75</code>: Subscription to savings<br><code>76</code>: Redemption to savings<br><code>77</code>: Jumpstart distribute<br><code>78</code>: Jumpstart lock up<br><code>80</code>: DEFI/Staking purchase<br><code>82</code>: DEFI/Staking redemption<br><code>83</code>: Staking yield<br><code>84</code>: Violation fee<br><code>89</code>: Deposit yield<br><code>116</code>: [Fiat] Place an order<br><code>117</code>: [Fiat] Fulfill an order<br><code>118</code>: [Fiat] Cancel an order<br><code>124</code>: Jumpstart unlocking<br><code>130</code>: Transferred from Trading account<br><code>131</code>: Transferred to Trading account<br><code>132</code>: [P2P] Frozen by customer service<br><code>133</code>: [P2P] Unfrozen by customer service<br><code>134</code>: [P2P] Transferred by customer service<br><code>135</code>: Cross chain exchange<br><code>137</code>: [ETH Staking] Subscription<br><code>138</code>: [ETH Staking] Swapping<br><code>139</code>: [ETH Staking] Earnings<br><code>146</code>: Customer feedback<br><code>150</code>: Affiliate commission<br><code>151</code>: Referral reward<br><code>152</code>: Broker reward<br><code>160</code>: Dual Investment subscribe<br><code>161</code>: Dual Investment collection<br><code>162</code>: Dual Investment profit<br><code>163</code>: Dual Investment refund<br><code>172</code>: [Affiliate] Sub-affiliate commission<br><code>173</code>: [Affiliate] Fee rebate (by trading fee)<br><code>174</code>: Jumpstart Pay<br><code>175</code>: Locked collateral<br><code>176</code>: Loan<br><code>177</code>: Added collateral<br><code>178</code>: Returned collateral<br><code>179</code>: Repayment<br><code>180</code>: Unlocked collateral<br><code>181</code>: Airdrop payment<br><code>185</code>: [Broker] Convert reward<br><code>187</code>: [Broker] Convert transfer<br><code>189</code>: Mystery box bonus<br><code>195</code>: Untradable asset withdrawal<br><code>196</code>: Untradable asset withdrawal revoked<br><code>197</code>: Untradable asset deposit<br><code>198</code>: Untradable asset collection reduce<br><code>199</code>: Untradable asset collection increase<br><code>200</code>: Buy<br><code>202</code>: Price Lock Subscribe<br><code>203</code>: Price Lock Collection<br><code>204</code>: Price Lock Profit<br><code>205</code>: Price Lock Refund<br><code>207</code>: Dual Investment Lite Subscribe<br><code>208</code>: Dual Investment Lite Collection<br><code>209</code>: Dual Investment Lite Profit<br><code>210</code>: Dual Investment Lite Refund<br><code>212</code>: [Flexible loan] Multi-collateral loan collateral locked<br><code>215</code>: [Flexible loan] Multi-collateral loan collateral released<br><code>217</code>: [Flexible loan] Multi-collateral loan borrowed<br><code>218</code>: [Flexible loan] Multi-collateral loan repaid<br><code>232</code>: [Flexible loan] Subsidized interest received<br><code>220</code>: Delisted crypto<br><code>221</code>: Blockchain&#39;s withdrawal fee<br><code>222</code>: Withdrawal fee refund<br><code>223</code>: SWAP lead trading profit share<br><code>225</code>: Shark Fin subscribe<br><code>226</code>: Shark Fin collection<br><code>227</code>: Shark Fin profit<br><code>228</code>: Shark Fin refund<br><code>229</code>: Airdrop<br><code>232</code>: Subsidized interest received<br><code>233</code>: Broker rebate compensation<br><code>240</code>: Snowball subscribe<br><code>241</code>: Snowball refund<br><code>242</code>: Snowball profit<br><code>243</code>: Snowball trading failed<br><code>249</code>: Seagull subscribe<br><code>250</code>: Seagull collection<br><code>251</code>: Seagull profit<br><code>252</code>: Seagull refund<br><code>263</code>: Strategy bots profit share<br><code>265</code>: Signal revenue<br><code>266</code>: SPOT lead trading profit share<br><code>270</code>: DCD broker transfer<br><code>271</code>: DCD broker rebate<br><code>272</code>: [Convert] Buy Crypto/Fiat<br><code>273</code>: [Convert] Sell Crypto/Fiat<br><code>284</code>: [Custody] Transfer out trading sub-account<br><code>285</code>: [Custody] Transfer in trading sub-account<br><code>286</code>: [Custody] Transfer out custody funding account<br><code>287</code>: [Custody] Transfer in custody funding account<br><code>288</code>: [Custody] Fund delegation <br><code>289</code>: [Custody] Fund undelegation<br><code>299</code>: Affiliate recommendation commission<br><code>300</code>: Fee discount rebate<br><code>303</code>: Snowball market maker transfer<br><del><code>304</code>: [Simple Earn Fixed] Order submission</del><br><del><code>305</code>: [Simple Earn Fixed] Order redemption</del><br><del><code>306</code>: [Simple Earn Fixed] Principal distribution</del><br><del><code>307</code>: [Simple Earn Fixed] Interest distribution (early termination compensation)</del><br><del><code>308</code>: [Simple Earn Fixed] Interest distribution</del><br><del><code>309</code>: [Simple Earn Fixed] Interest distribution (extension compensation) </del><br><code>311</code>: Crypto dust auto-transfer in<br><code>313</code>: Sent by gift<br><code>314</code>: Received from gift<br><code>315</code>: Refunded from gift<br><code>328</code>: [SOL staking] Send Liquidity Staking Token reward<br><code>329</code>: [SOL staking] Subscribe Liquidity Staking Token staking<br><code>330</code>: [SOL staking] Mint Liquidity Staking Token<br><code>331</code>: [SOL staking] Redeem Liquidity Staking Token order<br><code>332</code>: [SOL staking] Settle Liquidity Staking Token order<br><code>333</code>: Trial fund reward<br><code>336</code>: [Credit line] Loan Forced Repayment<br><code>338</code>: [Credit line] Forced Repayment Refund<br><code>354</code>: Copy and bot rewards</td>
 </tr>
 <tr>
 <td style="text-align: left">clientId</td>
@@ -59441,7 +59441,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">addrEx</td>
-<td style="text-align: left">Object<json></td>
+<td style="text-align: left">Object</td>
 <td style="text-align: left">Deposit address attachment (This will not be returned if the currency does not require this)<br>e.g. <code>TONCOIN</code> attached tag name is <code>comment</code>, the return will be <code>{&#39;comment&#39;:&#39;123456&#39;}</code></td>
 </tr>
 <tr>
@@ -63231,7 +63231,7 @@ Supports subscriptions for accounts<br></p>
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -63378,7 +63378,7 @@ Supports subscriptions for accounts<br></p>
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -63496,7 +63496,7 @@ Supports subscriptions for accounts<br></p>
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -63651,7 +63651,7 @@ Supports subscriptions for accounts<br></p>
 </tr>
 <tr>
 <td>data</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -64245,7 +64245,7 @@ body
 </tr>
 <tr>
 <td>details</td>
-<td>Array</td>
+<td>Array of objects</td>
 <td>Detailed asset information in all currencies</td>
 </tr>
 <tr>
@@ -65274,7 +65274,7 @@ body
 </tr>
 <tr>
 <td>investData</td>
-<td>Array</td>
+<td>Array of object</td>
 <td>Current target currency information available for investment</td>
 </tr>
 <tr>
@@ -65364,7 +65364,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">investData</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td style="text-align: left">Investment data</td>
 </tr>
@@ -66003,7 +66003,7 @@ body
 </tr>
 <tr>
 <td>investData</td>
-<td>Array</td>
+<td>Array of object</td>
 <td>Investment data</td>
 </tr>
 <tr>
@@ -66018,7 +66018,7 @@ body
 </tr>
 <tr>
 <td>earningData</td>
-<td>Array</td>
+<td>Array of object</td>
 <td>Earning data</td>
 </tr>
 <tr>
@@ -68257,7 +68257,7 @@ GET /api/v5/system/status?state<span class="o">=</span>canceled
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -68380,7 +68380,7 @@ GET /api/v5/system/status?state<span class="o">=</span>canceled
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">Array</td>
+<td style="text-align: left">Array of objects</td>
 <td>Subscribed data</td>
 </tr>
 <tr>
@@ -72521,56 +72521,6 @@ For private endpoint, the response is restricted based on your country of reside
 <td>59319</td>
 <td>200</td>
 <td>You can’t repay your loan order because your funds are in use. Make them available for full repayment.</td>
-</tr>
-<tr>
-<td>59320</td>
-<td>200</td>
-<td>Borrow quota exceeded</td>
-</tr>
-<tr>
-<td>59321</td>
-<td>200</td>
-<td>Borrowing isn&#39;t available in your region.</td>
-</tr>
-<tr>
-<td>59322</td>
-<td>200</td>
-<td>This action is unavailable for this order.</td>
-</tr>
-<tr>
-<td>59323</td>
-<td>200</td>
-<td>Borrowing amount is less than minimum</td>
-</tr>
-<tr>
-<td>59324</td>
-<td>200</td>
-<td>No available lending offer</td>
-</tr>
-<tr>
-<td>59325</td>
-<td>200</td>
-<td>Repay the full loan amount to proceed.</td>
-</tr>
-<tr>
-<td>59326</td>
-<td>200</td>
-<td>Invalid lending amount. Lending amount has to be between {minLend} to {lendQuota}.</td>
-</tr>
-<tr>
-<td>59327</td>
-<td>200</td>
-<td>You can’t renew your loan order automatically because the amount you’re renewing isn’t enough to cover your current liability. Repay manually to avoid high overdue interest.</td>
-</tr>
-<tr>
-<td>59328</td>
-<td>200</td>
-<td>Lending APR has to be between {minRate} to {maxRate}.</td>
-</tr>
-<tr>
-<td>59329</td>
-<td>200</td>
-<td>Liability reduction failed. Repay this order instead.</td>
 </tr>
 <tr>
 <td>59401</td>
