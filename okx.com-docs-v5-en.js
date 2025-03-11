@@ -1382,6 +1382,12 @@
                 <a href="#public-data-rest-api-get-open-interest" class="toc-h3 toc-link" data-title="Get open interest">Get open interest</a>
               </li>
               <li>
+                <a href="#public-data-rest-api-get-estimated-future-settlement-price" class="toc-h3 toc-link" data-title="Get estimated future settlement price">Get estimated future settlement price</a>
+              </li>
+              <li>
+                <a href="#public-data-rest-api-get-futures-settlement-history" class="toc-h3 toc-link" data-title="Get futures settlement history">Get futures settlement history</a>
+              </li>
+              <li>
                 <a href="#public-data-rest-api-get-funding-rate" class="toc-h3 toc-link" data-title="Get funding rate">Get funding rate</a>
               </li>
               <li>
@@ -30498,6 +30504,7 @@ body
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="nl">"algoId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"623833708424069120"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"algoClOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"algoOrdType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contract"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"availBal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.6561369013122267"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"cTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1695005546360"</span><span class="p">,</span><span class="w">
@@ -30762,6 +30769,7 @@ body
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="nl">"algoId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"623833708424069120"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"algoClOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"algoOrdType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contract"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"availBal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.6561369013122267"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"cTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1695005546360"</span><span class="p">,</span><span class="w">
@@ -31026,6 +31034,7 @@ body
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="nl">"algoId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"623833708424069120"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"algoClOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"algoOrdType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contract"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"availBal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.6561369013122267"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"cTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1695005546360"</span><span class="p">,</span><span class="w">
@@ -31715,7 +31724,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Array of objects contains the response results</td>
 </tr>
 </tbody></table>
@@ -31815,7 +31824,7 @@ body
 </tr>
 <tr>
 <td style="text-align: left">data</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">Array of objects contains the response results</td>
 </tr>
 <tr>
@@ -32172,6 +32181,11 @@ GET /api/v5/tradingBot/signal/sub-orders?algoId<span class="o">=</span>623833708
 <th style="text-align: left"><strong>Description</strong></th>
 </tr>
 </thead><tbody>
+<tr>
+<td style="text-align: left">alertMsg</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Alert message</td>
+</tr>
 <tr>
 <td style="text-align: left">algoId</td>
 <td style="text-align: left">String</td>
@@ -33420,6 +33434,11 @@ body
 <td style="text-align: left">tag</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Order tag</td>
+</tr>
+<tr>
+<td style="text-align: left">algoClOrdId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Client-supplied Algo ID</td>
 </tr>
 </tbody></table>
 <h3 id='order-book-trading-recurring-buy-ws-recurring-buy-orders-channel'>WS / Recurring buy orders channel</h3>
@@ -41867,7 +41886,7 @@ body
 <td style="text-align: left">Array of objects containing the results.</td>
 </tr>
 <tr>
-<td style="text-align: left">ts</td>
+<td style="text-align: left">&gt; ts</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">The timestamp of re-setting successfully. Unix timestamp format in milliseconds, e.g. <code>1597026383085</code>.</td>
 </tr>
@@ -51000,6 +51019,178 @@ When a product is going to be delisted (e.g. when a FUTURES contract is settled 
 <td style="text-align: left">ts</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Data return time,  Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
+</tr>
+</tbody></table>
+<h3 id='public-data-rest-api-get-estimated-future-settlement-price'>Get estimated future settlement price</h3>
+<p>Only applicable to demo trading.<br>
+Retrieve the estimated settlement price which will only have a return value one hour before the settlement.</p>
+<h4 id='public-data-rest-api-get-estimated-future-settlement-price-rate-limit-10-requests-per-2-seconds'>Rate Limit: 10 requests per 2 seconds</h4><h4 id='public-data-rest-api-get-estimated-future-settlement-price-rate-limit-rule-ip-instrument-id'>Rate limit rule: IP + Instrument ID</h4><h4 id='public-data-rest-api-get-estimated-future-settlement-price-http-request'>HTTP Request</h4>
+<p><code>GET /api/v5/public/estimated-settlement-info</code></p>
+
+<blockquote>
+<p>Request Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>GET /api/v5/public/estimated-settlement-info?instId<span class="o">=</span>XRP-USDT-250307
+</code></pre></div><h4 id='public-data-rest-api-get-estimated-future-settlement-price-request-parameters'>Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Instrument ID, e.g. <code>XRP-USDT-250307</code> <br>only applicable to <code>FUTURES</code></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"estSettlePx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.5666068562369959"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XRP-USDT-250307"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"nextSettleTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1741248000000"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1741246429748"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='public-data-rest-api-get-estimated-future-settlement-price-response-parameters'>Response Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left"><strong>Parameter</strong></th>
+<th style="text-align: left"><strong>Type</strong></th>
+<th style="text-align: left"><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Instrument ID, e.g. <code>XRP-USDT-250307</code></td>
+</tr>
+<tr>
+<td style="text-align: left">nextSettleTime</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Next settlement time, Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
+</tr>
+<tr>
+<td style="text-align: left">estSettlePx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Estimated settlement price</td>
+</tr>
+<tr>
+<td style="text-align: left">ts</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Data return time, Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
+</tr>
+</tbody></table>
+<h3 id='public-data-rest-api-get-futures-settlement-history'>Get futures settlement history</h3>
+<p>Only applicable to demo trading.<br>
+Retrieve settlement records of futures in the last 3 months.</p>
+<h4 id='public-data-rest-api-get-futures-settlement-history-rate-limit-40-requests-per-2-seconds'>Rate Limit: 40 requests per 2 seconds</h4><h4 id='public-data-rest-api-get-futures-settlement-history-rate-limit-rule-ip-instrument-family'>Rate limit rule: IP + (Instrument Family)</h4><h4 id='public-data-rest-api-get-futures-settlement-history-http-request'>HTTP Request</h4>
+<p><code>GET /api/v5/public/settlement-history</code></p>
+
+<blockquote>
+<p>Request Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>GET /api/v5/public/settlement-history?instFamily<span class="o">=</span>XRP-USD
+</code></pre></div><h4 id='public-data-rest-api-get-futures-settlement-history-request-parameters'>Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instFamily</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Instrument family</td>
+</tr>
+<tr>
+<td style="text-align: left">after</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Pagination of data to return records earlier than (not include) the requested <code>ts</code></td>
+</tr>
+<tr>
+<td style="text-align: left">before</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Pagination of data to return records newer than (not include) the requested <code>ts</code></td>
+</tr>
+<tr>
+<td style="text-align: left">limit</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Number of results per request. The maximum is <code>100</code>. The default is <code>100</code></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XRP-USDT-250307"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"settlePx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.5192078615298715"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1741161600000"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XRP-USDT-250307"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"settlePx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.5551316341327384"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1741075200000"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='public-data-rest-api-get-futures-settlement-history-response-parameters'>Response Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">ts</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Settlement time, Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
+</tr>
+<tr>
+<td style="text-align: left">details</td>
+<td style="text-align: left">Array of objects</td>
+<td style="text-align: left">Settlement info</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; insId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Instrument ID</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; px</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Settlement price</td>
 </tr>
 </tbody></table>
 <h3 id='public-data-rest-api-get-funding-rate'>Get funding rate</h3>
@@ -62236,7 +62427,7 @@ body
 <td>An array containing information about payment accounts associated with the currency and method.</td>
 </tr>
 <tr>
-<td>&gt; paymentAccId</td>
+<td>&gt; paymentAcctId</td>
 <td>String</td>
 <td>The account ID for withdrawal</td>
 </tr>
@@ -63057,11 +63248,6 @@ Only supported withdrawal of assets from funding account.</p>
 <td>paymentMethod</td>
 <td>String</td>
 <td>Payment Method<br><code>TR_BANKS</code></td>
-</tr>
-<tr>
-<td>paymentMethodId</td>
-<td>String</td>
-<td>Payment method ID</td>
 </tr>
 <tr>
 <td>state</td>
@@ -64171,7 +64357,7 @@ body
 <tr>
 <td>uTime</td>
 <td>String</td>
-<td>The latest time to get account information, millisecond format of Unix timestamp, e.g. <code>1597026383085</code></td>
+<td>Update time of account information, millisecond format of Unix timestamp, e.g. <code>1597026383085</code></td>
 </tr>
 <tr>
 <td>totalEq</td>
@@ -64186,32 +64372,32 @@ body
 <tr>
 <td>adjEq</td>
 <td>String</td>
-<td>Adjusted / Effective equity in <code>USD</code> <br>The net fiat value of the assets in the account that can provide margins for spot, expiry futures, perpetual futures and options under the cross-margin mode. <br>In multi-ccy or PM mode, the asset and margin requirement will all be converted to USD value to process the order check or liquidation. <br>Due to the volatility of each currency market, our platform calculates the actual USD value of each currency based on discount rates to balance market risks. <br>Applicable to <code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
+<td>Adjusted / Effective equity in <code>USD</code> <br>The net fiat value of the assets in the account that can provide margins for spot, expiry futures, perpetual futures and options under the cross-margin mode. <br>In multi-ccy or PM mode, the asset and margin requirement will all be converted to USD value to process the order check or liquidation. <br>Due to the volatility of each currency market, our platform calculates the actual USD value of each currency based on discount rates to balance market risks. <br>Applicable to <code>Spot mode</code>/<code>Multi-currency margin</code> and <code>Portfolio margin</code></td>
 </tr>
 <tr>
 <td>ordFroz</td>
 <td>String</td>
-<td>Margin frozen for pending cross orders in <code>USD</code> <br>Applicable to <code>Multi-currency margin</code></td>
+<td>Cross margin frozen for pending orders in <code>USD</code> <br>Only applicable to <code>Spot mode</code>/<code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
 </tr>
 <tr>
 <td>imr</td>
 <td>String</td>
-<td>Initial margin requirement in <code>USD</code> <br>The sum of initial margins of all open positions and pending orders under cross-margin mode in <code>USD</code>. <br>Applicable to <code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
+<td>Initial margin requirement in <code>USD</code> <br>The sum of initial margins of all open positions and pending orders under cross-margin mode in <code>USD</code>. <br>Applicable to <code>Spot mode</code>/<code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
 </tr>
 <tr>
 <td>mmr</td>
 <td>String</td>
-<td>Maintenance margin requirement in <code>USD</code> <br>The sum of maintenance margins of all open positions and pending orders under cross-margin mode in <code>USD</code>. <br>Applicable to <code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
+<td>Maintenance margin requirement in <code>USD</code> <br>The sum of maintenance margins of all open positions and pending orders under cross-margin mode in <code>USD</code>. <br>Applicable to <code>Spot mode</code>/<code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
 </tr>
 <tr>
 <td>borrowFroz</td>
 <td>String</td>
-<td>Potential borrowing IMR of the account in <code>USD</code> <br>Only applicable to <code>Multi-currency margin</code>/<code>Portfolio margin</code>. It is &quot;&quot; for other margin modes.</td>
+<td>Potential borrowing IMR of the account in <code>USD</code> <br>Only applicable to <code>Spot mode</code>/<code>Multi-currency margin</code>/<code>Portfolio margin</code>. It is &quot;&quot; for other margin modes.</td>
 </tr>
 <tr>
 <td>mgnRatio</td>
 <td>String</td>
-<td>Margin ratio in <code>USD</code>. <br>Applicable to <code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
+<td>Margin ratio in <code>USD</code> <br>Applicable to <code>Spot mode</code>/<code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
 </tr>
 <tr>
 <td>notionalUsd</td>
@@ -64261,12 +64447,12 @@ body
 <tr>
 <td>&gt; cashBal</td>
 <td>String</td>
-<td>Cash Balance</td>
+<td>Cash balance</td>
 </tr>
 <tr>
 <td>&gt; uTime</td>
 <td>String</td>
-<td>Update time, Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
+<td>Update time of currency balance information, Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
 </tr>
 <tr>
 <td>&gt; isoEq</td>
@@ -64274,19 +64460,19 @@ body
 <td>Isolated margin equity of currency<br>Applicable to <code>Spot and futures mode</code>/<code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
 </tr>
 <tr>
-<td>&gt; fixedBal</td>
-<td>String</td>
-<td>Frozen balance for <code>Dip Sniper</code> and <code>Peak Sniper</code></td>
-</tr>
-<tr>
 <td>&gt; availEq</td>
 <td>String</td>
-<td>Available equity of currency <br>The balance that can be used on margin or futures/swap trading. <br>Applicable to <code>Spot and futures mode</code>/<code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
+<td>Available equity of currency<br>Applicable to <code>Spot and futures mode</code>/<code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
 </tr>
 <tr>
 <td>&gt; disEq</td>
 <td>String</td>
-<td>Discount equity of currency in <code>USD</code></td>
+<td>Discount equity of currency in <code>USD</code>.</td>
+</tr>
+<tr>
+<td>&gt; fixedBal</td>
+<td>String</td>
+<td>Frozen balance for <code>Dip Sniper</code> and <code>Peak Sniper</code></td>
 </tr>
 <tr>
 <td>&gt; availBal</td>
@@ -64301,12 +64487,12 @@ body
 <tr>
 <td>&gt; ordFrozen</td>
 <td>String</td>
-<td>Margin frozen for open orders<br>Applicable to <code>Spot mode</code>/<code>Spot and futures mode</code>/<code>Multi-currency margin</code></td>
+<td>Margin frozen for open orders <br>Applicable to <code>Spot mode</code>/<code>Spot and futures mode</code>/<code>Multi-currency margin</code></td>
 </tr>
 <tr>
 <td>&gt; liab</td>
 <td>String</td>
-<td>Liabilities of currency<br>Applicable to <code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
+<td>Liabilities of currency<br>It is a positive value, e.g. <code>21625.64</code><br>Applicable to <code>Spot mode</code>/<code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
 </tr>
 <tr>
 <td>&gt; upl</td>
@@ -64321,12 +64507,17 @@ body
 <tr>
 <td>&gt; crossLiab</td>
 <td>String</td>
-<td>Cross Liabilities of currency<br>Applicable to <code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
+<td>Cross liabilities of currency<br>Applicable to <code>Spot mode</code>/<code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
+</tr>
+<tr>
+<td>&gt; rewardBal</td>
+<td>String</td>
+<td>Trial fund balance</td>
 </tr>
 <tr>
 <td>&gt; isoLiab</td>
 <td>String</td>
-<td>Isolated Liabilities of currency<br>Applicable to <code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
+<td>Isolated liabilities of currency<br>Applicable to <code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
 </tr>
 <tr>
 <td>&gt; mgnRatio</td>
@@ -64346,27 +64537,27 @@ body
 <tr>
 <td>&gt; interest</td>
 <td>String</td>
-<td>Interest of currency<br>Applicable to <code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
+<td>Accrued interest of currency<br>It is a positive value, e.g. <code>9.01</code><br>Applicable to <code>Spot mode</code>/<code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
 </tr>
 <tr>
 <td>&gt; twap</td>
 <td>String</td>
-<td>System&#39;s forced repayment(TWAP) indicator<br>Divided into multiple levels from 0 to 5, the larger the number, the more likely the auto repayment will be triggered.<br>Applicable to <code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
+<td>Risk indicator of auto liability repayment<br>Divided into multiple levels from 0 to 5, the larger the number, the more likely the auto repayment will be triggered. <br>Applicable to <code>Spot mode</code>/<code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
 </tr>
 <tr>
 <td>&gt; maxLoan</td>
 <td>String</td>
-<td>Max loan of currency<br>Applicable to <code>cross</code> of <code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
+<td>Max loan of currency<br>Applicable to <code>cross</code> of <code>Spot mode</code>/<code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
 </tr>
 <tr>
 <td>&gt; eqUsd</td>
 <td>String</td>
-<td>Equity <code>USD</code> of currency</td>
+<td>Equity in <code>USD</code> of currency</td>
 </tr>
 <tr>
 <td>&gt; borrowFroz</td>
 <td>String</td>
-<td>Potential borrowing IMR of currency in <code>USD</code> <br>Only applicable to <code>Multi-currency margin</code>/<code>Portfolio margin</code>. It is &quot;&quot; for other margin modes.</td>
+<td>Potential borrowing IMR of currency in <code>USD</code> <br>Applicable to <code>Multi-currency margin</code>/<code>Portfolio margin</code>. It is &quot;&quot; for other margin modes.</td>
 </tr>
 <tr>
 <td>&gt; notionalLever</td>
@@ -64374,9 +64565,34 @@ body
 <td>Leverage of currency<br>Applicable to <code>Spot and futures mode</code></td>
 </tr>
 <tr>
+<td>&gt; stgyEq</td>
+<td>String</td>
+<td>Strategy equity</td>
+</tr>
+<tr>
+<td>&gt; isoUpl</td>
+<td>String</td>
+<td>Isolated unrealized profit and loss of currency<br>Applicable to <code>Spot and futures mode</code>/<code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
+</tr>
+<tr>
+<td>&gt; spotInUseAmt</td>
+<td>String</td>
+<td>Spot in use amount<br>Applicable to <code>Portfolio margin</code></td>
+</tr>
+<tr>
+<td>&gt; clSpotInUseAmt</td>
+<td>String</td>
+<td>User-defined spot risk offset amount<br>Applicable to <code>Portfolio margin</code></td>
+</tr>
+<tr>
+<td>&gt; maxSpotInUse</td>
+<td>String</td>
+<td>Max possible spot risk offset amount<br>Applicable to <code>Portfolio margin</code></td>
+</tr>
+<tr>
 <td>&gt; spotIsoBal</td>
 <td>String</td>
-<td>SPOT isolated balance. only applicable to copy trading</td>
+<td>Spot isolated balance<br>Applicable to copy trading<br>Applicable to <code>Spot mode</code>/<code>Spot and futures mode</code>.</td>
 </tr>
 <tr>
 <td>&gt; smtSyncEq</td>
