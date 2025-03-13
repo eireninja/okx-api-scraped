@@ -1376,10 +1376,10 @@
                 <a href="#public-data-rest-api-get-instruments" class="toc-h3 toc-link" data-title="Get instruments">Get instruments</a>
               </li>
               <li>
-                <a href="#public-data-rest-api-get-delivery-exercise-history" class="toc-h3 toc-link" data-title="Get delivery/exercise history">Get delivery/exercise history</a>
+                <a href="#public-data-rest-api-get-estimated-delivery-exercise-price" class="toc-h3 toc-link" data-title="Get estimated delivery/exercise price">Get estimated delivery/exercise price</a>
               </li>
               <li>
-                <a href="#public-data-rest-api-get-open-interest" class="toc-h3 toc-link" data-title="Get open interest">Get open interest</a>
+                <a href="#public-data-rest-api-get-delivery-exercise-history" class="toc-h3 toc-link" data-title="Get delivery/exercise history">Get delivery/exercise history</a>
               </li>
               <li>
                 <a href="#public-data-rest-api-get-estimated-future-settlement-price" class="toc-h3 toc-link" data-title="Get estimated future settlement price">Get estimated future settlement price</a>
@@ -1394,13 +1394,13 @@
                 <a href="#public-data-rest-api-get-funding-rate-history" class="toc-h3 toc-link" data-title="Get funding rate history">Get funding rate history</a>
               </li>
               <li>
+                <a href="#public-data-rest-api-get-open-interest" class="toc-h3 toc-link" data-title="Get open interest">Get open interest</a>
+              </li>
+              <li>
                 <a href="#public-data-rest-api-get-limit-price" class="toc-h3 toc-link" data-title="Get limit price">Get limit price</a>
               </li>
               <li>
                 <a href="#public-data-rest-api-get-option-market-data" class="toc-h3 toc-link" data-title="Get option market data">Get option market data</a>
-              </li>
-              <li>
-                <a href="#public-data-rest-api-get-estimated-delivery-exercise-price" class="toc-h3 toc-link" data-title="Get estimated delivery/exercise price">Get estimated delivery/exercise price</a>
               </li>
               <li>
                 <a href="#public-data-rest-api-get-discount-rate-and-interest-free-quota" class="toc-h3 toc-link" data-title="Get discount rate and interest-free quota">Get discount rate and interest-free quota</a>
@@ -1477,7 +1477,7 @@
                 <a href="#public-data-websocket-option-summary-channel" class="toc-h3 toc-link" data-title="Option summary channel">Option summary channel</a>
               </li>
               <li>
-                <a href="#public-data-websocket-estimated-delivery-exercise-price-channel" class="toc-h3 toc-link" data-title="Estimated delivery/exercise price channel">Estimated delivery/exercise price channel</a>
+                <a href="#public-data-websocket-estimated-delivery-exercise-settlement-price-channel" class="toc-h3 toc-link" data-title="Estimated delivery/exercise/settlement price channel">Estimated delivery/exercise/settlement price channel</a>
               </li>
               <li>
                 <a href="#public-data-websocket-mark-price-channel" class="toc-h3 toc-link" data-title="Mark price channel">Mark price channel</a>
@@ -1929,6 +1929,7 @@
 
 <ul>
 <li>For users who complete registration on my.okx.com, please visit <a href="https://my.okx.com/docs-v5/en/">https://my.okx.com/docs-v5/en/</a> for the V5 API documentation.</li>
+<li>For users who complete registration on app.okx.com, please visit <a href="https://my.okx.com/docs-v5/en/">https://app.okx.com/docs-v5/en/</a> for the V5 API documentation.</li>
 </ul>
 <h2 id='overview-api-resources-and-support'>API Resources and Support</h2><h3 id='overview-api-resources-and-support-tutorials'>Tutorials</h3>
 <ul>
@@ -3101,6 +3102,7 @@ The Broker Program includes, and is not limited to, integrated trading platforms
             </span><span class="nl">"ctVal"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"ctValCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"expTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"futureSettlement"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="nl">"instFamily"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-EUR"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
@@ -3286,6 +3288,11 @@ The Broker Program includes, and is not limited to, integrated trading platforms
 <td style="text-align: left">String</td>
 <td style="text-align: left">The maximum order quantity of a single stop market order.<br>If it is a derivatives contract, the value is the number of contracts.<br>If it is <code>SPOT</code>/<code>MARGIN</code>, the value is the quantity in <code>USDT</code>.</td>
 </tr>
+<tr>
+<td style="text-align: left">futureSettlement</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">Whether daily settlement for expiry feature is enabled<br>Applicable to <code>FUTURES</code> <code>cross</code></td>
+</tr>
 </tbody></table>
 
 <aside class="notice">
@@ -3364,6 +3371,7 @@ GET /api/v5/account/balance?ccy<span class="o">=</span>BTC,ETH
                     </span><span class="nl">"cashBal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4850.435693622894"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"ccy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"crossLiab"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"collateralEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"disEq"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4991.542013297616"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"eq"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4992.890093622894"</span><span class="p">,</span><span class="w">
                     </span><span class="nl">"eqUsd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4991.542013297616"</span><span class="p">,</span><span class="w">
@@ -3503,7 +3511,7 @@ GET /api/v5/account/balance?ccy<span class="o">=</span>BTC,ETH
 </tr>
 <tr>
 <td>details</td>
-<td>Array of objects</td>
+<td>Array</td>
 <td>Detailed asset information in all currencies</td>
 </tr>
 <tr>
@@ -3711,6 +3719,16 @@ GET /api/v5/account/balance?ccy<span class="o">=</span>BTC,ETH
 <td>String</td>
 <td>Spot accumulated profit and loss ratio. <a href="https://www.okx.com/help/i-introduction-of-spot">More details</a></td>
 </tr>
+<tr>
+<td>&gt; totalPnlRatio</td>
+<td>String</td>
+<td>Spot accumulated profit and loss ratio. <a href="https://www.okx.com/help/i-introduction-of-spot">More details</a></td>
+</tr>
+<tr>
+<td>&gt; collateralEnabled</td>
+<td>Boolean</td>
+<td><code>true</code>: Collateral enabled<br><code>false</code>: Collateral disabled<br>Applicable to <code>Multi-currency margin</code><br><a href="/help/setting-collateral-cryptocurrencies-in-multi-currency-account-mode">More details</a></td>
+</tr>
 </tbody></table>
 
 <ul>
@@ -3896,7 +3914,7 @@ The currency details will not be returned when cashBal and eq is both 0.
 <tr>
 <td style="text-align: left">&gt; disEq</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">Yes</td>
+<td style="text-align: left">No</td>
 <td style="text-align: left">Yes</td>
 <td style="text-align: left">Yes</td>
 </tr>
@@ -4104,11 +4122,18 @@ The currency details will not be returned when cashBal and eq is both 0.
 <td style="text-align: left">Yes</td>
 </tr>
 <tr>
-<td style="text-align: left">&gt; totalPnlRatio</td>
+<td style="text-align: left">&gt; totalPnlRatio       c</td>
 <td style="text-align: left">Yes</td>
 <td style="text-align: left">Yes</td>
 <td style="text-align: left">Yes</td>
 <td style="text-align: left">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; collateralEnabled</td>
+<td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left"></td>
 </tr>
 </tbody></table>
 <h3 id='trading-account-rest-api-get-positions'>Get positions</h3>
@@ -4241,7 +4266,9 @@ In the isolated margin trading settings, if it is set to the manual transfers mo
             </span><span class="nl">"uplRatioLastPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-0.0104515220008934"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"usdPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"vegaBS"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"vegaPA"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="nl">"vegaPA"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"nonSettleAvgPx"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"settledPnl"</span><span class="p">:</span><span class="s2">""</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
@@ -4317,12 +4344,17 @@ In the isolated margin trading settings, if it is set to the manual transfers mo
 <tr>
 <td style="text-align: left">availPos</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Position that can be closed <br>Only applicable to <code>MARGIN</code> and <code>OPTION</code>. <br>For <code>Margin</code> position, the rest of sz will be <code>SPOT</code> trading after the liability is repaid while closing the position. Please get the available reduce-only amount from &quot;Get maximum available tradable amount&quot; if you want to reduce the amount of <code>SPOT</code> trading as much as possible.</td>
+<td style="text-align: left">Position that can be closed <br>Only applicable to <code>MARGIN</code> and <code>OPTION</code>.<br>For <code>MARGIN</code> position, the rest of sz will be <code>SPOT</code> trading after the liability is repaid while closing the position. Please get the available reduce-only amount from &quot;Get maximum available tradable amount&quot; if you want to reduce the amount of <code>SPOT</code> trading as much as possible.</td>
 </tr>
 <tr>
 <td style="text-align: left">avgPx</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Average open price</td>
+<td style="text-align: left">Average open price<br>Under cross-margin mode, the entry price of expiry futures will update at settlement to the last settlement price, and when the position is opened or increased.</td>
+</tr>
+<tr>
+<td style="text-align: left">nonSettleAvgPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Non-settlement entry price<br>The non-settlement entry price only reflects the average price at which the position is opened or increased.<br>Applicable to <code>cross</code> <code>FUTURES</code> positions.</td>
 </tr>
 <tr>
 <td style="text-align: left">markPx</td>
@@ -4522,7 +4554,12 @@ In the isolated margin trading settings, if it is set to the manual transfers mo
 <tr>
 <td style="text-align: left">realizedPnl</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Realized profit and loss<br/>Only applicable to <code>FUTURES</code>/<code>SWAP</code>/<code>OPTION</code><br/>realizedPnl=pnl+fee+fundingFee+liqPenalty</td>
+<td style="text-align: left">Realized profit and loss<br>Only applicable to <code>FUTURES</code>/<code>SWAP</code>/<code>OPTION</code><br><code>realizedPnl</code>=<code>pnl</code>+<code>fee</code>+<code>fundingFee</code>+<code>liqPenalty</code>+<code>settledPnl</code></td>
+</tr>
+<tr>
+<td style="text-align: left">settledPnl</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Accumulated settled profit and loss (calculated by settlement price)<br>Only applicable to <code>cross</code> <code>FUTURES</code></td>
 </tr>
 <tr>
 <td style="text-align: left">pnl</td>
@@ -4562,7 +4599,7 @@ In the isolated margin trading settings, if it is set to the manual transfers mo
 <tr>
 <td style="text-align: left">&gt; slTriggerPxType</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Stop-loss trigger price type. <br><code>last</code>：last price<br><code>index</code>：index price<br><code>mark</code>：mark price</td>
+<td style="text-align: left">Stop-loss trigger price type. <br><code>last</code>: last price<br><code>index</code>: index price<br><code>mark</code>: mark price</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; tpTriggerPx</td>
@@ -4572,7 +4609,7 @@ In the isolated margin trading settings, if it is set to the manual transfers mo
 <tr>
 <td style="text-align: left">&gt; tpTriggerPxType</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Take-profit trigger price type. <br><code>last</code>：last price<br><code>index</code>：index price<br><code>mark</code>：mark price</td>
+<td style="text-align: left">Take-profit trigger price type. <br><code>last</code>: last price<br><code>index</code>: index price<br><code>mark</code>: mark price</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; closeFraction</td>
@@ -4707,7 +4744,9 @@ As for portfolio margin account, the IMR and MMR of the position are calculated 
             </span><span class="nl">"triggerPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"uTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1654177174419"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"uly"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-USD"</span><span class="w">
+            </span><span class="nl">"uly"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-USD"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"nonSettleAvgPx"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"settledPnl"</span><span class="p">:</span><span class="s2">""</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
@@ -4753,7 +4792,12 @@ As for portfolio margin account, the IMR and MMR of the position are calculated 
 <tr>
 <td style="text-align: left">openAvgPx</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Average price of opening position</td>
+<td style="text-align: left">Average price of opening position<br>Under cross-margin mode, the entry price of expiry futures will update at settlement to the last settlement price, and when the position is opened or increased.</td>
+</tr>
+<tr>
+<td style="text-align: left">nonSettleAvgPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Non-settlement entry price<br>The non-settlement entry price only reflects the average price at which the position is opened or increased.<br>Only applicable to <code>cross</code> <code>FUTURES</code></td>
 </tr>
 <tr>
 <td style="text-align: left">closeAvgPx</td>
@@ -4778,7 +4822,12 @@ As for portfolio margin account, the IMR and MMR of the position are calculated 
 <tr>
 <td style="text-align: left">realizedPnl</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Realized profit and loss<br/>Only applicable to <code>FUTURES</code>/<code>SWAP</code>/<code>OPTION</code><br/>realizedPnl=pnl+fee+fundingFee+liqPenalty</td>
+<td style="text-align: left">Realized profit and loss<br>Only applicable to <code>FUTURES</code>/<code>SWAP</code>/<code>OPTION</code><br><code>realizedPnl</code>=<code>pnl</code>+<code>fee</code>+<code>fundingFee</code>+<code>liqPenalty</code>+<code>settledPnl</code></td>
+</tr>
+<tr>
+<td style="text-align: left">settledPnl</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Accumulated settled profit and loss (calculated by settlement price)<br>Only applicable to <code>cross</code> <code>FUTURES</code></td>
 </tr>
 <tr>
 <td style="text-align: left">pnlRatio</td>
@@ -5095,13 +5144,13 @@ GET /api/v5/account/bills?instType<span class="o">=</span>MARGIN
 <td style="text-align: left">type</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Bill type<br><code>1</code>: Transfer<br><code>2</code>: Trade<br><code>3</code>: Delivery<br><code>4</code>: Forced repayment<br><code>5</code>: Liquidation<br><code>6</code>: Margin transfer<br><code>7</code>: Interest deduction<br><code>8</code>: Funding fee<br><code>9</code>: ADL<br><code>10</code>: Clawback<br><code>11</code>: System token conversion<br><code>12</code>: Strategy transfer<br><code>13</code>: DDH<br><code>14</code>: Block trade<br><code>15</code>: Quick Margin<br><code>16</code>: Borrowing<br><code>22</code>: Repay<br><code>24</code>: Spread trading<br><code>26</code>: Structured products<br><code>27</code>: Convert<br><code>28</code>: Easy convert<br><code>29</code>: One-click repay<br><code>30</code>: Simple trade<br><code>33</code>: Loans<br><code>250</code>: Copy trader profit sharing expenses<br><code>251</code>: Copy trader profit sharing refund</td>
+<td style="text-align: left">Bill type<br><code>1</code>: Transfer<br><code>2</code>: Trade<br><code>3</code>: Delivery<br><code>4</code>: Forced repayment<br><code>5</code>: Liquidation<br><code>6</code>: Margin transfer<br><code>7</code>: Interest deduction<br><code>8</code>: Funding fee<br><code>9</code>: ADL<br><code>10</code>: Clawback<br><code>11</code>: System token conversion<br><code>12</code>: Strategy transfer<br><code>13</code>: DDH<br><code>14</code>: Block trade<br><code>15</code>: Quick Margin<br><code>16</code>: Borrowing<br><code>22</code>: Repay<br><code>24</code>: Spread trading<br><code>26</code>: Structured products<br><code>27</code>: Convert<br><code>28</code>: Easy convert<br><code>29</code>: One-click repay<br><code>30</code>: Simple trade<br><code>33</code>: Loans<br><code>34</code>: Settlement<br><code>250</code>: Copy trader profit sharing expenses<br><code>251</code>: Copy trader profit sharing refund</td>
 </tr>
 <tr>
 <td style="text-align: left">subType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Bill subtype<br><code>1</code>: Buy<br><code>2</code>: Sell<br><code>3</code>: Open long<br><code>4</code>: Open short<br><code>5</code>: Close long<br><code>6</code>: Close short<br><code>9</code>: Interest deduction for Market loans<br><code>11</code>: Transfer in<br><code>12</code>: Transfer out<br><code>14</code>: Interest deduction for VIP loans<br><code>160</code>: Manual margin increase<br><code>161</code>: Manual margin decrease<br><code>162</code>: Auto margin increase<br><code>114</code>: Forced repayment buy<br><code>115</code>: Forced repayment sell<br><code>118</code>: System token conversion transfer in<br><code>119</code>: System token conversion transfer out<br><code>100</code>: Partial liquidation close long<br><code>101</code>: Partial liquidation close short<br><code>102</code>: Partial liquidation buy<br><code>103</code>: Partial liquidation sell<br><code>104</code>: Liquidation long<br><code>105</code>: Liquidation short<br><code>106</code>: Liquidation buy<br><code>107</code>: Liquidation sell<br><code>108</code>: Clawback<br><code>110</code>: Liquidation transfer in<br><code>111</code>: Liquidation transfer out<br><code>125</code>: ADL close long<br><code>126</code>: ADL close short<br><code>127</code>: ADL buy<br><code>128</code>: ADL sell<br><code>131</code>: ddh buy<br><code>132</code>: ddh sell<br><code>170</code>: Exercised(ITM buy side)<br><code>171</code>: Counterparty exercised(ITM sell side)<br><code>172</code>: Expired(Non-ITM buy and sell side)<br><code>112</code>: Delivery long<br><code>113</code>: Delivery short<br><code>117</code>: Delivery/Exercise clawback<br><code>173</code>: Funding fee expense<br><code>174</code>: Funding fee income<br><code>200</code>:System transfer in<br><code>201</code>: Manually transfer in<br><code>202</code>: System transfer out<br><code>203</code>: Manually transfer out<br><code>204</code>: block trade buy<br><code>205</code>: block trade sell<br><code>206</code>: block trade open long<br><code>207</code>: block trade open short<br><code>208</code>: block trade close long<br><code>209</code>: block trade close short<br><code>210</code>: Manual Borrowing of quick margin<br><code>211</code>: Manual Repayment of quick margin<br><code>212</code>: Auto borrow of quick margin<br><code>213</code>: Auto repay of quick margin<br><code>220</code>: Transfer in when using USDT to buy OPTION<br><code>221</code>: Transfer out when using USDT to buy OPTION<br><code>16</code>: Repay forcibly<br><code>17</code>: Repay interest by borrowing forcibly<br><code>224</code>: Repayment transfer in<br><code>225</code>: Repayment transfer out<br><code>236</code>: Easy convert in<br><code>237</code>: Easy convert out<br><code>250</code>: Profit sharing expenses<br><code>251</code>: Profit sharing refund<br><code>280</code>: SPOT profit sharing expenses<br><code>281</code>: SPOT profit sharing refund<br><code>270</code>: Spread trading buy<br><code>271</code>: Spread trading sell<br><code>272</code>: Spread trading open long<br><code>273</code>: Spread trading open short<br><code>274</code>: Spread trading close long<br><code>275</code>: Spread trading close short<br><code>280</code>: SPOT profit sharing expenses<br><code>281</code>: SPOT profit sharing refund <br><code>284</code>: Copy trade automatic transfer in<br><code>285</code>: Copy trade manual transfer in<br><code>286</code>: Copy trade automatic transfer out<br><code>287</code>: Copy trade manual transfer out<br><code>290</code>: Crypto dust auto-transfer out<br><del><code>293</code>: Fixed loan interest deduction</del><br><del><code>294</code>: Fixed loan interest refund</del><br><del><code>295</code>: Fixed loan overdue penalty</del><br><code>296</code>: From structured order placements<br><code>297</code>: To structured order placements<br><code>298</code>: From structured settlements<br><code>299</code>: To structured settlements<br><code>306</code>: Manual borrow<br><code>307</code>: Auto borrow<br><code>308</code>: Manual repay<br><code>309</code>: Auto repay<br><code>312</code>: Auto offset<br><code>318</code>: Convert in<br><code>319</code>: Convert out<br><code>320</code>: Simple buy<br><code>321</code>: Simple sell<br><code>332</code>: Margin transfer in isolated margin position <br><code>333</code>: Margin transfer out isolated margin position<br><code>334</code>: Margin loss when closing isolated margin position<br><code>348</code>: [Credit line] Forced repayment<br><code>350</code>: [Credit line] Forced repayment refund<br><code>352</code>: [Credit line] Forced repayment penalty fee deduction<br><code>353</code>: [Credit line] Forced repayment penalty fee (pending deduction)<br><code>356</code>: [Credit line] Auto conversion (pending deduction)<br><code>357</code>: [Credit line] Auto Conversion Transfer to Funding</td>
+<td style="text-align: left">Bill subtype<br><code>1</code>: Buy<br><code>2</code>: Sell<br><code>3</code>: Open long<br><code>4</code>: Open short<br><code>5</code>: Close long<br><code>6</code>: Close short<br><code>9</code>: Interest deduction for Market loans<br><code>11</code>: Transfer in<br><code>12</code>: Transfer out<br><code>14</code>: Interest deduction for VIP loans<br><code>160</code>: Manual margin increase<br><code>161</code>: Manual margin decrease<br><code>162</code>: Auto margin increase<br><code>114</code>: Forced repayment buy<br><code>115</code>: Forced repayment sell<br><code>118</code>: System token conversion transfer in<br><code>119</code>: System token conversion transfer out<br><code>100</code>: Partial liquidation close long<br><code>101</code>: Partial liquidation close short<br><code>102</code>: Partial liquidation buy<br><code>103</code>: Partial liquidation sell<br><code>104</code>: Liquidation long<br><code>105</code>: Liquidation short<br><code>106</code>: Liquidation buy<br><code>107</code>: Liquidation sell<br><code>108</code>: Clawback<br><code>110</code>: Liquidation transfer in<br><code>111</code>: Liquidation transfer out<br><code>125</code>: ADL close long<br><code>126</code>: ADL close short<br><code>127</code>: ADL buy<br><code>128</code>: ADL sell<br><code>131</code>: ddh buy<br><code>132</code>: ddh sell<br><code>170</code>: Exercised(ITM buy side)<br><code>171</code>: Counterparty exercised(ITM sell side)<br><code>172</code>: Expired(Non-ITM buy and sell side)<br><code>112</code>: Delivery long<br><code>113</code>: Delivery short<br><code>117</code>: Delivery/Exercise clawback<br><code>173</code>: Funding fee expense<br><code>174</code>: Funding fee income<br><code>200</code>:System transfer in<br><code>201</code>: Manually transfer in<br><code>202</code>: System transfer out<br><code>203</code>: Manually transfer out<br><code>204</code>: block trade buy<br><code>205</code>: block trade sell<br><code>206</code>: block trade open long<br><code>207</code>: block trade open short<br><code>208</code>: block trade close long<br><code>209</code>: block trade close short<br><code>210</code>: Manual Borrowing of quick margin<br><code>211</code>: Manual Repayment of quick margin<br><code>212</code>: Auto borrow of quick margin<br><code>213</code>: Auto repay of quick margin<br><code>220</code>: Transfer in when using USDT to buy OPTION<br><code>221</code>: Transfer out when using USDT to buy OPTION<br><code>16</code>: Repay forcibly<br><code>17</code>: Repay interest by borrowing forcibly<br><code>224</code>: Repayment transfer in<br><code>225</code>: Repayment transfer out<br><code>236</code>: Easy convert in<br><code>237</code>: Easy convert out<br><code>250</code>: Profit sharing expenses<br><code>251</code>: Profit sharing refund<br><code>280</code>: SPOT profit sharing expenses<br><code>281</code>: SPOT profit sharing refund<br><code>270</code>: Spread trading buy<br><code>271</code>: Spread trading sell<br><code>272</code>: Spread trading open long<br><code>273</code>: Spread trading open short<br><code>274</code>: Spread trading close long<br><code>275</code>: Spread trading close short<br><code>280</code>: SPOT profit sharing expenses<br><code>281</code>: SPOT profit sharing refund <br><code>284</code>: Copy trade automatic transfer in<br><code>285</code>: Copy trade manual transfer in<br><code>286</code>: Copy trade automatic transfer out<br><code>287</code>: Copy trade manual transfer out<br><code>290</code>: Crypto dust auto-transfer out<br><del><code>293</code>: Fixed loan interest deduction</del><br><del><code>294</code>: Fixed loan interest refund</del><br><del><code>295</code>: Fixed loan overdue penalty</del><br><code>296</code>: From structured order placements<br><code>297</code>: To structured order placements<br><code>298</code>: From structured settlements<br><code>299</code>: To structured settlements<br><code>306</code>: Manual borrow<br><code>307</code>: Auto borrow<br><code>308</code>: Manual repay<br><code>309</code>: Auto repay<br><code>312</code>: Auto offset<br><code>318</code>: Convert in<br><code>319</code>: Convert out<br><code>320</code>: Simple buy<br><code>321</code>: Simple sell<br><code>332</code>: Margin transfer in isolated margin position <br><code>333</code>: Margin transfer out isolated margin position<br><code>334</code>: Margin loss when closing isolated margin position<br><code>348</code>: [Credit line] Forced repayment<br><code>350</code>: [Credit line] Forced repayment refund<br><code>352</code>: [Credit line] Forced repayment penalty fee deduction<br><code>353</code>: [Credit line] Forced repayment penalty fee (pending deduction)<br><code>356</code>: [Credit line] Auto conversion (pending deduction)<br><code>357</code>: [Credit line] Auto Conversion Transfer to Funding<br><code>355</code>: Settlement PnL</td>
 </tr>
 <tr>
 <td style="text-align: left">after</td>
@@ -5232,7 +5281,7 @@ GET /api/v5/account/bills?instType<span class="o">=</span>MARGIN
 <tr>
 <td style="text-align: left">sz</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Quantity<br/>For <code>FUTURES</code>/<code>SWAP</code>/<code>OPTION</code>, it is fill quantity or position quantity, the unit is contract.<br/>For other scenarios. the unit is account balance currency(<code>ccy</code>).</td>
+<td style="text-align: left">Quantity<br/>For <code>FUTURES</code>/<code>SWAP</code>/<code>OPTION</code>, it is fill quantity or position quantity, the unit is contract. The value is always positive.<br/>For other scenarios. the unit is account balance currency(<code>ccy</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left">px</td>
@@ -5419,13 +5468,13 @@ GET /api/v5/account/bills-archive?instType<span class="o">=</span>MARGIN
 <td style="text-align: left">type</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Bill type<br><code>1</code>: Transfer<br><code>2</code>: Trade<br><code>3</code>: Delivery<br><code>4</code>: Forced repayment<br><code>5</code>: Liquidation<br><code>6</code>: Margin transfer<br><code>7</code>: Interest deduction<br><code>8</code>: Funding fee<br><code>9</code>: ADL<br><code>10</code>: Clawback<br><code>11</code>: System token conversion<br><code>12</code>: Strategy transfer<br><code>13</code>: DDH<br><code>14</code>: Block trade<br><code>15</code>: Quick Margin<br><code>16</code>: Borrowing<br><code>22</code>: Repay<br><code>24</code>: Spread trading<br><code>26</code>: Structured products<br><code>27</code>: Convert<br><code>28</code>: Easy convert<br><code>29</code>: One-click repay<br><code>30</code>: Simple trade<br><code>33</code>: Loans<br><code>250</code>: Copy trader profit sharing expenses<br><code>251</code>: Copy trader profit sharing refund</td>
+<td style="text-align: left">Bill type<br><code>1</code>: Transfer<br><code>2</code>: Trade<br><code>3</code>: Delivery<br><code>4</code>: Forced repayment<br><code>5</code>: Liquidation<br><code>6</code>: Margin transfer<br><code>7</code>: Interest deduction<br><code>8</code>: Funding fee<br><code>9</code>: ADL<br><code>10</code>: Clawback<br><code>11</code>: System token conversion<br><code>12</code>: Strategy transfer<br><code>13</code>: DDH<br><code>14</code>: Block trade<br><code>15</code>: Quick Margin<br><code>16</code>: Borrowing<br><code>22</code>: Repay<br><code>24</code>: Spread trading<br><code>26</code>: Structured products<br><code>27</code>: Convert<br><code>28</code>: Easy convert<br><code>29</code>: One-click repay<br><code>30</code>: Simple trade<br><code>33</code>: Loans<br/><code>34</code>: Settlement<br><code>250</code>: Copy trader profit sharing expenses<br><code>251</code>: Copy trader profit sharing refund</td>
 </tr>
 <tr>
 <td style="text-align: left">subType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Bill subtype<br><code>1</code>: Buy<br><code>2</code>: Sell<br><code>3</code>: Open long<br><code>4</code>: Open short<br><code>5</code>: Close long<br><code>6</code>: Close short<br><code>9</code>: Interest deduction for Market loans<br><code>11</code>: Transfer in<br><code>12</code>: Transfer out<br><code>14</code>: Interest deduction for VIP loans<br><code>160</code>: Manual margin increase<br><code>161</code>: Manual margin decrease<br><code>162</code>: Auto margin increase<br><code>114</code>: Forced repayment buy<br><code>115</code>: Forced repayment sell<br><code>118</code>: System token conversion transfer in<br><code>119</code>: System token conversion transfer out<br><code>100</code>: Partial liquidation close long<br><code>101</code>: Partial liquidation close short<br><code>102</code>: Partial liquidation buy<br><code>103</code>: Partial liquidation sell<br><code>104</code>: Liquidation long<br><code>105</code>: Liquidation short<br><code>106</code>: Liquidation buy<br><code>107</code>: Liquidation sell<br><code>108</code>: Clawback<br><code>110</code>: Liquidation transfer in<br><code>111</code>: Liquidation transfer out<br><code>125</code>: ADL close long<br><code>126</code>: ADL close short<br><code>127</code>: ADL buy<br><code>128</code>: ADL sell<br><code>131</code>: ddh buy<br><code>132</code>: ddh sell<br><code>170</code>: Exercised(ITM buy side)<br><code>171</code>: Counterparty exercised(ITM sell side)<br><code>172</code>: Expired(Non-ITM buy and sell side)<br><code>112</code>: Delivery long<br><code>113</code>: Delivery short<br><code>117</code>: Delivery/Exercise clawback<br><code>173</code>: Funding fee expense<br><code>174</code>: Funding fee income<br><code>200</code>:System transfer in<br><code>201</code>: Manually transfer in<br><code>202</code>: System transfer out<br><code>203</code>: Manually transfer out<br><code>204</code>: block trade buy<br><code>205</code>: block trade sell<br><code>206</code>: block trade open long<br><code>207</code>: block trade open short<br><code>208</code>: block trade close long<br><code>209</code>: block trade close short<br><code>210</code>: Manual Borrowing of quick margin<br><code>211</code>: Manual Repayment of quick margin<br><code>212</code>: Auto borrow of quick margin<br><code>213</code>: Auto repay of quick margin<br><code>220</code>: Transfer in when using USDT to buy OPTION<br><code>221</code>: Transfer out when using USDT to buy OPTION<br><code>16</code>: Repay forcibly<br><code>17</code>: Repay interest by borrowing forcibly<br><code>224</code>: Repayment transfer in<br><code>225</code>: Repayment transfer out<br><code>236</code>: Easy convert in<br><code>237</code>: Easy convert out<br><code>250</code>: Profit sharing expenses<br><code>251</code>: Profit sharing refund<br><code>280</code>: SPOT profit sharing expenses<br><code>281</code>: SPOT profit sharing refund<br><code>270</code>: Spread trading buy<br><code>271</code>: Spread trading sell<br><code>272</code>: Spread trading open long<br><code>273</code>: Spread trading open short<br><code>274</code>: Spread trading close long<br><code>275</code>: Spread trading close short<br><code>280</code>: SPOT profit sharing expenses<br><code>281</code>: SPOT profit sharing refund <br><code>284</code>: Copy trade automatic transfer in<br><code>285</code>: Copy trade manual transfer in<br><code>286</code>: Copy trade automatic transfer out<br><code>287</code>: Copy trade manual transfer out<br><code>290</code>: Crypto dust auto-transfer out<br><del><code>293</code>: Fixed loan interest deduction</del><br><del><code>294</code>: Fixed loan interest refund</del><br><del><code>295</code>: Fixed loan overdue penalty</del><br><code>296</code>: From structured order placements<br><code>297</code>: To structured order placements<br><code>298</code>: From structured settlements<br><code>299</code>: To structured settlements<br><code>306</code>: Manual borrow<br><code>307</code>: Auto borrow<br><code>308</code>: Manual repay<br><code>309</code>: Auto repay<br><code>312</code>: Auto offset<br><code>318</code>: Convert in<br><code>319</code>: Convert out<br><code>320</code>: Simple buy<br><code>321</code>: Simple sell<br><code>332</code>: Margin transfer in isolated margin position <br><code>333</code>: Margin transfer out isolated margin position<br><code>334</code>: Margin loss when closing isolated margin position<br><code>348</code>: [Credit line] Forced repayment<br><code>350</code>: [Credit line] Forced repayment refund<br><code>352</code>: [Credit line] Forced repayment penalty fee deduction<br><code>353</code>: [Credit line] Forced repayment penalty fee (pending deduction)<br><code>356</code>: [Credit line] Auto conversion (pending deduction)<br><code>357</code>: [Credit line] Auto Conversion Transfer to Funding</td>
+<td style="text-align: left">Bill subtype<br><code>1</code>: Buy<br><code>2</code>: Sell<br><code>3</code>: Open long<br><code>4</code>: Open short<br><code>5</code>: Close long<br><code>6</code>: Close short<br><code>9</code>: Interest deduction for Market loans<br><code>11</code>: Transfer in<br><code>12</code>: Transfer out<br><code>14</code>: Interest deduction for VIP loans<br><code>160</code>: Manual margin increase<br><code>161</code>: Manual margin decrease<br><code>162</code>: Auto margin increase<br><code>114</code>: Forced repayment buy<br><code>115</code>: Forced repayment sell<br><code>118</code>: System token conversion transfer in<br><code>119</code>: System token conversion transfer out<br><code>100</code>: Partial liquidation close long<br><code>101</code>: Partial liquidation close short<br><code>102</code>: Partial liquidation buy<br><code>103</code>: Partial liquidation sell<br><code>104</code>: Liquidation long<br><code>105</code>: Liquidation short<br><code>106</code>: Liquidation buy<br><code>107</code>: Liquidation sell<br><code>108</code>: Clawback<br><code>110</code>: Liquidation transfer in<br><code>111</code>: Liquidation transfer out<br><code>125</code>: ADL close long<br><code>126</code>: ADL close short<br><code>127</code>: ADL buy<br><code>128</code>: ADL sell<br><code>131</code>: ddh buy<br><code>132</code>: ddh sell<br><code>170</code>: Exercised(ITM buy side)<br><code>171</code>: Counterparty exercised(ITM sell side)<br><code>172</code>: Expired(Non-ITM buy and sell side)<br><code>112</code>: Delivery long<br><code>113</code>: Delivery short<br><code>117</code>: Delivery/Exercise clawback<br><code>173</code>: Funding fee expense<br><code>174</code>: Funding fee income<br><code>200</code>:System transfer in<br><code>201</code>: Manually transfer in<br><code>202</code>: System transfer out<br><code>203</code>: Manually transfer out<br><code>204</code>: block trade buy<br><code>205</code>: block trade sell<br><code>206</code>: block trade open long<br><code>207</code>: block trade open short<br><code>208</code>: block trade close long<br><code>209</code>: block trade close short<br><code>210</code>: Manual Borrowing of quick margin<br><code>211</code>: Manual Repayment of quick margin<br><code>212</code>: Auto borrow of quick margin<br><code>213</code>: Auto repay of quick margin<br><code>220</code>: Transfer in when using USDT to buy OPTION<br><code>221</code>: Transfer out when using USDT to buy OPTION<br><code>16</code>: Repay forcibly<br><code>17</code>: Repay interest by borrowing forcibly<br><code>224</code>: Repayment transfer in<br><code>225</code>: Repayment transfer out<br><code>236</code>: Easy convert in<br><code>237</code>: Easy convert out<br><code>250</code>: Profit sharing expenses<br><code>251</code>: Profit sharing refund<br><code>280</code>: SPOT profit sharing expenses<br><code>281</code>: SPOT profit sharing refund<br><code>270</code>: Spread trading buy<br><code>271</code>: Spread trading sell<br><code>272</code>: Spread trading open long<br><code>273</code>: Spread trading open short<br><code>274</code>: Spread trading close long<br><code>275</code>: Spread trading close short<br><code>280</code>: SPOT profit sharing expenses<br><code>281</code>: SPOT profit sharing refund <br><code>284</code>: Copy trade automatic transfer in<br><code>285</code>: Copy trade manual transfer in<br><code>286</code>: Copy trade automatic transfer out<br><code>287</code>: Copy trade manual transfer out<br><code>290</code>: Crypto dust auto-transfer out<br><del><code>293</code>: Fixed loan interest deduction</del><br><del><code>294</code>: Fixed loan interest refund</del><br><del><code>295</code>: Fixed loan overdue penalty</del><br><code>296</code>: From structured order placements<br><code>297</code>: To structured order placements<br><code>298</code>: From structured settlements<br><code>299</code>: To structured settlements<br><code>306</code>: Manual borrow<br><code>307</code>: Auto borrow<br><code>308</code>: Manual repay<br><code>309</code>: Auto repay<br><code>312</code>: Auto offset<br><code>318</code>: Convert in<br><code>319</code>: Convert out<br><code>320</code>: Simple buy<br><code>321</code>: Simple sell<br><code>332</code>: Margin transfer in isolated margin position <br><code>333</code>: Margin transfer out isolated margin position<br><code>334</code>: Margin loss when closing isolated margin position<br><code>348</code>: [Credit line] Forced repayment<br><code>350</code>: [Credit line] Forced repayment refund<br><code>352</code>: [Credit line] Forced repayment penalty fee deduction<br><code>353</code>: [Credit line] Forced repayment penalty fee (pending deduction)<br><code>356</code>: [Credit line] Auto conversion (pending deduction)<br><code>357</code>: [Credit line] Auto Conversion Transfer to Funding<br/><code>355</code>: Settlement PnL</td>
 </tr>
 <tr>
 <td style="text-align: left">after</td>
@@ -5556,7 +5605,7 @@ GET /api/v5/account/bills-archive?instType<span class="o">=</span>MARGIN
 <tr>
 <td style="text-align: left">sz</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Quantity<br/>For <code>FUTURES</code>/<code>SWAP</code>/<code>OPTION</code>, it is fill quantity or position quantity, the unit is contract.<br/>For other scenarios. the unit is account balance currency(<code>ccy</code>).</td>
+<td style="text-align: left">Quantity<br/>For <code>FUTURES</code>/<code>SWAP</code>/<code>OPTION</code>, it is fill quantity or position quantity, the unit is contract. The value is always positive.<br/>For other scenarios. the unit is account balance currency(<code>ccy</code>).</td>
 </tr>
 <tr>
 <td style="text-align: left">px</td>
@@ -9385,67 +9434,67 @@ body
 <td>Whether it is a real position<br>If <code>instType</code> is <code>SWAP</code>/<code>FUTURES</code>/<code>OPTION</code>, it is a valid parameter, else it will returns <code>false</code></td>
 </tr>
 <tr>
-<td>&gt; positions</td>
+<td>positions</td>
 <td>Array of object</td>
 <td>Position info<br>Only applicable to <code>Multi-currency margin</code></td>
 </tr>
 <tr>
-<td>&gt;&gt; instId</td>
+<td>&gt; instId</td>
 <td>String</td>
 <td>Instrument ID, e.g. <code>BTC-USDT-SWAP</code></td>
 </tr>
 <tr>
-<td>&gt;&gt; instType</td>
+<td>&gt; instType</td>
 <td>String</td>
 <td>Instrument type<br><code>SPOT</code><br><code>SWAP</code><br><code>FUTURES</code><br><code>OPTION</code></td>
 </tr>
 <tr>
-<td>&gt;&gt; amt</td>
+<td>&gt; amt</td>
 <td>String</td>
 <td>When <code>instType</code> is <code>SPOT</code>, it represents spot in use.<br>When <code>instType</code> is <code>SWAP</code>/<code>FUTURES</code>/<code>OPTION</code>, it represents position amount.</td>
 </tr>
 <tr>
-<td>&gt;&gt; posSide</td>
+<td>&gt; posSide</td>
 <td>String</td>
 <td>Position side<br><code>long</code><br><code>short</code><br><code>net</code></td>
 </tr>
 <tr>
-<td>&gt;&gt; avgPx</td>
+<td>&gt; avgPx</td>
 <td>String</td>
 <td>Average open price</td>
 </tr>
 <tr>
-<td>&gt;&gt; markPx</td>
+<td>&gt; markPx</td>
 <td>String</td>
 <td>Mark price</td>
 </tr>
 <tr>
-<td>&gt;&gt; floatPnl</td>
+<td>&gt; floatPnl</td>
 <td>String</td>
 <td>Float P&amp;L</td>
 </tr>
 <tr>
-<td>&gt;&gt; imr</td>
+<td>&gt; imr</td>
 <td>String</td>
 <td>IMR</td>
 </tr>
 <tr>
-<td>&gt;&gt; mgnRatio</td>
+<td>&gt; mgnRatio</td>
 <td>String</td>
 <td>Margin ratio</td>
 </tr>
 <tr>
-<td>&gt;&gt; lever</td>
+<td>&gt; lever</td>
 <td>String</td>
 <td>Leverage</td>
 </tr>
 <tr>
-<td>&gt;&gt; notionalUsd</td>
+<td>&gt; notionalUsd</td>
 <td>String</td>
 <td>Notional in <code>USD</code></td>
 </tr>
 <tr>
-<td>&gt;&gt; isRealPos</td>
+<td>&gt; isRealPos</td>
 <td>Boolean</td>
 <td>Whether it is a real position<br>If <code>instType</code> is <code>SWAP</code>/<code>FUTURES</code>/<code>OPTION</code>, it is a valid parameter, else it will returns <code>false</code></td>
 </tr>
@@ -10650,7 +10699,7 @@ It will also be pushed in regular interval according to subscription granularity
 </tr>
 <tr>
 <td style="text-align: left">args</td>
-<td style="text-align: left">Array of objects</td>
+<td style="text-align: left">Array of object</td>
 <td style="text-align: left">Yes</td>
 <td>List of subscribed channels</td>
 </tr>
@@ -10773,6 +10822,9 @@ It will also be pushed in regular interval according to subscription granularity
         </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"account"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44*********584"</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"eventType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"snapshot"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"curPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastPage"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
         </span><span class="nl">"adjEq"</span><span class="p">:</span><span class="w"> </span><span class="s2">"55444.12216906034"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"borrowFroz"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
@@ -10784,6 +10836,7 @@ It will also be pushed in regular interval according to subscription granularity
             </span><span class="nl">"ccy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"coinUsdPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.99927"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"crossLiab"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"collateralEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="nl">"disEq"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4889.379316336831"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"eq"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4892.951170691435"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"eqUsd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4889.379316336831"</span><span class="p">,</span><span class="w">
@@ -10818,7 +10871,8 @@ It will also be pushed in regular interval according to subscription granularity
             </span><span class="nl">"spotUpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"spotUplRatio"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"totalPnl"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"totalPnlRatio"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="nl">"totalPnlRatio"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"collateralEnabled"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
         </span><span class="p">}],</span><span class="w">
         </span><span class="nl">"imr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"isoEq"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
@@ -10857,6 +10911,21 @@ It will also be pushed in regular interval according to subscription granularity
 <td>&gt; uid</td>
 <td>String</td>
 <td>User Identifier</td>
+</tr>
+<tr>
+<td>eventType</td>
+<td>String</td>
+<td>Event type: <br><code>snapshot</code>: Initial and regular snapshot push <br><code>event_update</code>: Event-driven update push</td>
+</tr>
+<tr>
+<td>curPage</td>
+<td>Integer</td>
+<td>Current page number. <br>Only applicable for <code>snapshot</code> events. Not included in <code>event_update</code> events.</td>
+</tr>
+<tr>
+<td>lastPage</td>
+<td>Boolean</td>
+<td>Whether this is the last page of pagination:<br><code>true</code><br><code>false</code><br>Only applicable for <code>snapshot</code> events. Not included in <code>event_update</code> events.</td>
 </tr>
 <tr>
 <td>data</td>
@@ -11153,6 +11222,11 @@ It will also be pushed in regular interval according to subscription granularity
 <td>String</td>
 <td>Spot accumulated profit and loss ratio. <a href="https://www.okx.com/help/i-introduction-of-spot">More details</a></td>
 </tr>
+<tr>
+<td>&gt;&gt; collateralEnabled</td>
+<td>Boolean</td>
+<td><code>true</code>: Collateral enabled<br><code>false</code>: Collateral disabled<br>Applicable to <code>Multi-currency margin</code></td>
+</tr>
 </tbody></table>
 
 <aside class="notice">
@@ -11331,7 +11405,7 @@ It will also be pushed in regular interval according to subscription granularity
 <td style="text-align: left">&gt; instType</td>
 <td style="text-align: left">String</td>
 <td>Yes</td>
-<td>Instrument type<br><code>OPTION</code><br><code>FUTURES</code><br><code>SWAP</code><br><code>MARGIN</code>  <br><code>ANY</code></td>
+<td>Instrument type<br><code>MARGIN</code><br><code>FUTURES</code><br><code>SWAP</code><br><code>OPTION</code><br><code>ANY</code></td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; instFamily</td>
@@ -11374,6 +11448,9 @@ It will also be pushed in regular interval according to subscription granularity
       </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"77982378738415879"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"instType"</span><span class="p">:</span><span class="s2">"FUTURES"</span><span class="w">
   </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"eventType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"snapshot"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"curPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastPage"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"adl"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
@@ -11433,6 +11510,8 @@ It will also be pushed in regular interval according to subscription granularity
       </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"-0.0001"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"fundingFee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"liqPenalty"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"nonSettleAvgPx"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+      </span><span class="nl">"settledPnl"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="nl">"closeOrderAlgo"</span><span class="p">:[</span><span class="w">
           </span><span class="p">{</span><span class="w">
               </span><span class="nl">"algoId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
@@ -11464,6 +11543,9 @@ It will also be pushed in regular interval according to subscription granularity
         </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"77982378738415879"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ANY"</span><span class="w">
     </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"eventType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"snapshot"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"curPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastPage"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"adl"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
@@ -11525,6 +11607,8 @@ It will also be pushed in regular interval according to subscription granularity
       </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"-0.0001"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"fundingFee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"liqPenalty"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"nonSettleAvgPx"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+      </span><span class="nl">"settledPnl"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="nl">"closeOrderAlgo"</span><span class="p">:[</span><span class="w">
           </span><span class="p">{</span><span class="w">
               </span><span class="nl">"algoId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
@@ -11603,6 +11687,8 @@ It will also be pushed in regular interval according to subscription granularity
       </span><span class="nl">"fee"</span><span class="p">:</span><span class="s2">"-0.0001"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"fundingFee"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"liqPenalty"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"nonSettleAvgPx"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+      </span><span class="nl">"settledPnl"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="nl">"closeOrderAlgo"</span><span class="p">:[</span><span class="w">
           </span><span class="p">{</span><span class="w">
               </span><span class="nl">"algoId"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w">
@@ -11661,6 +11747,21 @@ It will also be pushed in regular interval according to subscription granularity
 <td style="text-align: left">&gt; instId</td>
 <td style="text-align: left">String</td>
 <td>Instrument ID</td>
+</tr>
+<tr>
+<td style="text-align: left">eventType</td>
+<td style="text-align: left">String</td>
+<td>Event type: <br><code>snapshot</code>: Initial and regular snapshot push <br><code>event_update</code>: Event-driven update push</td>
+</tr>
+<tr>
+<td style="text-align: left">curPage</td>
+<td style="text-align: left">Integer</td>
+<td>Current page number. <br>Only applicable for <code>snapshot</code> events. Not included in <code>event_update</code> events.</td>
+</tr>
+<tr>
+<td style="text-align: left">lastPage</td>
+<td style="text-align: left">Boolean</td>
+<td>Whether this is the last page of pagination:<br><code>true</code><br><code>false</code><br>Only applicable for <code>snapshot</code> events. Not included in <code>event_update</code> events.</td>
 </tr>
 <tr>
 <td style="text-align: left">data</td>
@@ -11935,7 +12036,7 @@ It will also be pushed in regular interval according to subscription granularity
 <tr>
 <td style="text-align: left">&gt; realizedPnl</td>
 <td style="text-align: left">String</td>
-<td>Realized profit and loss<br/>Only applicable to <code>FUTURES</code>/<code>SWAP</code>/<code>OPTION</code><br/> realizedPnl=pnl+fee+fundingFee+liqPenalty</td>
+<td>Realized profit and loss<br/>Only applicable to <code>FUTURES</code>/<code>SWAP</code>/<code>OPTION</code><br/> realizedPnl=pnl+fee+fundingFee+liqPenalty+settledPnl</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; pnl</td>
@@ -12006,6 +12107,16 @@ It will also be pushed in regular interval according to subscription granularity
 <td style="text-align: left">&gt; pTime</td>
 <td style="text-align: left">String</td>
 <td>Push time of positions information, Unix timestamp format in milliseconds, e.g. <code>1597026383085</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; nonSettleAvgPx</td>
+<td style="text-align: left">String</td>
+<td>Non-Settlement entry price<br>The non-settlement entry price only reflects the average price at which the position is opened or increased.<br>Applicable to <code>FUTURES</code> <code>cross</code></td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; settledPnl</td>
+<td style="text-align: left">String</td>
+<td>Accumulated settled P&amp;L (calculated by settlement price)<br>Applicable to <code>FUTURES</code> <code>cross</code></td>
 </tr>
 </tbody></table>
 
@@ -12167,7 +12278,9 @@ Concurrent connection to this channel will be restricted by the following rules:
             </span><span class="nl">"ccy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"posCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"avgPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3320"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"uTIme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1597026383085"</span><span class="w">
+            </span><span class="nl">"nonSettleAvgPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"settledPnl"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"uTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1597026383085"</span><span class="w">
         </span><span class="p">}],</span><span class="w">
         </span><span class="nl">"trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
             </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-USD-191018"</span><span class="p">,</span><span class="w">
@@ -12211,7 +12324,7 @@ Concurrent connection to this channel will be restricted by the following rules:
 <tr>
 <td style="text-align: left">&gt; eventType</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Event Type<br><code>snapshot</code>,<code>delivered</code>,<code>exercised</code>,<code>transferred</code>,<code>filled</code>,<code>liquidation</code>,<code>claw_back</code>,<code>adl</code>,<code>funding_fee</code>,<code>adjust_margin</code>,<code>set_leverage</code>,<code>interest_deduction</code></td>
+<td style="text-align: left">Event Type<br><code>snapshot</code><br><code>delivered</code><br><code>exercised</code><br><code>transferred</code><br><code>filled</code><br><code>liquidation</code><br><code>claw_back</code><br><code>adl</code><br><code>funding_fee</code><br><code>adjust_margin</code><br><code>set_leverage</code><br><code>interest_deduction</code><br><code>settlement</code></td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; balData</td>
@@ -12297,6 +12410,16 @@ Concurrent connection to this channel will be restricted by the following rules:
 <td style="text-align: left">&gt;&gt; posCcy</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Position currency, only applicable to MARGIN positions.</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt;&gt; nonSettleAvgPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Non-Settlement entry price<br>The non-settlement entry price only reflects the average price at which the position is opened or increased.<br>Applicable to <code>FUTURES</code> <code>cross</code></td>
+</tr>
+<tr>
+<td style="text-align: left">&gt;&gt; settledPnl</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Accumulated settled P&amp;L (calculated by settlement price)<br>Applicable to <code>FUTURES</code> <code>cross</code></td>
 </tr>
 <tr>
 <td style="text-align: left">&gt;&gt; uTime</td>
@@ -19081,7 +19204,7 @@ POST /api/v5/trade/order-precheck
 <tr>
 <td style="text-align: left">&gt; cancelSource</td>
 <td style="text-align: left">String</td>
-<td>Source of the order cancellation.<br>Valid values and the corresponding meanings are:<br><code>0</code>: Order canceled by system<br><code>1</code>: Order canceled by user<br><code>2</code>: Order canceled: Pre reduce-only order canceled, due to insufficient margin in user position<br><code>3</code>: Order canceled: Risk cancellation was triggered. Pending order was canceled due to insufficient margin ratio and forced-liquidation risk.<br><code>4</code>: Order canceled: Borrowings of crypto reached hard cap, order was canceled by system.<br><code>6</code>: Order canceled: ADL order cancellation was triggered. Pending order was canceled due to a low margin ratio and forced-liquidation risk. <br><code>7</code>: Order canceled: Futures contract delivery. <br><code>9</code>: Order canceled: Insufficient balance after funding fees deducted. <br><code>13</code>: Order canceled: FOK order was canceled due to incompletely filled.<br><code>14</code>: Order canceled: IOC order was partially canceled due to incompletely filled.<br><code>15</code>: Order canceled: The order price is beyond the limit<br><code>17</code>: Order canceled: Close order was canceled, due to the position was already closed at market price.<br><code>20</code>: Cancel all after triggered<br><code>21</code>: Order canceled: The TP/SL order was canceled because the position had been closed<br><code>22</code>, <code>23</code>: Order canceled: Reduce-only orders only allow reducing your current position. System has already canceled this order.<br><code>27</code>: Order canceled: Price limit verification failed because the price difference between counterparties exceeds 5% <br><code>31</code>: The post-only order will take liquidity in taker orders  <br><code>32</code>: Self trade prevention <br><code>33</code>: The order exceeds the maximum number of order matches per taker order<br/><code>36</code>: Your TP limit order was canceled because the corresponding SL order was triggered. <br/><code>37</code>: Your TP limit order was canceled because the corresponding SL order was canceled.<br> <code>38</code>: You have canceled market maker protection (MMP) orders.<br> <code>39</code>: Your order was canceled because market maker protection (MMP) was triggered. <br/><code>42</code>: Your order was canceled because the difference between the initial and current best bid or ask prices reached the maximum chase difference.</td>
+<td>Source of the order cancellation.<br>Valid values and the corresponding meanings are:<br><code>0</code>: Order canceled by system<br><code>1</code>: Order canceled by user<br><code>2</code>: Order canceled: Pre reduce-only order canceled, due to insufficient margin in user position<br><code>3</code>: Order canceled: Risk cancellation was triggered. Pending order was canceled due to insufficient margin ratio and forced-liquidation risk.<br><code>4</code>: Order canceled: Borrowings of crypto reached hard cap, order was canceled by system.<br><code>6</code>: Order canceled: ADL order cancellation was triggered. Pending order was canceled due to a low margin ratio and forced-liquidation risk. <br><code>7</code>: Order canceled: Futures contract delivery. <br><code>9</code>: Order canceled: Insufficient balance after funding fees deducted. <br><code>10</code>:  Order canceled: Option contract expiration.<br/><code>13</code>: Order canceled: FOK order was canceled due to incompletely filled.<br><code>14</code>: Order canceled: IOC order was partially canceled due to incompletely filled.<br><code>15</code>: Order canceled: The order price is beyond the limit<br><code>17</code>: Order canceled: Close order was canceled, due to the position was already closed at market price.<br><code>20</code>: Cancel all after triggered<br><code>21</code>: Order canceled: The TP/SL order was canceled because the position had been closed<br><code>22</code>, <code>23</code>: Order canceled: Reduce-only orders only allow reducing your current position. System has already canceled this order.<br><code>27</code>: Order canceled: Price limit verification failed because the price difference between counterparties exceeds 5% <br><code>31</code>: The post-only order will take liquidity in taker orders  <br><code>32</code>: Self trade prevention <br><code>33</code>: The order exceeds the maximum number of order matches per taker order<br/><code>36</code>: Your TP limit order was canceled because the corresponding SL order was triggered. <br/><code>37</code>: Your TP limit order was canceled because the corresponding SL order was canceled.<br> <code>38</code>: You have canceled market maker protection (MMP) orders.<br> <code>39</code>: Your order was canceled because market maker protection (MMP) was triggered. <br/><code>42</code>: Your order was canceled because the difference between the initial and current best bid or ask prices reached the maximum chase difference.</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; amendSource</td>
@@ -19158,12 +19281,6 @@ POST /api/v5/trade/order-precheck
 <aside class="notice"> 
 <p> 
   For market orders, it's likely the orders channel will show order state as "filled" while showing the "last filled quantity (fillSz)" as 0.
-</p> 
-</aside> 
-
-<aside class="notice"> 
-<p> 
-When OPTION contract expires, the orders channel doesn’t update for the canceled pending order.
 </p> 
 </aside> 
 <h3 id='order-book-trading-trade-ws-fills-channel'>WS / Fills channel</h3>
@@ -41519,7 +41636,7 @@ Prices provided on RFQs by the trading bot are for reference only. <br>
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OPTION"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"includeALL"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"includeAll"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
             </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"uly"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-USD"</span><span class="p">,</span><span class="w">
@@ -41535,7 +41652,7 @@ Prices provided on RFQs by the trading bot are for reference only. <br>
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FUTURES"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"includeALL"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"includeAll"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"uly"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-USD"</span><span class="p">,</span><span class="w">
@@ -41551,7 +41668,7 @@ Prices provided on RFQs by the trading bot are for reference only. <br>
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="nl">"instType:"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SWAP"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"includeALL"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"includeAll"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"uly"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-USD"</span><span class="p">,</span><span class="w">
@@ -41565,7 +41682,7 @@ Prices provided on RFQs by the trading bot are for reference only. <br>
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="nl">"instType:"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"includeALL"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"includeAll"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-USDT"</span><span class="w">
@@ -48842,7 +48959,6 @@ Cancel order returns with sCode equal to 0. It is not strictly considered that t
 <h2 id='spread-trading-websocket-private-channel'>WebSocket Private Channel</h2>
 <ul>
 <li>Production Trading URL: <code>wss://ws.okx.com:8443/ws/v5/business</code></li>
-<li>AWS Production Trading URL: <code>wss://wsaws.okx.com:8443/ws/v5/business</code></li>
 <li>Demo Trading URL: <code>wss://wspap.okx.com:8443/ws/v5/business</code> </li>
 </ul>
 <h3 id='spread-trading-websocket-private-channel-order-channel'>Order channel</h3>
@@ -49512,7 +49628,6 @@ Cancel order returns with sCode equal to 0. It is not strictly considered that t
 <h2 id='spread-trading-websocket-public-channel'>WebSocket Public Channel</h2>
 <ul>
 <li>Production Trading URL: <code>wss://ws.okx.com:8443/ws/v5/business</code></li>
-<li>AWS Production Trading URL: <code>wss://wsaws.okx.com:8443/ws/v5/business</code></li>
 <li>Demo Trading URL: <code>wss://wspap.okx.com:8443/ws/v5/business</code> </li>
 </ul>
 <h3 id='spread-trading-websocket-public-channel-order-book-channel'>Order book channel</h3>
@@ -50566,6 +50681,7 @@ The data returned will be arranged in an array like this: [ts,o,h,l,c,vol,confir
             </span><span class="nl">"ctVal"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"ctValCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"expTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"futureSettlement"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="nl">"instFamily"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-USDT"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
@@ -50760,6 +50876,11 @@ The data returned will be arranged in an array like this: [ts,o,h,l,c,vol,confir
 <td style="text-align: left">String</td>
 <td style="text-align: left">The maximum order quantity of a single stop market order.<br>If it is a derivatives contract, the value is the number of contracts.<br>If it is <code>SPOT</code>/<code>MARGIN</code>, the value is the quantity in <code>USDT</code>.</td>
 </tr>
+<tr>
+<td style="text-align: left">futureSettlement</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">Whether daily settlement for expiry feature is enabled<br>Applicable to <code>FUTURES</code> <code>cross</code></td>
+</tr>
 </tbody></table>
 
 <aside class="notice">
@@ -50774,6 +50895,87 @@ state<br>
 The state will always change from `preopen` to `live` when the listTime is reached.<br>
 When a product is going to be delisted (e.g. when a FUTURES contract is settled or OPTION contract is exercised), the instrument will not be available.
 </aside>
+<h3 id='public-data-rest-api-get-estimated-delivery-exercise-price'>Get estimated delivery/exercise price</h3>
+<p>Retrieve the estimated delivery price which will only have a return value one hour before the delivery/exercise.</p>
+<h4 id='public-data-rest-api-get-estimated-delivery-exercise-price-rate-limit-10-requests-per-2-seconds'>Rate Limit: 10 requests per 2 seconds</h4><h4 id='public-data-rest-api-get-estimated-delivery-exercise-price-rate-limit-rule-ip-instrument-id'>Rate limit rule: IP + Instrument ID</h4><h4 id='public-data-rest-api-get-estimated-delivery-exercise-price-http-request'>HTTP Request</h4>
+<p><code>GET /api/v5/public/estimated-price</code></p>
+
+<blockquote>
+<p>Request Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>GET /api/v5/public/estimated-price?instId<span class="o">=</span>BTC-USD-200214
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">okx.PublicData</span> <span class="k">as</span> <span class="n">PublicData</span>
+
+<span class="n">flag</span> <span class="o">=</span> <span class="s">"0"</span>  <span class="c1"># Production trading: 0, Demo trading: 1
+</span>
+<span class="n">publicDataAPI</span> <span class="o">=</span> <span class="n">PublicData</span><span class="p">.</span><span class="n">PublicAPI</span><span class="p">(</span><span class="n">flag</span><span class="o">=</span><span class="n">flag</span><span class="p">)</span>
+
+<span class="c1"># Retrieve estimated delivery/exercise price
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">publicDataAPI</span><span class="p">.</span><span class="n">get_estimated_price</span><span class="p">(</span>
+    <span class="n">instId</span> <span class="o">=</span> <span class="s">"BTC-USD-200214"</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div><h4 id='public-data-rest-api-get-estimated-delivery-exercise-price-request-parameters'>Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Instrument ID, e.g. <code>BTC-USD-200214</code> <br>only applicable to <code>FUTURES</code>/<code>OPTION</code></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"instType"</span><span class="p">:</span><span class="s2">"FUTURES"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"instId"</span><span class="p">:</span><span class="s2">"BTC-USDT-201227"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"settlePx"</span><span class="p">:</span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ts"</span><span class="p">:</span><span class="s2">"1597026383085"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='public-data-rest-api-get-estimated-delivery-exercise-price-response-parameters'>Response Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left"><strong>Parameter</strong></th>
+<th style="text-align: left"><strong>Type</strong></th>
+<th style="text-align: left"><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Instrument type<br><code>FUTURES</code><br><code>OPTION</code></td>
+</tr>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Instrument ID, e.g. <code>BTC-USD-200214</code></td>
+</tr>
+<tr>
+<td style="text-align: left">settlePx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Estimated delivery/exercise price</td>
+</tr>
+<tr>
+<td style="text-align: left">ts</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Data return time, Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
+</tr>
+</tbody></table>
 <h3 id='public-data-rest-api-get-delivery-exercise-history'>Get delivery/exercise history</h3>
 <p>Retrieve delivery records of Futures and exercise records of Options in the last 3 months.</p>
 <h4 id='public-data-rest-api-get-delivery-exercise-history-rate-limit-40-requests-per-2-seconds'>Rate Limit: 40 requests per 2 seconds</h4><h4 id='public-data-rest-api-get-delivery-exercise-history-rate-limit-rule-ip-instrument-type-uly'>Rate limit rule: IP + (Instrument Type + uly)</h4><h4 id='public-data-rest-api-get-delivery-exercise-history-permission-read'>Permission: Read</h4><h4 id='public-data-rest-api-get-delivery-exercise-history-http-request'>HTTP Request</h4>
@@ -50910,120 +51112,8 @@ When a product is going to be delisted (e.g. when a FUTURES contract is settled 
 <td style="text-align: left">Type  <br><code>delivery</code> <br><code>exercised</code> <br><code>expired_otm</code>:Out of the money</td>
 </tr>
 </tbody></table>
-<h3 id='public-data-rest-api-get-open-interest'>Get open interest</h3>
-<p>Retrieve the total open interest for contracts on OKX.</p>
-<h4 id='public-data-rest-api-get-open-interest-rate-limit-20-requests-per-2-seconds'>Rate Limit: 20 requests per 2 seconds</h4><h4 id='public-data-rest-api-get-open-interest-rate-limit-rule-ip-instrument-id'>Rate limit rule: IP + Instrument ID</h4><h4 id='public-data-rest-api-get-open-interest-permission-read'>Permission: Read</h4><h4 id='public-data-rest-api-get-open-interest-http-request'>HTTP Request</h4>
-<p><code>GET /api/v5/public/open-interest</code></p>
-
-<blockquote>
-<p>Request Example</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>GET /api/v5/public/open-interest?instType<span class="o">=</span>SWAP
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">okx.PublicData</span> <span class="k">as</span> <span class="n">PublicData</span>
-
-<span class="n">flag</span> <span class="o">=</span> <span class="s">"0"</span>  <span class="c1"># Production trading: 0, Demo trading: 1
-</span>
-<span class="n">publicDataAPI</span> <span class="o">=</span> <span class="n">PublicData</span><span class="p">.</span><span class="n">PublicAPI</span><span class="p">(</span><span class="n">flag</span><span class="o">=</span><span class="n">flag</span><span class="p">)</span>
-
-<span class="c1"># Retrieve the total open interest for contracts on OKX
-</span><span class="n">result</span> <span class="o">=</span> <span class="n">publicDataAPI</span><span class="p">.</span><span class="n">get_open_interest</span><span class="p">(</span>
-    <span class="n">instType</span><span class="o">=</span><span class="s">"SWAP"</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</code></pre></div><h4 id='public-data-rest-api-get-open-interest-request-parameters'>Request Parameters</h4>
-<table><thead>
-<tr>
-<th style="text-align: left">Parameter</th>
-<th style="text-align: left">Type</th>
-<th style="text-align: left">Required</th>
-<th style="text-align: left">Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">instType</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">Yes</td>
-<td style="text-align: left">Instrument type<br><code>SWAP</code><br><code>FUTURES</code><br><code>OPTION</code></td>
-</tr>
-<tr>
-<td style="text-align: left">uly</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">Conditional</td>
-<td style="text-align: left">Underlying<br>Applicable to <code>FUTURES</code>/<code>SWAP</code>/<code>OPTION</code>. <br>If instType is <code>OPTION</code>, either <code>uly</code> or <code>instFamily</code> is required.</td>
-</tr>
-<tr>
-<td style="text-align: left">instFamily</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">Conditional</td>
-<td style="text-align: left">Instrument family<br>Applicable to <code>FUTURES</code>/<code>SWAP</code>/<code>OPTION</code><br>If instType is <code>OPTION</code>, either <code>uly</code> or <code>instFamily</code> is required.</td>
-</tr>
-<tr>
-<td style="text-align: left">instId</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">No</td>
-<td style="text-align: left">Instrument ID, e.g. <code>BTC-USDT-SWAP</code><br>Applicable to <code>FUTURES</code>/<code>SWAP</code>/<code>OPTION</code></td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p>Response Example</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"instType"</span><span class="p">:</span><span class="s2">"SWAP"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"instId"</span><span class="p">:</span><span class="s2">"BTC-USDT-SWAP"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"oi"</span><span class="p">:</span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"oiCcy"</span><span class="p">:</span><span class="s2">"555.55"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"oiUsd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50000"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"ts"</span><span class="p">:</span><span class="s2">"1597026383085"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h4 id='public-data-rest-api-get-open-interest-response-parameters'>Response Parameters</h4>
-<table><thead>
-<tr>
-<th style="text-align: left"><strong>Parameter</strong></th>
-<th style="text-align: left"><strong>Type</strong></th>
-<th style="text-align: left"><strong>Description</strong></th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">instType</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">Instrument type</td>
-</tr>
-<tr>
-<td style="text-align: left">instId</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">Instrument ID</td>
-</tr>
-<tr>
-<td style="text-align: left">oi</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">Open interest in number of contracts</td>
-</tr>
-<tr>
-<td style="text-align: left">oiCcy</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">Open interest in number of coin</td>
-</tr>
-<tr>
-<td style="text-align: left">oiUsd</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">Open interest in number of USD</td>
-</tr>
-<tr>
-<td style="text-align: left">ts</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">Data return time,  Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
-</tr>
-</tbody></table>
 <h3 id='public-data-rest-api-get-estimated-future-settlement-price'>Get estimated future settlement price</h3>
-<p>Only applicable to demo trading.<br>
-Retrieve the estimated settlement price which will only have a return value one hour before the settlement.</p>
+<p>Retrieve the estimated settlement price which will only have a return value one hour before the settlement.</p>
 <h4 id='public-data-rest-api-get-estimated-future-settlement-price-rate-limit-10-requests-per-2-seconds'>Rate Limit: 10 requests per 2 seconds</h4><h4 id='public-data-rest-api-get-estimated-future-settlement-price-rate-limit-rule-ip-instrument-id'>Rate limit rule: IP + Instrument ID</h4><h4 id='public-data-rest-api-get-estimated-future-settlement-price-http-request'>HTTP Request</h4>
 <p><code>GET /api/v5/public/estimated-settlement-info</code></p>
 
@@ -51093,8 +51183,7 @@ Retrieve the estimated settlement price which will only have a return value one 
 </tr>
 </tbody></table>
 <h3 id='public-data-rest-api-get-futures-settlement-history'>Get futures settlement history</h3>
-<p>Only applicable to demo trading.<br>
-Retrieve settlement records of futures in the last 3 months.</p>
+<p>Retrieve settlement records of futures in the last 3 months.</p>
 <h4 id='public-data-rest-api-get-futures-settlement-history-rate-limit-40-requests-per-2-seconds'>Rate Limit: 40 requests per 2 seconds</h4><h4 id='public-data-rest-api-get-futures-settlement-history-rate-limit-rule-ip-instrument-family'>Rate limit rule: IP + (Instrument Family)</h4><h4 id='public-data-rest-api-get-futures-settlement-history-http-request'>HTTP Request</h4>
 <p><code>GET /api/v5/public/settlement-history</code></p>
 
@@ -51455,6 +51544,117 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 <aside class="notice">
 For some altcoins perpetual swaps with significant fluctuations in funding rates, OKX will closely monitor market changes. When necessary, the funding rate collection frequency, currently set at 8 hours, may be adjusted to higher frequencies such as 6 hours, 4 hours, 2 hours, or 1 hour. Thus, users should focus on the difference between `fundingTime` and `nextFundingTime` fields to determine the funding fee interval of a contract.
 </aside>
+<h3 id='public-data-rest-api-get-open-interest'>Get open interest</h3>
+<p>Retrieve the total open interest for contracts on OKX.</p>
+<h4 id='public-data-rest-api-get-open-interest-rate-limit-20-requests-per-2-seconds'>Rate Limit: 20 requests per 2 seconds</h4><h4 id='public-data-rest-api-get-open-interest-rate-limit-rule-ip-instrument-id'>Rate limit rule: IP + Instrument ID</h4><h4 id='public-data-rest-api-get-open-interest-permission-read'>Permission: Read</h4><h4 id='public-data-rest-api-get-open-interest-http-request'>HTTP Request</h4>
+<p><code>GET /api/v5/public/open-interest</code></p>
+
+<blockquote>
+<p>Request Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>GET /api/v5/public/open-interest?instType<span class="o">=</span>SWAP
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">okx.PublicData</span> <span class="k">as</span> <span class="n">PublicData</span>
+
+<span class="n">flag</span> <span class="o">=</span> <span class="s">"0"</span>  <span class="c1"># Production trading: 0, Demo trading: 1
+</span>
+<span class="n">publicDataAPI</span> <span class="o">=</span> <span class="n">PublicData</span><span class="p">.</span><span class="n">PublicAPI</span><span class="p">(</span><span class="n">flag</span><span class="o">=</span><span class="n">flag</span><span class="p">)</span>
+
+<span class="c1"># Retrieve the total open interest for contracts on OKX
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">publicDataAPI</span><span class="p">.</span><span class="n">get_open_interest</span><span class="p">(</span>
+    <span class="n">instType</span><span class="o">=</span><span class="s">"SWAP"</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div><h4 id='public-data-rest-api-get-open-interest-request-parameters'>Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Instrument type<br><code>SWAP</code><br><code>FUTURES</code><br><code>OPTION</code></td>
+</tr>
+<tr>
+<td style="text-align: left">uly</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Conditional</td>
+<td style="text-align: left">Underlying<br>Applicable to <code>FUTURES</code>/<code>SWAP</code>/<code>OPTION</code>. <br>If instType is <code>OPTION</code>, either <code>uly</code> or <code>instFamily</code> is required.</td>
+</tr>
+<tr>
+<td style="text-align: left">instFamily</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Conditional</td>
+<td style="text-align: left">Instrument family<br>Applicable to <code>FUTURES</code>/<code>SWAP</code>/<code>OPTION</code><br>If instType is <code>OPTION</code>, either <code>uly</code> or <code>instFamily</code> is required.</td>
+</tr>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Instrument ID, e.g. <code>BTC-USDT-SWAP</code><br>Applicable to <code>FUTURES</code>/<code>SWAP</code>/<code>OPTION</code></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"instType"</span><span class="p">:</span><span class="s2">"SWAP"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"instId"</span><span class="p">:</span><span class="s2">"BTC-USDT-SWAP"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"oi"</span><span class="p">:</span><span class="s2">"5000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"oiCcy"</span><span class="p">:</span><span class="s2">"555.55"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"oiUsd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ts"</span><span class="p">:</span><span class="s2">"1597026383085"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='public-data-rest-api-get-open-interest-response-parameters'>Response Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left"><strong>Parameter</strong></th>
+<th style="text-align: left"><strong>Type</strong></th>
+<th style="text-align: left"><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Instrument type</td>
+</tr>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Instrument ID</td>
+</tr>
+<tr>
+<td style="text-align: left">oi</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Open interest in number of contracts</td>
+</tr>
+<tr>
+<td style="text-align: left">oiCcy</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Open interest in number of coin</td>
+</tr>
+<tr>
+<td style="text-align: left">oiUsd</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Open interest in number of USD</td>
+</tr>
+<tr>
+<td style="text-align: left">ts</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Data return time,  Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
+</tr>
+</tbody></table>
 <h3 id='public-data-rest-api-get-limit-price'>Get limit price</h3>
 <p>Retrieve the highest buy limit and lowest sell limit of the instrument.</p>
 <h4 id='public-data-rest-api-get-limit-price-rate-limit-20-requests-per-2-seconds'>Rate Limit: 20 requests per 2 seconds</h4><h4 id='public-data-rest-api-get-limit-price-rate-limit-rule-ip'>Rate limit rule: IP</h4><h4 id='public-data-rest-api-get-limit-price-permission-read'>Permission: Read</h4><h4 id='public-data-rest-api-get-limit-price-http-request'>HTTP Request</h4>
@@ -51750,87 +51950,6 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 <td style="text-align: left">ts</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Data update time, Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
-</tr>
-</tbody></table>
-<h3 id='public-data-rest-api-get-estimated-delivery-exercise-price'>Get estimated delivery/exercise price</h3>
-<p>Retrieve the estimated delivery price which will only have a return value one hour before the delivery/exercise.</p>
-<h4 id='public-data-rest-api-get-estimated-delivery-exercise-price-rate-limit-10-requests-per-2-seconds'>Rate Limit: 10 requests per 2 seconds</h4><h4 id='public-data-rest-api-get-estimated-delivery-exercise-price-rate-limit-rule-ip-instrument-id'>Rate limit rule: IP + Instrument ID</h4><h4 id='public-data-rest-api-get-estimated-delivery-exercise-price-permission-read'>Permission: Read</h4><h4 id='public-data-rest-api-get-estimated-delivery-exercise-price-http-request'>HTTP Request</h4>
-<p><code>GET /api/v5/public/estimated-price</code></p>
-
-<blockquote>
-<p>Request Example</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>GET /api/v5/public/estimated-price?instId<span class="o">=</span>BTC-USDT-191227
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">okx.PublicData</span> <span class="k">as</span> <span class="n">PublicData</span>
-
-<span class="n">flag</span> <span class="o">=</span> <span class="s">"0"</span>  <span class="c1"># Production trading: 0, Demo trading: 1
-</span>
-<span class="n">publicDataAPI</span> <span class="o">=</span> <span class="n">PublicData</span><span class="p">.</span><span class="n">PublicAPI</span><span class="p">(</span><span class="n">flag</span><span class="o">=</span><span class="n">flag</span><span class="p">)</span>
-
-<span class="c1"># Retrieve estimated delivery/exercise price
-</span><span class="n">result</span> <span class="o">=</span> <span class="n">publicDataAPI</span><span class="p">.</span><span class="n">get_estimated_price</span><span class="p">(</span>
-    <span class="n">instId</span><span class="o">=</span><span class="s">"BTC-USDT-220916"</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</code></pre></div><h4 id='public-data-rest-api-get-estimated-delivery-exercise-price-request-parameters'>Request Parameters</h4>
-<table><thead>
-<tr>
-<th style="text-align: left">Parameter</th>
-<th style="text-align: left">Type</th>
-<th style="text-align: left">Required</th>
-<th style="text-align: left">Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">instId</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">Yes</td>
-<td style="text-align: left">Instrument ID,  e.g. <code>BTC-USD-200214</code> <br>only applicable to <code>FUTURES</code>/<code>OPTION</code></td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p>Response Example</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"instType"</span><span class="p">:</span><span class="s2">"FUTURES"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"instId"</span><span class="p">:</span><span class="s2">"BTC-USDT-201227"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"settlePx"</span><span class="p">:</span><span class="s2">"200"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"ts"</span><span class="p">:</span><span class="s2">"1597026383085"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h4 id='public-data-rest-api-get-estimated-delivery-exercise-price-response-parameters'>Response Parameters</h4>
-<table><thead>
-<tr>
-<th style="text-align: left"><strong>Parameter</strong></th>
-<th style="text-align: left"><strong>Type</strong></th>
-<th style="text-align: left"><strong>Description</strong></th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">instType</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">Instrument type<br><code>FUTURES</code><br><code>OPTION</code></td>
-</tr>
-<tr>
-<td style="text-align: left">instId</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">Instrument ID,  e.g. <code>BTC-USDT-SWAP</code></td>
-</tr>
-<tr>
-<td style="text-align: left">settlePx</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">Estimated delivery price</td>
-</tr>
-<tr>
-<td style="text-align: left">ts</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left">Data return time, Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
 </tr>
 </tbody></table>
 <h3 id='public-data-rest-api-get-discount-rate-and-interest-free-quota'>Get discount rate and interest-free quota</h3>
@@ -54083,6 +54202,7 @@ Authentication is required for this endpoint. This endpoint is only supported in
         </span><span class="nl">"ctVal"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="nl">"ctValCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="nl">"expTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"futureSettlement"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="nl">"instFamily"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-USDT"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
@@ -54291,6 +54411,11 @@ Authentication is required for this endpoint. This endpoint is only supported in
 <td style="text-align: left">&gt; maxStopSz</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">The maximum order quantity of a single stop market order.<br>If it is a derivatives contract, the value is the number of contracts.<br>If it is <code>SPOT</code>/<code>MARGIN</code>, the value is the quantity in <code>USDT</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; futureSettlement</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">Whether daily settlement for expiry feature is enabled<br>Applicable to <code>FUTURES</code> <code>cross</code></td>
 </tr>
 </tbody></table>
 
@@ -55241,11 +55366,11 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 <td>Price update time, Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
 </tr>
 </tbody></table>
-<h3 id='public-data-websocket-estimated-delivery-exercise-price-channel'>Estimated delivery/exercise price channel</h3>
-<p>Retrieve the estimated delivery/exercise price of <code>SWAP</code>, <code>FUTURES</code> and <code>OPTION</code> contracts.</p>
+<h3 id='public-data-websocket-estimated-delivery-exercise-settlement-price-channel'>Estimated delivery/exercise/settlement price channel</h3>
+<p>Retrieve the estimated delivery/exercise/settlement price of <code>FUTURES</code> and <code>OPTION</code> contracts.</p>
 
-<p>Only the estimated delivery/exercise price will be pushed an hour before delivery/exercise, and will be pushed if there is any price change.</p>
-<h4 id='public-data-websocket-estimated-delivery-exercise-price-channel-url-path'>URL Path</h4>
+<p>Only the estimated price will be pushed in an hour before delivery/exercise/settlement, and will be pushed if there is any price change.</p>
+<h4 id='public-data-websocket-estimated-delivery-exercise-settlement-price-channel-url-path'>URL Path</h4>
 <p>/ws/v5/public</p>
 
 <blockquote>
@@ -55261,7 +55386,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
     <span class="o">}</span>
   <span class="o">]</span>
 <span class="o">}</span>
-</code></pre></div><h4 id='public-data-websocket-estimated-delivery-exercise-price-channel-request-parameters'>Request Parameters</h4>
+</code></pre></div><h4 id='public-data-websocket-estimated-delivery-exercise-settlement-price-channel-request-parameters'>Request Parameters</h4>
 <table><thead>
 <tr>
 <th style="text-align: left">Parameter</th>
@@ -55292,7 +55417,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 <td style="text-align: left">&gt; instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td>Instrument type<br><code>OPTION</code><br><code>FUTURES</code><br><code>SWAP</code></td>
+<td>Instrument type<br><code>OPTION</code><br><code>FUTURES</code></td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; instFamily</td>
@@ -55330,7 +55455,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
   </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid request: {</span><span class="se">\"</span><span class="s2">op</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">subscribe</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">argss</span><span class="se">\"</span><span class="s2">:[{ </span><span class="se">\"</span><span class="s2">channel</span><span class="se">\"</span><span class="s2"> : </span><span class="se">\"</span><span class="s2">estimated-price</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">instId</span><span class="se">\"</span><span class="s2"> : </span><span class="se">\"</span><span class="s2">FUTURES</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">uly</span><span class="se">\"</span><span class="s2"> :</span><span class="se">\"</span><span class="s2">BTC-USD</span><span class="se">\"</span><span class="s2">}]}"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"connId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a4d3ae55"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h4 id='public-data-websocket-estimated-delivery-exercise-price-channel-response-parameters'>Response parameters</h4>
+</span></code></pre></div><h4 id='public-data-websocket-estimated-delivery-exercise-settlement-price-channel-response-parameters'>Response parameters</h4>
 <table><thead>
 <tr>
 <th style="text-align: left">Parameter</th>
@@ -55361,7 +55486,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 <td style="text-align: left">&gt; instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Yes</td>
-<td>Instrument type<br><code>OPTION</code><br><code>FUTURES</code><br><code>SWAP</code></td>
+<td>Instrument type<br><code>OPTION</code><br><code>FUTURES</code></td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; instFamily</td>
@@ -55399,21 +55524,20 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 <p>Push Data Example</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"arg"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"estimated-price"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FUTURES"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"instFamily"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-USD"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FUTURES"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-USD-170310"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"settlePx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1597026383085"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+    </span><span class="nl">"arg"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"estimated-price"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FUTURES"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"instFamily"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XRP-USDT"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XRP-USDT-250307"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FUTURES"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"settlePx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.4230631578947368"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"settleType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"settlement"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1741244598708"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h4 id='public-data-websocket-estimated-delivery-exercise-price-channel-push-data-parameters'>Push data parameters</h4>
+</span></code></pre></div><h4 id='public-data-websocket-estimated-delivery-exercise-settlement-price-channel-push-data-parameters'>Push data parameters</h4>
 <table><thead>
 <tr>
 <th style="text-align: left"><strong>Parameter</strong></th>
@@ -55434,7 +55558,7 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 <tr>
 <td style="text-align: left">&gt; instType</td>
 <td style="text-align: left">String</td>
-<td>Instrument type<br><code>FUTURES</code><br><code>OPTION</code><br><code>SWAP</code></td>
+<td>Instrument type<br><code>FUTURES</code><br><code>OPTION</code></td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; instFamily</td>
@@ -55462,9 +55586,14 @@ For some altcoins perpetual swaps with significant fluctuations in funding rates
 <td>Instrument ID, e.g. <code>BTC-USD-170310</code></td>
 </tr>
 <tr>
+<td style="text-align: left">&gt; settleType</td>
+<td style="text-align: left">String</td>
+<td>Type<br><code>settlement</code>: Futures settlement<br><code>delivery</code>: Futures delivery<br><code>exercise</code>: Option exercise</td>
+</tr>
+<tr>
 <td style="text-align: left">&gt; settlePx</td>
 <td style="text-align: left">String</td>
-<td>Estimated delivery/exercise price</td>
+<td>Estimated price</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; ts</td>
@@ -68743,7 +68872,7 @@ For private endpoint, the response is restricted based on your country of reside
 </tr>
 <tr>
 <td style="text-align: left">details</td>
-<td style="text-align: left">String</td>
+<td style="text-align: left">Array of objects</td>
 <td style="text-align: left">List of announcements</td>
 </tr>
 <tr>
@@ -69493,7 +69622,7 @@ For private endpoint, the response is restricted based on your country of reside
 <tr>
 <td>51020</td>
 <td>200</td>
-<td>Order amount should be greater than the minimum available amount.</td>
+<td>Your order should meet or exceed the minimum order amount.</td>
 </tr>
 <tr>
 <td>51021</td>
