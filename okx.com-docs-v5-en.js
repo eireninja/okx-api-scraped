@@ -729,6 +729,15 @@
                 <a href="#order-book-trading-trade-get-one-click-repay-history" class="toc-h3 toc-link" data-title="GET / One-click repay history">GET / One-click repay history</a>
               </li>
               <li>
+                <a href="#order-book-trading-trade-get-one-click-repay-currency-list-new" class="toc-h3 toc-link" data-title="GET / One-click repay currency list (New)">GET / One-click repay currency list (New)</a>
+              </li>
+              <li>
+                <a href="#order-book-trading-trade-post-trade-one-click-repay-new" class="toc-h3 toc-link" data-title="POST / Trade one-click repay (New)">POST / Trade one-click repay (New)</a>
+              </li>
+              <li>
+                <a href="#order-book-trading-trade-get-one-click-repay-history-new" class="toc-h3 toc-link" data-title="GET / One-click repay history (New)">GET / One-click repay history (New)</a>
+              </li>
+              <li>
                 <a href="#order-book-trading-trade-post-mass-cancel-order" class="toc-h3 toc-link" data-title="POST / Mass cancel order">POST / Mass cancel order</a>
               </li>
               <li>
@@ -3547,7 +3556,7 @@ GET /api/v5/account/balance?ccy<span class="o">=</span>BTC,ETH
 <tr>
 <td>&gt; disEq</td>
 <td>String</td>
-<td>Discount equity of currency in <code>USD</code>.</td>
+<td>Discount equity of currency in <code>USD</code>.<br>Applicable to <code>Spot mode</code>(enabled spot borrow)/<code>Multi-currency margin</code>/<code>Portfolio margin</code></td>
 </tr>
 <tr>
 <td>&gt; fixedBal</td>
@@ -3567,7 +3576,7 @@ GET /api/v5/account/balance?ccy<span class="o">=</span>BTC,ETH
 <tr>
 <td>&gt; ordFrozen</td>
 <td>String</td>
-<td>Margin frozen for open orders <br>Applicable to <code>Spot mode</code>/<code>Spot and futures mode</code>/<code>Multi-currency margin</code></td>
+<td>Margin frozen for open orders<br>Applicable to <code>Spot mode</code>/<code>Spot and futures mode</code>/<code>Multi-currency margin</code></td>
 </tr>
 <tr>
 <td>&gt; liab</td>
@@ -3914,7 +3923,7 @@ The currency details will not be returned when cashBal and eq is both 0.
 <tr>
 <td style="text-align: left">&gt; disEq</td>
 <td style="text-align: left">Yes</td>
-<td style="text-align: left">No</td>
+<td style="text-align: left"></td>
 <td style="text-align: left">Yes</td>
 <td style="text-align: left">Yes</td>
 </tr>
@@ -17712,7 +17721,7 @@ body
 </tr>
 </tbody></table>
 <h3 id='order-book-trading-trade-get-one-click-repay-currency-list'>GET / One-click repay currency list</h3>
-<p>Get list of debt currency data and repay currencies. Debt currencies include both cross and isolated debts.</p>
+<p>Get list of debt currency data and repay currencies. Debt currencies include both cross and isolated debts. Only applicable to <code>Multi-currency margin</code>/<code>Portfolio margin</code>.</p>
 <h4 id='order-book-trading-trade-get-one-click-repay-currency-list-rate-limit-1-request-per-2-seconds'>Rate Limit: 1 request per 2 seconds</h4><h4 id='order-book-trading-trade-get-one-click-repay-currency-list-rate-limit-rule-user-id'>Rate limit rule: User ID</h4><h4 id='order-book-trading-trade-get-one-click-repay-currency-list-permission-read'>Permission: Read</h4><h4 id='order-book-trading-trade-get-one-click-repay-currency-list-http-request'>HTTP Request</h4>
 <p><code>GET /api/v5/trade/one-click-repay-currency-list</code></p>
 
@@ -17795,7 +17804,7 @@ body
 <tr>
 <td style="text-align: left">&gt; debtCcy</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Debt currency type</td>
+<td style="text-align: left">Debt currency</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; debtAmt</td>
@@ -17815,7 +17824,7 @@ body
 <tr>
 <td style="text-align: left">&gt; repayCcy</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Repay currency type</td>
+<td style="text-align: left">Repay currency</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; repayAmt</td>
@@ -17825,7 +17834,8 @@ body
 </tbody></table>
 <h3 id='order-book-trading-trade-post-trade-one-click-repay'>POST / Trade one-click repay</h3>
 <p>Trade one-click repay to repay cross debts. Isolated debts are not applicable.
-The maximum repayment amount is based on the remaining available balance of funding and trading accounts.</p>
+The maximum repayment amount is based on the remaining available balance of funding and trading accounts.
+Only applicable to <code>Multi-currency margin</code>/<code>Portfolio margin</code>.</p>
 <h4 id='order-book-trading-trade-post-trade-one-click-repay-rate-limit-1-request-per-2-seconds'>Rate Limit: 1 request per 2 seconds</h4><h4 id='order-book-trading-trade-post-trade-one-click-repay-rate-limit-rule-user-id'>Rate limit rule: User ID</h4><h4 id='order-book-trading-trade-post-trade-one-click-repay-permission-trade'>Permission: Trade</h4><h4 id='order-book-trading-trade-post-trade-one-click-repay-http-request'>HTTP Request</h4>
 <p><code>POST /api/v5/trade/one-click-repay</code></p>
 
@@ -17943,7 +17953,7 @@ body
 </tr>
 </tbody></table>
 <h3 id='order-book-trading-trade-get-one-click-repay-history'>GET / One-click repay history</h3>
-<p>Get the history and status of one-click repay trades in the past 7 days.</p>
+<p>Get the history and status of one-click repay trades in the past 7 days. Only applicable to <code>Multi-currency margin</code>/<code>Portfolio margin</code>.</p>
 <h4 id='order-book-trading-trade-get-one-click-repay-history-rate-limit-1-request-per-2-seconds'>Rate Limit: 1 request per 2 seconds</h4><h4 id='order-book-trading-trade-get-one-click-repay-history-rate-limit-rule-user-id'>Rate limit rule: User ID</h4><h4 id='order-book-trading-trade-get-one-click-repay-history-permission-read'>Permission: Read</h4><h4 id='order-book-trading-trade-get-one-click-repay-history-http-request'>HTTP Request</h4>
 <p><code>GET /api/v5/trade/one-click-repay-history</code></p>
 
@@ -18048,6 +18058,357 @@ body
 <td style="text-align: left">uTime</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Trade time, Unix timestamp format in milliseconds, e.g. 1597026383085</td>
+</tr>
+</tbody></table>
+<h3 id='order-book-trading-trade-get-one-click-repay-currency-list-new'>GET / One-click repay currency list (New)</h3>
+<p>Get list of debt currency data and repay currencies. Only applicable to <code>SPOT mode</code>.</p>
+<h4 id='order-book-trading-trade-get-one-click-repay-currency-list-new-rate-limit-1-request-per-2-seconds'>Rate Limit: 1 request per 2 seconds</h4><h4 id='order-book-trading-trade-get-one-click-repay-currency-list-new-rate-limit-rule-user-id'>Rate limit rule: User ID</h4><h4 id='order-book-trading-trade-get-one-click-repay-currency-list-new-permission-read'>Permission: Read</h4><h4 id='order-book-trading-trade-get-one-click-repay-currency-list-new-http-request'>HTTP Request</h4>
+<p><code>GET /api/v5/trade/one-click-repay-currency-list-v2</code></p>
+
+<blockquote>
+<p>Request Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>GET /api/v5/trade/one-click-repay-currency-list-v2
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code>
+</code></pre></div>
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"debtData"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"debtAmt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"debtCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"repayData"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"repayAmt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.000022977"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"repayCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"repayAmt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4998.0002397"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"repayCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"repayAmt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"repayCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OKB"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"repayAmt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"repayCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"repayAmt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"repayCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='order-book-trading-trade-get-one-click-repay-currency-list-new-response-parameters'>Response Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">debtData</td>
+<td style="text-align: left">Array of objects</td>
+<td style="text-align: left">Debt currency data list</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; debtCcy</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Debt currency</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; debtAmt</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Debt currency amount<br>Including principal and interest</td>
+</tr>
+<tr>
+<td style="text-align: left">repayData</td>
+<td style="text-align: left">Array of objects</td>
+<td style="text-align: left">Repay currency data list</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; repayCcy</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Repay currency</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; repayAmt</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Repay currency&#39;s available balance amount</td>
+</tr>
+</tbody></table>
+<h3 id='order-book-trading-trade-post-trade-one-click-repay-new'>POST / Trade one-click repay (New)</h3>
+<p>Trade one-click repay to repay debts. Only applicable to <code>SPOT mode</code>. </p>
+<h4 id='order-book-trading-trade-post-trade-one-click-repay-new-rate-limit-1-request-per-2-seconds'>Rate Limit: 1 request per 2 seconds</h4><h4 id='order-book-trading-trade-post-trade-one-click-repay-new-rate-limit-rule-user-id'>Rate limit rule: User ID</h4><h4 id='order-book-trading-trade-post-trade-one-click-repay-new-permission-trade'>Permission: Trade</h4><h4 id='order-book-trading-trade-post-trade-one-click-repay-new-http-request'>HTTP Request</h4>
+<p><code>POST /api/v5/trade/one-click-repay-v2</code></p>
+
+<blockquote>
+<p>Request Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>POST /api/v5/trade/one-click-repay-v2
+body
+<span class="o">{</span>
+    <span class="s2">"debtCcy"</span>: <span class="s2">"USDC"</span>, 
+    <span class="s2">"repayCcyList"</span>: <span class="o">[</span><span class="s2">"USDC"</span>,<span class="s2">"BTC"</span><span class="o">]</span> 
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code>
+</code></pre></div><h4 id='order-book-trading-trade-post-trade-one-click-repay-new-request-parameters'>Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">debtCcy</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Debt currency</td>
+</tr>
+<tr>
+<td style="text-align: left">repayCcyList</td>
+<td style="text-align: left">Array of string</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">Repay currency list, e.g. [&quot;USDC&quot;,&quot;BTC&quot;]<br>The priority of currency to repay is consistent with the order in the array. (The first item has the highest priority)</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"debtCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"repayCcyList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"BTC"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1742192217514"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='order-book-trading-trade-post-trade-one-click-repay-new-response-parameters'>Response Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">debtCcy</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Debt currency</td>
+</tr>
+<tr>
+<td style="text-align: left">repayCcyList</td>
+<td style="text-align: left">Array of string</td>
+<td style="text-align: left">Repay currency list, e.g. [&quot;USDC&quot;,&quot;BTC&quot;]</td>
+</tr>
+<tr>
+<td style="text-align: left">ts</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Request time, Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
+</tr>
+</tbody></table>
+<h3 id='order-book-trading-trade-get-one-click-repay-history-new'>GET / One-click repay history (New)</h3>
+<p>Get the history and status of one-click repay trades in the past 7 days. Only applicable to <code>SPOT mode</code>.</p>
+<h4 id='order-book-trading-trade-get-one-click-repay-history-new-rate-limit-1-request-per-2-seconds'>Rate Limit: 1 request per 2 seconds</h4><h4 id='order-book-trading-trade-get-one-click-repay-history-new-rate-limit-rule-user-id'>Rate limit rule: User ID</h4><h4 id='order-book-trading-trade-get-one-click-repay-history-new-permission-read'>Permission: Read</h4><h4 id='order-book-trading-trade-get-one-click-repay-history-new-http-request'>HTTP Request</h4>
+<p><code>GET /api/v5/trade/one-click-repay-history-v2</code></p>
+
+<blockquote>
+<p>Request Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>GET /api/v5/trade/one-click-repay-history-v2
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code></code></pre></div><h4 id='order-book-trading-trade-get-one-click-repay-history-new-request-parameters'>Request Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">after</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Pagination of data to return records earlier than (included) the requested time <code>ts</code> , Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
+</tr>
+<tr>
+<td style="text-align: left">before</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Pagination of data to return records newer than (included) the requested time <code>ts</code>, Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
+</tr>
+<tr>
+<td style="text-align: left">limit</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">Number of results per request. The maximum is 100. The default is 100.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"debtCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fillDebtSz"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.079631989"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ordIdInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"cTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1742194485439"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"fillPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"fillSz"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.088651"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC-USDT"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2338478342062235648"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ioc"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"px"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0049"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filled"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"sz"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.0886514537313433"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"cTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1742194482326"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"fillPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"83271.9"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"fillSz"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00010969"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-USDT"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2338478237607288832"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ioc"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"px"</span><span class="p">:</span><span class="w"> </span><span class="s2">"82856.7"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filled"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"sz"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000109696512171"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"repayCcyList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"BTC"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filled"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1742194481852"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"debtCcy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fillDebtSz"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ordIdInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="nl">"repayCcyList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"USDC"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"BTC"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filled"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1742192217511"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='order-book-trading-trade-get-one-click-repay-history-new-response-parameters'>Response Parameters</h4>
+<table><thead>
+<tr>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">debtCcy</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Debt currency</td>
+</tr>
+<tr>
+<td style="text-align: left">repayCcyList</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Repay currency list, e.g. [&quot;USDC&quot;,&quot;BTC&quot;]</td>
+</tr>
+<tr>
+<td style="text-align: left">fillDebtSz</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Amount of debt currency transacted</td>
+</tr>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Current status of one-click repay <br><code>running</code>: Running <br><code>filled</code>: Filled <br><code>failed</code>: Failed</td>
+</tr>
+<tr>
+<td style="text-align: left">ordIdInfo</td>
+<td style="text-align: left">Array of object</td>
+<td style="text-align: left">Order info</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; ordId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Order ID</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Instrument ID, e.g. <code>BTC-USDT</code></td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; ordType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Order type<br><code>ioc</code>: Immediate-or-cancel order</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; side</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Side<br><code>buy</code><br><code>sell</code></td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; px</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Price</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; sz</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Quantity to buy or sell</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; fillPx</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Last filled price.<br>If none is filled, it will return &quot;&quot;.</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; fillSz</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Last filled quantity</td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; state</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">State<br><code>filled</code><br><code>canceled</code></td>
+</tr>
+<tr>
+<td style="text-align: left">&gt; cTime</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Creation time for order, Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
+</tr>
+<tr>
+<td style="text-align: left">ts</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Request time, Unix timestamp format in milliseconds, e.g. <code>1597026383085</code></td>
 </tr>
 </tbody></table>
 <h3 id='order-book-trading-trade-post-mass-cancel-order'>POST / Mass cancel order</h3>
@@ -59564,7 +59925,7 @@ body
 <td style="text-align: left">type</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">No</td>
-<td style="text-align: left">Bill type<br><code>1</code>: Deposit<br><code>2</code>: Withdrawal<br><code>13</code>: Canceled withdrawal<br><code>20</code>: Transfer to sub account (for master account)<br><code>21</code>: Transfer from sub account (for master account)<br><code>22</code>: Transfer out from sub to master account (for sub-account)<br><code>23</code>: Transfer in from master to sub account (for sub-account)<br><code>28</code>: Manually claimed Airdrop<br><code>47</code>: System reversal<br><code>48</code>: Event Reward<br><code>49</code>: Event Giveaway<br><code>68</code>: Fee rebate (by rebate card)<br><code>72</code>: Token received<br><code>73</code>: Token given away<br><code>74</code>: Token refunded<br><code>75</code>: Subscription to savings<br><code>76</code>: Redemption to savings<br><code>77</code>: Jumpstart distribute<br><code>78</code>: Jumpstart lock up<br><code>80</code>: DEFI/Staking purchase<br><code>82</code>: DEFI/Staking redemption<br><code>83</code>: Staking yield<br><code>84</code>: Violation fee<br><code>89</code>: Deposit yield<br><code>116</code>: [Fiat] Place an order<br><code>117</code>: [Fiat] Fulfill an order<br><code>118</code>: [Fiat] Cancel an order<br><code>124</code>: Jumpstart unlocking<br><code>130</code>: Transferred from Trading account<br><code>131</code>: Transferred to Trading account<br><code>132</code>: [P2P] Frozen by customer service<br><code>133</code>: [P2P] Unfrozen by customer service<br><code>134</code>: [P2P] Transferred by customer service<br><code>135</code>: Cross chain exchange<br><code>137</code>: [ETH Staking] Subscription<br><code>138</code>: [ETH Staking] Swapping<br><code>139</code>: [ETH Staking] Earnings<br><code>146</code>: Customer feedback<br><code>150</code>: Affiliate commission<br><code>151</code>: Referral reward<br><code>152</code>: Broker reward<br><code>160</code>: Dual Investment subscribe<br><code>161</code>: Dual Investment collection<br><code>162</code>: Dual Investment profit<br><code>163</code>: Dual Investment refund<br><code>172</code>: [Affiliate] Sub-affiliate commission<br><code>173</code>: [Affiliate] Fee rebate (by trading fee)<br><code>174</code>: Jumpstart Pay<br><code>175</code>: Locked collateral<br><code>176</code>: Loan<br><code>177</code>: Added collateral<br><code>178</code>: Returned collateral<br><code>179</code>: Repayment<br><code>180</code>: Unlocked collateral<br><code>181</code>: Airdrop payment<br><code>185</code>: [Broker] Convert reward<br><code>187</code>: [Broker] Convert transfer<br><code>189</code>: Mystery box bonus<br><code>195</code>: Untradable asset withdrawal<br><code>196</code>: Untradable asset withdrawal revoked<br><code>197</code>: Untradable asset deposit<br><code>198</code>: Untradable asset collection reduce<br><code>199</code>: Untradable asset collection increase<br><code>200</code>: Buy<br><code>202</code>: Price Lock Subscribe<br><code>203</code>: Price Lock Collection<br><code>204</code>: Price Lock Profit<br><code>205</code>: Price Lock Refund<br><code>207</code>: Dual Investment Lite Subscribe<br><code>208</code>: Dual Investment Lite Collection<br><code>209</code>: Dual Investment Lite Profit<br><code>210</code>: Dual Investment Lite Refund<br><code>212</code>: [Flexible loan] Multi-collateral loan collateral locked<br><code>215</code>: [Flexible loan] Multi-collateral loan collateral released<br><code>217</code>: [Flexible loan] Multi-collateral loan borrowed<br><code>218</code>: [Flexible loan] Multi-collateral loan repaid<br><code>232</code>: [Flexible loan] Subsidized interest received<br><code>220</code>: Delisted crypto<br><code>221</code>: Blockchain&#39;s withdrawal fee<br><code>222</code>: Withdrawal fee refund<br><code>223</code>: SWAP lead trading profit share<br><code>225</code>: Shark Fin subscribe<br><code>226</code>: Shark Fin collection<br><code>227</code>: Shark Fin profit<br><code>228</code>: Shark Fin refund<br><code>229</code>: Airdrop<br><code>232</code>: Subsidized interest received<br><code>233</code>: Broker rebate compensation<br><code>240</code>: Snowball subscribe<br><code>241</code>: Snowball refund<br><code>242</code>: Snowball profit<br><code>243</code>: Snowball trading failed<br><code>249</code>: Seagull subscribe<br><code>250</code>: Seagull collection<br><code>251</code>: Seagull profit<br><code>252</code>: Seagull refund<br><code>263</code>: Strategy bots profit share<br><code>265</code>: Signal revenue<br><code>266</code>: SPOT lead trading profit share<br><code>270</code>: DCD broker transfer<br><code>271</code>: DCD broker rebate<br><code>272</code>: [Convert] Buy Crypto/Fiat<br><code>273</code>: [Convert] Sell Crypto/Fiat<br><code>284</code>: [Custody] Transfer out trading sub-account<br><code>285</code>: [Custody] Transfer in trading sub-account<br><code>286</code>: [Custody] Transfer out custody funding account<br><code>287</code>: [Custody] Transfer in custody funding account<br><code>288</code>: [Custody] Fund delegation <br><code>289</code>: [Custody] Fund undelegation<br><code>299</code>: Affiliate recommendation commission<br><code>300</code>: Fee discount rebate<br><code>303</code>: Snowball market maker transfer<br><del><code>304</code>: [Simple Earn Fixed] Order submission</del><br><del><code>305</code>: [Simple Earn Fixed] Order redemption</del><br><del><code>306</code>: [Simple Earn Fixed] Principal distribution</del><br><del><code>307</code>: [Simple Earn Fixed] Interest distribution (early termination compensation)</del><br><del><code>308</code>: [Simple Earn Fixed] Interest distribution</del><br><del><code>309</code>: [Simple Earn Fixed] Interest distribution (extension compensation) </del><br><code>311</code>: Crypto dust auto-transfer in<br><code>313</code>: Sent by gift<br><code>314</code>: Received from gift<br><code>315</code>: Refunded from gift<br><code>328</code>: [SOL staking] Send Liquidity Staking Token reward<br><code>329</code>: [SOL staking] Subscribe Liquidity Staking Token staking<br><code>330</code>: [SOL staking] Mint Liquidity Staking Token<br><code>331</code>: [SOL staking] Redeem Liquidity Staking Token order<br><code>332</code>: [SOL staking] Settle Liquidity Staking Token order<br><code>333</code>: Trial fund reward<br><code>336</code>: [Credit line] Loan Forced Repayment<br><code>338</code>: [Credit line] Forced Repayment Refund<br><code>354</code>: Copy and bot rewards</td>
+<td style="text-align: left">Bill type<br><code>1</code>: Deposit<br><code>2</code>: Withdrawal<br><code>13</code>: Canceled withdrawal<br><code>20</code>: Transfer to sub account (for master account)<br><code>21</code>: Transfer from sub account (for master account)<br><code>22</code>: Transfer out from sub to master account (for sub-account)<br><code>23</code>: Transfer in from master to sub account (for sub-account)<br><code>28</code>: Manually claimed Airdrop<br><code>47</code>: System reversal<br><code>48</code>: Event Reward<br><code>49</code>: Event Giveaway<br><code>68</code>: Fee rebate (by rebate card)<br><code>72</code>: Token received<br><code>73</code>: Token given away<br><code>74</code>: Token refunded<br><code>75</code>: Subscription to savings<br><code>76</code>: Redemption to savings<br><code>77</code>: Jumpstart distribute<br><code>78</code>: Jumpstart lock up<br><code>80</code>: DEFI/Staking purchase<br><code>82</code>: DEFI/Staking redemption<br><code>83</code>: Staking yield<br><code>84</code>: Violation fee<br><code>89</code>: Deposit yield<br><code>116</code>: [Fiat] Place an order<br><code>117</code>: [Fiat] Fulfill an order<br><code>118</code>: [Fiat] Cancel an order<br><code>124</code>: Jumpstart unlocking<br><code>130</code>: Transferred from Trading account<br><code>131</code>: Transferred to Trading account<br><code>132</code>: [P2P] Frozen by customer service<br><code>133</code>: [P2P] Unfrozen by customer service<br><code>134</code>: [P2P] Transferred by customer service<br><code>135</code>: Cross chain exchange<br><code>137</code>: [ETH Staking] Subscription<br><code>138</code>: [ETH Staking] Swapping<br><code>139</code>: [ETH Staking] Earnings<br><code>146</code>: Customer feedback<br><code>150</code>: Affiliate commission<br><code>151</code>: Referral reward<br><code>152</code>: Broker reward<br><code>160</code>: Dual Investment subscribe<br><code>161</code>: Dual Investment collection<br><code>162</code>: Dual Investment profit<br><code>163</code>: Dual Investment refund<br><code>172</code>: [Affiliate] Sub-affiliate commission<br><code>173</code>: [Affiliate] Fee rebate (by trading fee)<br><code>174</code>: Jumpstart Pay<br><code>175</code>: Locked collateral<br><code>176</code>: Loan<br><code>177</code>: Added collateral<br><code>178</code>: Returned collateral<br><code>179</code>: Repayment<br><code>180</code>: Unlocked collateral<br><code>181</code>: Airdrop payment<br><code>185</code>: [Broker] Convert reward<br><code>187</code>: [Broker] Convert transfer<br><code>189</code>: Mystery box bonus<br><code>195</code>: Untradable asset withdrawal<br><code>196</code>: Untradable asset withdrawal revoked<br><code>197</code>: Untradable asset deposit<br><code>198</code>: Untradable asset collection reduce<br><code>199</code>: Untradable asset collection increase<br><code>200</code>: Buy<br><code>202</code>: Price Lock Subscribe<br><code>203</code>: Price Lock Collection<br><code>204</code>: Price Lock Profit<br><code>205</code>: Price Lock Refund<br><code>207</code>: Dual Investment Lite Subscribe<br><code>208</code>: Dual Investment Lite Collection<br><code>209</code>: Dual Investment Lite Profit<br><code>210</code>: Dual Investment Lite Refund<br><code>212</code>: [Flexible loan] Multi-collateral loan collateral locked<br><code>215</code>: [Flexible loan] Multi-collateral loan collateral released<br><code>217</code>: [Flexible loan] Multi-collateral loan borrowed<br><code>218</code>: [Flexible loan] Multi-collateral loan repaid<br><code>232</code>: [Flexible loan] Subsidized interest received<br><code>220</code>: Delisted crypto<br><code>221</code>: Blockchain&#39;s withdrawal fee<br><code>222</code>: Withdrawal fee refund<br><code>223</code>: SWAP lead trading profit share<br><code>225</code>: Shark Fin subscribe<br><code>226</code>: Shark Fin collection<br><code>227</code>: Shark Fin profit<br><code>228</code>: Shark Fin refund<br><code>229</code>: Airdrop<br><code>232</code>: Subsidized interest received<br><code>233</code>: Broker rebate compensation<br><code>240</code>: Snowball subscribe<br><code>241</code>: Snowball refund<br><code>242</code>: Snowball profit<br><code>243</code>: Snowball trading failed<br><code>249</code>: Seagull subscribe<br><code>250</code>: Seagull collection<br><code>251</code>: Seagull profit<br><code>252</code>: Seagull refund<br><code>263</code>: Strategy bots profit share<br><code>265</code>: Signal revenue<br><code>266</code>: SPOT lead trading profit share<br><code>270</code>: DCD broker transfer<br><code>271</code>: DCD broker rebate<br><code>272</code>: [Convert] Buy Crypto/Fiat<br><code>273</code>: [Convert] Sell Crypto/Fiat<br><code>284</code>: [Custody] Transfer out trading sub-account<br><code>285</code>: [Custody] Transfer in trading sub-account<br><code>286</code>: [Custody] Transfer out custody funding account<br><code>287</code>: [Custody] Transfer in custody funding account<br><code>288</code>: [Custody] Fund delegation <br><code>289</code>: [Custody] Fund undelegation<br><code>299</code>: Affiliate recommendation commission<br><code>300</code>: Fee discount rebate<br><code>303</code>: Snowball market maker transfer<br><del><code>304</code>: [Simple Earn Fixed] Order submission</del><br><del><code>305</code>: [Simple Earn Fixed] Order redemption</del><br><del><code>306</code>: [Simple Earn Fixed] Principal distribution</del><br><del><code>307</code>: [Simple Earn Fixed] Interest distribution (early termination compensation)</del><br><del><code>308</code>: [Simple Earn Fixed] Interest distribution</del><br><del><code>309</code>: [Simple Earn Fixed] Interest distribution (extension compensation) </del><br><code>311</code>: Crypto dust auto-transfer in<br><code>313</code>: Sent by gift<br><code>314</code>: Received from gift<br><code>315</code>: Refunded from gift<br><code>328</code>: [SOL staking] Send Liquidity Staking Token reward<br><code>329</code>: [SOL staking] Subscribe Liquidity Staking Token staking<br><code>330</code>: [SOL staking] Mint Liquidity Staking Token<br><code>331</code>: [SOL staking] Redeem Liquidity Staking Token order<br><code>332</code>: [SOL staking] Settle Liquidity Staking Token order<br><code>333</code>: Trial fund reward<br><code>336</code>: [Credit line] Loan Forced Repayment<br><code>338</code>: [Credit line] Forced Repayment Refund<br><code>354</code>: Copy and bot rewards<br><code>361</code>: Deposit from closed sub-account</td>
 </tr>
 <tr>
 <td style="text-align: left">clientId</td>
@@ -72758,6 +73119,11 @@ For private endpoint, the response is restricted based on your country of reside
 <td>Unable to switch due to a margin check failure.</td>
 </tr>
 <tr>
+<td>59140</td>
+<td>200</td>
+<td>You can only repay with your collateral crypto.</td>
+</tr>
+<tr>
 <td>59200</td>
 <td>200</td>
 <td>Insufficient account balance.</td>
@@ -73425,161 +73791,48 @@ For private endpoint, the response is restricted based on your country of reside
 <td>As a lead trader, you can&#39;t lead trades in {instrument} with leverage higher than {num}×</td>
 </tr>
 <tr>
-<td>59206</td>
+<td>59129</td>
 <td>200</td>
-<td>The lead trader doesn&#39;t have any more vacancies for copy traders</td>
-</tr>
-<tr>
-<td>59216</td>
-<td>200</td>
-<td>The position doesn&#39;t exist. Please try again</td>
-</tr>
-<tr>
-<td>59218</td>
-<td>200</td>
-<td>Closing all positions at market price...</td>
-</tr>
-<tr>
-<td>59256</td>
-<td>200</td>
-<td>To switch to One-way mode, lower the number of traders you copy to 1</td>
-</tr>
-<tr>
-<td>59247</td>
-<td>200</td>
-<td>High leverage causes current position to exceed the maximum position size limit under this leverage. Adjust the leverage.</td>
-</tr>
-<tr>
-<td>59260</td>
-<td>200</td>
-<td>You are not a spot lead trader yet. Complete the application on our website or app first.</td>
-</tr>
-<tr>
-<td>59262</td>
-<td>200</td>
-<td>You aren&#39;t a contract lead trader yet. Complete the application first.</td>
-</tr>
-<tr>
-<td>59641</td>
-<td>200</td>
-<td>Can&#39;t switch account mode as you have fixed loan borrowings.</td>
-</tr>
-<tr>
-<td>59642</td>
-<td>200</td>
-<td>Lead and copy traders can only use spot or spot and futures modes</td>
-</tr>
-<tr>
-<td>59643</td>
-<td>200</td>
-<td>Couldn’t switch account modes as you’re currently copying spot trades</td>
-</tr>
-<tr>
-<td>59245</td>
-<td>200</td>
-<td>As a lead trader, number of {param0} contract per order must be no greater than {param1}</td>
-</tr>
-<tr>
-<td>59263</td>
-<td>200</td>
-<td>Only traders on the allowlist can use copy trading. ND brokers can reach out to BD for help.</td>
-</tr>
-<tr>
-<td>59264</td>
-<td>200</td>
-<td>Spot copy trading isn&#39;t supported</td>
-</tr>
-<tr>
-<td>59267</td>
-<td>200</td>
-<td>Cancellation failed as you aren&#39;t copying this trader</td>
-</tr>
-<tr>
-<td>59268</td>
-<td>200</td>
-<td>You can&#39;t copy trades with instId that hasn&#39;t been selected by the lead trader</td>
-</tr>
-<tr>
-<td>59269</td>
-<td>200</td>
-<td>This contract lead trader doesn&#39;t exist</td>
-</tr>
-<tr>
-<td>59270</td>
-<td>200</td>
-<td>Maximum total amount (copyTotalAmt) can&#39;t be lower than amount per order (copyAmt) when using fixed amount</td>
-</tr>
-<tr>
-<td>59273</td>
-<td>200</td>
-<td>You aren&#39;t a contract copy trader yet. Start by coping a contract trader.</td>
-</tr>
-<tr>
-<td>59275</td>
-<td>200</td>
-<td>You can&#39;t copy trade as you&#39;re applying to become a lead trader</td>
-</tr>
-<tr>
-<td>59276</td>
-<td>200</td>
-<td>You can&#39;t copy this lead trader as they&#39;ve applied to stop leading trades</td>
-</tr>
-<tr>
-<td>59277</td>
-<td>200</td>
-<td>You can&#39;t copy this lead trader as they don&#39;t have any copy trader vacancies</td>
-</tr>
-<tr>
-<td>59278</td>
-<td>200</td>
-<td>Your request to stop copy trading is being processed. Try again later.</td>
-</tr>
-<tr>
-<td>59279</td>
-<td>200</td>
-<td>You&#39;ve already copied this trader</td>
-</tr>
-<tr>
-<td>59280</td>
-<td>200</td>
-<td>You can&#39;t modify copy trade settings as you aren&#39;t copying this trader</td>
-</tr>
-<tr>
-<td>59282</td>
-<td>200</td>
-<td>Only ND sub-accounts under ND brokers whose main accounts are on the allowlist support this endpoint. Reach out to BD for help.</td>
-</tr>
-<tr>
-<td>59283</td>
-<td>200</td>
-<td>Your account isn’t currently using spot and futures mode</td>
-</tr>
-<tr>
-<td>59284</td>
-<td>200</td>
-<td>You&#39;ve reached the monthly limit of {param0} ratio edits</td>
-</tr>
-<tr>
-<td>59286</td>
-<td>200</td>
-<td>You can&#39;t become a futures lead trader when using spot mode</td>
-</tr>
-<tr>
-<td>59287</td>
-<td>200</td>
-<td>Profit sharing ratio should be between {param0} and {param1}</td>
-</tr>
-<tr>
-<td>59288</td>
-<td>200</td>
-<td>You&#39;re leading trades but your account is in portfolio margin mode. Switch to spot and futures mode or multiple-currency margin mode and try again</td>
+<td>The first crypto you use to repay must be {param0}.</td>
 </tr>
 <tr>
 <td>59130</td>
 <td>200</td>
-<td>The highest take profit level is {num}%. Enter a smaller number and try again.</td>
+<td>If an asset’s balance is &lt; 1 USD, it can only repay borrowings of the same crypto.</td>
 </tr>
 </tbody></table>
+
+<p>|   59206           |   200                 | The lead trader doesn&#39;t have any more vacancies for copy traders                                                                                                                   |
+|   59216           |   200                 | The position doesn&#39;t exist. Please try again                                                                                                                   |
+|   59218           |   200                 | Closing all positions at market price...                                                                                                                       |
+|   59256           |   200                 | To switch to One-way mode, lower the number of traders you copy to 1                                                                                                                      |
+| 59247          | 200                  | High leverage causes current position to exceed the maximum position size limit under this leverage. Adjust the leverage. |
+|   59260           |   200                 | You are not a spot lead trader yet. Complete the application on our website or app first.                                                                          |
+|   59262           |   200                 | You aren&#39;t a contract lead trader yet. Complete the application first.                                                                                            |
+|   59641           |   200                 | Can&#39;t switch account mode as you have fixed loan borrowings.                                                                     |
+|   59642           |   200                 | Lead and copy traders can only use spot or spot and futures modes                                                                    |
+|   59643           |   200                 | Couldn’t switch account modes as you’re currently copying spot trades                                                           |
+|   59245           |   200                 | As a lead trader, number of {param0} contract per order must be no greater than {param1}                                                            |
+|   59263           |   200     | Only traders on the allowlist can use copy trading. ND brokers can reach out to BD for help.                                                       |
+|   59264           |   200     | Spot copy trading isn&#39;t supported                                                       |
+|   59267           |   200     | Cancellation failed as you aren&#39;t copying this trader                                                                           |
+|   59268           |   200     | You can&#39;t copy trades with instId that hasn&#39;t been selected by the lead trader                                                                                            |
+|   59269           |   200     | This contract lead trader doesn&#39;t exist                                                             |
+|   59270           |   200     | Maximum total amount (copyTotalAmt) can&#39;t be lower than amount per order (copyAmt) when using fixed amount                                                          |
+|   59273           |   200     | You aren&#39;t a contract copy trader yet. Start by coping a contract trader.                                                           |
+|   59275           |   200     | You can&#39;t copy trade as you&#39;re applying to become a lead trader                                                             |
+|   59276           |   200     | You can&#39;t copy this lead trader as they&#39;ve applied to stop leading trades                                                           |
+|   59277           |   200     | You can&#39;t copy this lead trader as they don&#39;t have any copy trader vacancies                                                            |
+|   59278           |   200     | Your request to stop copy trading is being processed. Try again later.                                                          |
+|   59279           |   200     | You&#39;ve already copied this trader                                                            |
+|   59280           |   200     | You can&#39;t modify copy trade settings as you aren&#39;t copying this trader                                                          |
+|   59282           |   200     | Only ND sub-accounts under ND brokers whose main accounts are on the allowlist support this endpoint. Reach out to BD for help.                                                                                                                                                                                                                                                   |
+|   59283           |   200     | Your account isn’t currently using spot and futures mode                                                          |
+|   59284           |   200     | You&#39;ve reached the monthly limit of {param0} ratio edits                                                                                                                                                                                                                                                                                                                         |
+|   59286           |   200     | You can&#39;t become a futures lead trader when using spot mode                                                                                                                                                                                                                                                                                                               |
+|   59287           |   200     | Profit sharing ratio should be between {param0} and {param1}                                                                                                                                                                                                                                                                                                                     |
+|   59288           |   200     | You&#39;re leading trades but your account is in portfolio margin mode. Switch to spot and futures mode or multiple-currency margin mode and try again                                                                                                                                                                                                                                      |
+|   59130           |   200     | The highest take profit level is {num}%. Enter a smaller number and try again.                                                          |</p>
 
 <p>|   59258           |   200     | Action not supported for lead traders                                                            |
 |   59259           |   200     | Enter a multiplier value that&#39;s within the valid range                                                          |
