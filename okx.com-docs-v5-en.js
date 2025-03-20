@@ -1532,7 +1532,7 @@
                 <a href="#trading-statistics-rest-api-get-contract-taker-volume" class="toc-h3 toc-link" data-title="Get contract taker volume">Get contract taker volume</a>
               </li>
               <li>
-                <a href="#trading-statistics-rest-api-get-margin-lending-ratio" class="toc-h3 toc-link" data-title="Get margin lending ratio">Get margin lending ratio</a>
+                <a href="#trading-statistics-rest-api-get-margin-long-short-ratio" class="toc-h3 toc-link" data-title="Get margin long/short ratio">Get margin long/short ratio</a>
               </li>
               <li>
                 <a href="#trading-statistics-rest-api-get-top-traders-contract-long-short-ratio" class="toc-h3 toc-link" data-title="Get top traders contract long/short ratio">Get top traders contract long/short ratio</a>
@@ -17072,7 +17072,7 @@ As far as OPTION orders that are complete, pxVol and pxUsd will update in time f
 
 <aside class="notice">
 tradeId<br>
-When the order category to which the transaction details belong is partial_liquidation, full_liquidation, or adl, this field will be assigned a negative value to distinguish it from other matching transaction scenarios.<br>
+For partial_liquidation, full_liquidation, or adl, when it comes to fill information, this field will be assigned a negative value to distinguish it from other matching transaction scenarios, when it comes to order information, this field will be 0.
 </aside>
 
 <aside class="notice">
@@ -57855,9 +57855,9 @@ The return value array order is: [ts,sellVol,buyVol]
 </tbody></table>
 
 <p>The data returned will be arranged in an array like this: [ts, sellVol, buyVol].</p>
-<h3 id='trading-statistics-rest-api-get-margin-lending-ratio'>Get margin lending ratio</h3>
+<h3 id='trading-statistics-rest-api-get-margin-long-short-ratio'>Get margin long/short ratio</h3>
 <p>Retrieve the ratio of cumulative amount of quote currency to base currency.</p>
-<h4 id='trading-statistics-rest-api-get-margin-lending-ratio-rate-limit-5-requests-per-2-seconds'>Rate Limit: 5 requests per 2 seconds</h4><h4 id='trading-statistics-rest-api-get-margin-lending-ratio-rate-limit-rule-ip'>Rate limit rule: IP</h4><h4 id='trading-statistics-rest-api-get-margin-lending-ratio-permission-read'>Permission: Read</h4><h4 id='trading-statistics-rest-api-get-margin-lending-ratio-http-request'>HTTP Request</h4>
+<h4 id='trading-statistics-rest-api-get-margin-long-short-ratio-rate-limit-5-requests-per-2-seconds'>Rate Limit: 5 requests per 2 seconds</h4><h4 id='trading-statistics-rest-api-get-margin-long-short-ratio-rate-limit-rule-ip'>Rate limit rule: IP</h4><h4 id='trading-statistics-rest-api-get-margin-long-short-ratio-permission-read'>Permission: Read</h4><h4 id='trading-statistics-rest-api-get-margin-long-short-ratio-http-request'>HTTP Request</h4>
 <p><code>GET /api/v5/rubik/stat/margin/loan-ratio</code></p>
 
 <blockquote>
@@ -57875,7 +57875,7 @@ The return value array order is: [ts,sellVol,buyVol]
     <span class="n">ccy</span><span class="o">=</span><span class="s">"BTC"</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</code></pre></div><h4 id='trading-statistics-rest-api-get-margin-lending-ratio-request-parameters'>Request Parameters</h4>
+</code></pre></div><h4 id='trading-statistics-rest-api-get-margin-long-short-ratio-request-parameters'>Request Parameters</h4>
 <table><thead>
 <tr>
 <th style="text-align: left">Parameter</th>
@@ -57927,7 +57927,7 @@ The return value array order is: [ts,sellVol,buyVol]
     </span><span class="p">],</span><span class="w">
     </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h4 id='trading-statistics-rest-api-get-margin-lending-ratio-response-parameters'>Response Parameters</h4>
+</span></code></pre></div><h4 id='trading-statistics-rest-api-get-margin-long-short-ratio-response-parameters'>Response Parameters</h4>
 <table><thead>
 <tr>
 <th style="text-align: left"><strong>Parameter</strong></th>
@@ -64531,7 +64531,10 @@ Supports subscriptions for accounts<br></p>
             </span><span class="nl">"subAcct"</span><span class="p">:</span><span class="w"> </span><span class="s2">"D456DDDL"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1659334756000"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3400***********7413"</span><span class="w">
+            </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3400***********7413"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"subAcctLv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"firstLvSubAcct"</span><span class="p">:</span><span class="w"> </span><span class="s2">"D456DDDL"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ifDma"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -64592,6 +64595,21 @@ Supports subscriptions for accounts<br></p>
 <td style="text-align: left">ts</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Sub-account creation time, Unix timestamp in millisecond format. e.g. <code>1597026383085</code></td>
+</tr>
+<tr>
+<td style="text-align: left">subAcctLv</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Sub-account level <br><code>1</code>: First level sub-account<br/><code>2</code>: Second level sub-account.</td>
+</tr>
+<tr>
+<td style="text-align: left">firstLvSubAcct</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">The first level sub-account. <br>For subAcctLv: 1, firstLvSubAcct is equal to subAcct<br/>For subAcctLv: 2, subAcct belongs to firstLvSubAcct.</td>
+</tr>
+<tr>
+<td style="text-align: left">ifDma</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">Whether it is dma broker sub-account. <br><code>true</code>: Dma broker sub-account<br/> <code>false</code>: It is not dma broker sub-account.</td>
 </tr>
 </tbody></table>
 <h3 id='sub-account-rest-api-reset-the-api-key-of-a-sub-account'>Reset the API Key of a sub-account</h3>
