@@ -531,7 +531,7 @@
                 <a href="#trading-account-rest-api-get-bills-details-last-7-days" class="toc-h3 toc-link" data-title="Get bills details (last 7 days)">Get bills details (last 7 days)</a>
               </li>
               <li>
-                <a href="#trading-account-rest-api-get-bills-details-last-3-months" class="toc-h3 toc-link" data-title="Get bills details (last 3 months)">Get bills details (last 3 months)</a>
+                <a href="#trading-account-rest-api-get-bills-details-last-1-year" class="toc-h3 toc-link" data-title="Get bills details (last 1 year)">Get bills details (last 1 year)</a>
               </li>
               <li>
                 <a href="#trading-account-rest-api-apply-bills-details-since-2021" class="toc-h3 toc-link" data-title="Apply bills details (since 2021)">Apply bills details (since 2021)</a>
@@ -5408,9 +5408,9 @@ GET /api/v5/account/bills?instType<span class="o">=</span>MARGIN
 <strong>Funding Fee expense (subType = 173)</strong><br>
 You may refer to "pnl" for the fee payment
 </aside>
-<h3 id='trading-account-rest-api-get-bills-details-last-3-months'>Get bills details (last 3 months)</h3>
-<p>Retrieve the account’s bills. The bill refers to all transaction records that result in changing the balance of an account. Pagination is supported, and the response is sorted with most recent first. This endpoint can retrieve data from the last 3 months.</p>
-<h4 id='trading-account-rest-api-get-bills-details-last-3-months-rate-limit-5-requests-per-2-seconds'>Rate Limit: 5 requests per 2 seconds</h4><h4 id='trading-account-rest-api-get-bills-details-last-3-months-rate-limit-rule-user-id'>Rate limit rule: User ID</h4><h4 id='trading-account-rest-api-get-bills-details-last-3-months-permission-read'>Permission: Read</h4><h4 id='trading-account-rest-api-get-bills-details-last-3-months-http-request'>HTTP Request</h4>
+<h3 id='trading-account-rest-api-get-bills-details-last-1-year'>Get bills details (last 1 year)</h3>
+<p>Retrieve the account’s bills. The bill refers to all transaction records that result in changing the balance of an account. Pagination is supported, and the response is sorted with most recent first. This endpoint can retrieve data from the last 1 year since July 1, 2024.</p>
+<h4 id='trading-account-rest-api-get-bills-details-last-1-year-rate-limit-5-requests-per-2-seconds'>Rate Limit: 5 requests per 2 seconds</h4><h4 id='trading-account-rest-api-get-bills-details-last-1-year-rate-limit-rule-user-id'>Rate limit rule: User ID</h4><h4 id='trading-account-rest-api-get-bills-details-last-1-year-permission-read'>Permission: Read</h4><h4 id='trading-account-rest-api-get-bills-details-last-1-year-http-request'>HTTP Request</h4>
 <p><code>GET /api/v5/account/bills-archive</code></p>
 
 <blockquote>
@@ -5434,7 +5434,7 @@ GET /api/v5/account/bills-archive?instType<span class="o">=</span>MARGIN
 <span class="c1"># Get bills details (last 3 months)
 </span><span class="n">result</span> <span class="o">=</span> <span class="n">accountAPI</span><span class="p">.</span><span class="n">get_account_bills_archive</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</code></pre></div><h4 id='trading-account-rest-api-get-bills-details-last-3-months-request-parameters'>Request Parameters</h4>
+</code></pre></div><h4 id='trading-account-rest-api-get-bills-details-last-1-year-request-parameters'>Request Parameters</h4>
 <table><thead>
 <tr>
 <th style="text-align: left">Parameter</th>
@@ -5558,7 +5558,7 @@ GET /api/v5/account/bills-archive?instType<span class="o">=</span>MARGIN
         </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w"> 
-</span></code></pre></div><h4 id='trading-account-rest-api-get-bills-details-last-3-months-response-parameters'>Response Parameters</h4>
+</span></code></pre></div><h4 id='trading-account-rest-api-get-bills-details-last-1-year-response-parameters'>Response Parameters</h4>
 <table><thead>
 <tr>
 <th style="text-align: left">Parameter</th>
