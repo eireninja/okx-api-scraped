@@ -51185,7 +51185,7 @@ The data returned will be arranged in an array like this: [ts,o,h,l,c,vol,confir
 <tr>
 <td style="text-align: left">alias</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Alias<br><code>this_week</code><br><code>next_week</code><br><code>this_month</code><br><code>next_month</code><br><code>quarter</code><br><code>next_quarter</code><br>Only applicable to <code>FUTURES</code> <br><strong>Not recommended for use, users are encouraged to rely on the expTime field to determine the delivery time of the contract</strong></td>
+<td style="text-align: left">Alias<br><code>this_week</code><br><code>next_week</code><br><code>this_month</code><br><code>next_month</code><br><code>quarter</code><br><code>next_quarter</code><br><code>third_quarter</code><br>Only applicable to <code>FUTURES</code> <br><strong>Not recommended for use, users are encouraged to rely on the expTime field to determine the delivery time of the contract</strong></td>
 </tr>
 <tr>
 <td style="text-align: left">state</td>
